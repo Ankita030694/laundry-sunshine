@@ -22,7 +22,7 @@ const AboutUs = () => {
               className="text-[#1F2933] leading-[1.1]"
               style={{ 
                 fontFamily: 'Satoshi, sans-serif',
-                fontSize: 'min(52px, 6.5vw)',
+                fontSize: 'clamp(32px, 8vw, 52px)',
                 fontWeight: 500,
               }}
             >
@@ -32,10 +32,9 @@ const AboutUs = () => {
           
           <div className="lg:max-w-md">
             <p 
-              className="text-[#1F2933] opacity-80 mb-8 leading-relaxed"
+              className="text-[#1F2933] opacity-80 mb-8 leading-relaxed text-base md:text-lg"
               style={{ 
                 fontFamily: 'Satoshi, sans-serif',
-                fontSize: '18px',
                 fontWeight: 400
               }}
             >
@@ -44,24 +43,22 @@ const AboutUs = () => {
             
             <div className="flex items-center group cursor-pointer">
               <button 
-                className="bg-[#E6763F] text-white font-medium transition-all hover:bg-[#d56530] flex justify-center items-center h-[54px]"
+                className="bg-[#E6763F] text-white font-medium transition-all hover:bg-[#d56530] flex justify-center items-center h-[50px] md:h-[54px] px-6 md:px-8 text-base md:text-lg"
                 style={{ 
                   fontFamily: 'Satoshi, sans-serif',
-                  padding: '0 32px',
-                  fontSize: '18px',
                   textTransform: 'uppercase'
                 }}
               >
                 DISCOVER MORE
               </button>
-              <div className="transition-all duration-300 ml-[2px] h-[54px] w-[54px] bg-[#E6763F] flex items-center justify-center">
+              <div className="transition-all duration-300 ml-[2px] h-[50px] w-[50px] md:h-[54px] md:w-[54px] bg-[#E6763F] flex items-center justify-center">
                 <svg 
-                  width="24" 
-                  height="24" 
+                  width="20" 
+                  height="20" 
                   viewBox="0 0 24 24" 
                   fill="none" 
                   xmlns="http://www.w3.org/2000/svg"
-                  className="transition-transform duration-300 group-hover:rotate-45"
+                  className="md:w-6 md:h-6 transition-transform duration-300 group-hover:rotate-45"
                 >
                   <path d="M7 17L17 7M17 7H7M17 7V17" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -72,7 +69,7 @@ const AboutUs = () => {
 
         {/* scrollable images */}
         <div className="overflow-x-auto pb-8 -mx-6 px-6 no-scrollbar">
-          <div className="flex gap-8 w-max">
+          <div className="flex gap-4 md:gap-8 w-max">
             {[
               { src: "/about1.png", title: "Certified Installation for Seamless Operations" },
               { src: "/about2.png", title: "Preventive Maintenance for Maximum Uptime" },
@@ -80,19 +77,18 @@ const AboutUs = () => {
               { src: "/about2.png", title: "Energy-Efficient Solutions" },
               { src: "/about1.png", title: "After-Sales Support & Spare Parts" }
             ].map((card, index) => (
-              <div key={index} className="relative w-[1080px] aspect-[16/9] overflow-hidden group flex-shrink-0">
+              <div key={index} className="relative w-[300px] md:w-[600px] lg:w-[1080px] aspect-[16/9] overflow-hidden group flex-shrink-0">
                 <Image
                   src={card.src}
                   alt={card.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1F2933]/90 to-transparent flex flex-col justify-end p-8">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1F2933]/90 to-transparent flex flex-col justify-end p-6 md:p-8">
                   <h3 
-                    className="text-white max-w-sm"
+                    className="text-white max-w-[250px] md:max-w-sm text-xl md:text-3xl"
                     style={{ 
                       fontFamily: 'Satoshi, sans-serif',
-                      fontSize: '32px',
                       fontWeight: 500,
                       lineHeight: '1.2'
                     }}
@@ -106,7 +102,7 @@ const AboutUs = () => {
         </div>
 
         {/* Decorative accent border */}
-        <div className="w-full h-[6px] bg-gray-200 mt-4">
+        <div className="w-full h-[4px] md:h-[6px] bg-gray-200 mt-4">
           <div className="w-1/3 h-full bg-[#E6763F]"></div>
         </div>
       </div>

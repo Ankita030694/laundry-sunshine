@@ -31,9 +31,9 @@ const Features = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="relative p-10 group transition-all"
+              className="relative p-8 md:p-10 group transition-all"
               style={{
-                minHeight: '406px'
+                minHeight: 'auto'
               }}
             >
               {/* SVG Background Layer */}
@@ -57,8 +57,8 @@ const Features = () => {
                 </svg>
               </div>
 
-              <div className="relative z-10">
-                <div className="mb-8">
+              <div className="relative z-10 h-full flex flex-col">
+                <div className="mb-6 md:mb-8">
                   <Image 
                     src={feature.icon} 
                     alt={feature.title} 
@@ -68,10 +68,9 @@ const Features = () => {
                 </div>
                 
                 <h3 
-                  className="text-[#E6763F] mb-4"
+                  className="text-[#E6763F] mb-4 text-xl md:text-2xl"
                   style={{ 
                     fontFamily: 'Satoshi, sans-serif',
-                    fontSize: '24px',
                     fontWeight: 500,
                     lineHeight: '1.2'
                   }}
@@ -80,10 +79,9 @@ const Features = () => {
                 </h3>
                 
                 <p 
-                  className="text-gray-500"
+                  className="text-gray-500 pb-10 md:pb-0 text-sm md:text-base"
                   style={{ 
                     fontFamily: 'Satoshi, sans-serif',
-                    fontSize: '16px',
                     fontWeight: 400,
                     lineHeight: '1.5'
                   }}

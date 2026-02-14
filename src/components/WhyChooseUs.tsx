@@ -22,19 +22,18 @@ const WhyChooseUs = () => {
               className="text-[#0f172a] leading-[1.1]"
               style={{ 
                 fontFamily: 'Satoshi, sans-serif',
-                fontSize: 'min(52px, 6.5vw)',
+                fontSize: 'clamp(32px, 8vw, 52px)',
                 fontWeight: 500,
               }}
             >
               Established Leaders in Commercial Laundry Solutions
             </h2>
           </div>
-          <div className="lg:max-w-sm pt-6">
+          <div className="lg:max-w-sm pt-4 md:pt-6">
             <p 
-              className="text-gray-600 leading-relaxed"
+              className="text-gray-600 leading-relaxed text-sm md:text-base"
               style={{ 
                 fontFamily: 'Satoshi, sans-serif',
-                fontSize: '15px',
                 fontWeight: 400
               }}
             >
@@ -45,25 +44,25 @@ const WhyChooseUs = () => {
       </div>
 
       {/* Full-width Border Wrapper */}
-      <div className="border-t border-gray-400 w-full mt-8">
+      <div className="border-t border-gray-300 md:border-gray-400 w-full mt-8">
         <div className="container mx-auto px-6">
           {/* Feature Columns */}
           <div className="grid grid-cols-1 md:grid-cols-3">
             {/* Column 1 */}
-            <div className="py-12 pr-6 md:border-r border-gray-400">
-              <div className="mb-8">
+            <div className="py-10 md:py-12 pr-6 border-b md:border-b-0 md:border-r border-gray-300 md:border-gray-400">
+              <div className="mb-6 md:mb-8">
                 <Image 
                   src="/handshake.svg" 
                   alt="Trusted Expertise" 
-                  width={52} 
-                  height={52} 
+                  width={48} 
+                  height={48} 
+                  className="md:w-[52px] md:h-[52px]"
                 />
               </div>
               <p 
-                className="text-[#0f172a] max-w-[200px]"
+                className="text-[#0f172a] max-w-[200px] text-lg md:text-2xl"
                 style={{ 
                   fontFamily: 'Satoshi, sans-serif',
-                  fontSize: '22px',
                   fontWeight: 400,
                   lineHeight: '1.2'
                 }}
@@ -73,20 +72,20 @@ const WhyChooseUs = () => {
             </div>
 
             {/* Column 2 */}
-            <div className="py-12 px-6 md:border-r border-gray-400">
-              <div className="mb-8">
+            <div className="py-10 md:py-12 px-0 md:px-6 border-b md:border-b-0 md:border-r border-gray-300 md:border-gray-400">
+              <div className="mb-6 md:mb-8">
                 <Image 
                   src="/badge.svg" 
                   alt="Authorized Dealer" 
-                  width={52} 
-                  height={52} 
+                  width={48} 
+                  height={48} 
+                  className="md:w-[52px] md:h-[52px]"
                 />
               </div>
               <p 
-                className="text-[#0f172a] max-w-[240px]"
+                className="text-[#0f172a] max-w-[240px] text-lg md:text-2xl"
                 style={{ 
                   fontFamily: 'Satoshi, sans-serif',
-                  fontSize: '22px',
                   fontWeight: 400,
                   lineHeight: '1.2'
                 }}
@@ -96,20 +95,20 @@ const WhyChooseUs = () => {
             </div>
 
             {/* Column 3 */}
-            <div className="py-12 pl-6">
-              <div className="mb-8">
+            <div className="py-10 md:py-12 pl-0 md:pl-6">
+              <div className="mb-6 md:mb-8">
                 <Image 
                   src="/plaas.svg" 
                   alt="Complete Support" 
-                  width={52} 
-                  height={52} 
+                  width={48} 
+                  height={48} 
+                  className="md:w-[52px] md:h-[52px]"
                 />
               </div>
               <p 
-                className="text-[#0f172a] max-w-[260px]"
+                className="text-[#0f172a] max-w-[260px] text-lg md:text-2xl"
                 style={{ 
                   fontFamily: 'Satoshi, sans-serif',
-                  fontSize: '22px',
                   fontWeight: 400,
                   lineHeight: '1.2'
                 }}

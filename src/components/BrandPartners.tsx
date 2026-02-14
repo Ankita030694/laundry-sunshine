@@ -13,23 +13,23 @@ const BrandPartners = () => {
     <section className="bg-white py-20">
       <div className="container mx-auto px-6">
         <h2 
-          className="mb-16"
+          className="mb-10 md:mb-16"
           style={{ 
             color: '#1F2933',
             textAlign: 'center',
             fontFamily: 'Satoshi, sans-serif',
-            fontSize: '55px',
+            fontSize: 'clamp(32px, 6vw, 55px)',
             fontStyle: 'normal',
             fontWeight: 500,
-            lineHeight: '55px',
+            lineHeight: '1.2',
           }}
         >
           Our Strategic Brand Partners
         </h2>
         
-        <div className="flex flex-wrap justify-center items-center gap-16 md:gap-24">
+        <div className="flex flex-wrap justify-center items-center gap-10 md:gap-24">
           {brands.map((brand) => (
-            <div key={brand.name} className="relative h-36 w-50 transition-all duration-300">
+            <div key={brand.name} className="relative h-20 w-32 md:h-36 md:w-50 transition-all duration-300">
               <Image
                 src={brand.src}
                 alt={brand.name}

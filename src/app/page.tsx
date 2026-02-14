@@ -9,11 +9,11 @@ import AboutUs from "@/components/AboutUs";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen overflow-x-hidden">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#1F2933]">
+      <section className="relative min-h-screen md:h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#1F2933]">
         {/* Background Image with Gradient Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -31,33 +31,35 @@ export default function Home() {
         </div>
 
         {/* Hero Content - Middle */}
-        <div className="container relative z-10 mx-auto px-6 flex flex-col items-center justify-center text-center">
+        <div className="container relative z-10 mx-auto px-6 py-20 flex flex-col items-center justify-center text-center">
           <h1 
             className="max-w-8xl text-white tracking-tight animate-fade-in"
             style={{ 
               fontFamily: 'Satoshi, sans-serif',
-              fontSize: 'min(80px, 10vw)',
+              fontSize: 'clamp(32px, 8vw, 80px)',
               fontWeight: 700,
-              lineHeight: 'min(80px, 10vw)',
+              lineHeight: '1.1',
               letterSpacing: '1px'
             }}
           >
-            Commercial Laundry Solutions <br /> Built for Performance
+            Commercial Laundry Solutions <br className="hidden md:block" /> Built for Performance
           </h1>
           
+          <p className="mt-6 text-white/80 text-lg md:text-2xl max-w-2xl md:hidden animate-fade-in delay-100">
+            We supply, install, and maintain high-quality laundry machines across India.
+          </p>
+
           {/* CTA Buttons - Refined with user specs */}
           <div className="mt-10 flex items-center gap-0 animate-fade-in delay-200 group cursor-pointer">
             <button 
-              className="bg-[#E6763F] text-white font-bold transition-all hover:bg-[#d56530] flex justify-center items-center h-[54px]"
+              className="bg-[#E6763F] text-white font-bold transition-all hover:bg-[#d56530] flex justify-center items-center h-[54px] whitespace-nowrap px-8 md:px-10 text-base md:text-lg"
               style={{ 
-                fontFamily: 'Satoshi, sans-serif',
-                padding: '0 37px',
-                fontSize: '18px'
+                fontFamily: 'Satoshi, sans-serif'
               }}
             >
               Get Free Quote
             </button>
-            <div className="transition-all duration-300 ml-[10px] group-hover:ml-0 h-[54px] w-[54px] bg-[#E6763F] flex items-center justify-center">
+            <div className="transition-all duration-300 ml-[10px] group-hover:ml-0 h-[54px] w-[54px] bg-[#E6763F] flex items-center justify-center shrink-0">
               <svg 
                 width="54" 
                 height="54" 
