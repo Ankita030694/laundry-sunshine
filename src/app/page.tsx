@@ -1,65 +1,104 @@
+import Navbar from "@/components/Navbar";
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
+import CTA from "@/components/CTA";
+import Features from "@/components/Features";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import BrandPartners from "@/components/BrandPartners";
+import AboutUs from "@/components/AboutUs";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="relative min-h-screen">
+      <Navbar />
+      
+      {/* Hero Section */}
+      <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#1F2933]">
+        {/* Background Image with Gradient Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hero-bg.jpg"
+            alt="Sunshine Equipments Hero"
+            fill
+            className="object-cover object-center opacity-70"
+            priority
+          />
+          {/* Requested Gradient Overlay */}
+          <div 
+            className="absolute inset-0" 
+            style={{ background: 'linear-gradient(180deg, rgba(31, 41, 51, 0.00) 0%, #1F2933 100%)' }}
+          />
+        </div>
+
+        {/* Hero Content - Middle */}
+        <div className="container relative z-10 mx-auto px-6 flex flex-col items-center justify-center text-center">
+          <h1 
+            className="max-w-8xl text-white tracking-tight animate-fade-in"
+            style={{ 
+              fontFamily: 'Satoshi, sans-serif',
+              fontSize: 'min(80px, 10vw)',
+              fontWeight: 700,
+              lineHeight: 'min(80px, 10vw)',
+              letterSpacing: '1px'
+            }}
+          >
+            Commercial Laundry Solutions <br /> Built for Performance
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+          
+          {/* CTA Buttons - Refined with user specs */}
+          <div className="mt-10 flex items-center gap-0 animate-fade-in delay-200 group cursor-pointer">
+            <button 
+              className="bg-[#E6763F] text-white font-bold transition-all hover:bg-[#d56530] flex justify-center items-center h-[54px]"
+              style={{ 
+                fontFamily: 'Satoshi, sans-serif',
+                padding: '0 37px',
+                fontSize: '18px'
+              }}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              Get Free Quote
+            </button>
+            <div className="transition-all duration-300 ml-[10px] group-hover:ml-0 h-[54px] w-[54px] bg-[#E6763F] flex items-center justify-center">
+              <svg 
+                width="54" 
+                height="54" 
+                viewBox="0 0 65 65" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                className="transition-transform duration-300 group-hover:rotate-45"
+              >
+                <path d="M25.5146 22.4853H42.4852M42.4852 22.4853V39.4558M42.4852 22.4853L22.6862 42.2843" stroke="#F9FAFB" strokeWidth="2"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Left Content - Moved from Right and Scaled down */}
+        <div className="absolute bottom-12 left-12 z-10 max-w-xl text-left hidden lg:block animate-fade-in delay-500">
+          <p 
+            className="text-white"
+            style={{ 
+              fontFamily: 'Satoshi, sans-serif',
+              fontSize: '24px',
+              fontWeight: 400,
+              lineHeight: '31px',
+            }}
+          >
+            We supply, install, and maintain high-quality laundry machines for hotels, hospitals, laundromats, and industrial facilities across India.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      <Features />
+
+      <AboutUs />
+
+      <BrandPartners />
+
+      <WhyChooseUs />
+
+
+      <CTA />
+    </main>
   );
 }
+
