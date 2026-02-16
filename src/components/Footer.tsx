@@ -107,7 +107,7 @@ export default function Footer() {
         {/* Legal Disclaimer */}
         <div className="text-center border-t border-gray-400 pt-8">
           <p className="text-sm text-gray-500 font-medium">
-            © 2025 AMA Legal Solutions. All Rights Reserved.
+            © 2010 Sunshine Equipments. All Rights Reserved.
           </p>
         </div>
       </div>

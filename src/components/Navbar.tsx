@@ -107,7 +107,7 @@ export default function Navbar() {
             </button>
           </div>
           
-          <div className="flex flex-col gap-6 px-6 py-10">
+          <div className="flex flex-col gap-6 px-6 py-10 bg-white">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
