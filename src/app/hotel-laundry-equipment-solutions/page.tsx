@@ -128,12 +128,22 @@ export default function HotelLaundrySolutions() {
                 "@type": "Organization",
                 "@id": "https://sunshine-laundry.com/#organization",
                 "name": brandName,
+                "legalName": "Sunshine Equipments",
                 "url": "https://sunshine-laundry.com/",
                 "logo": {
                     "@type": "ImageObject",
                     "url": logoUrl,
                     "width": "300",
                     "height": "200"
+                },
+                "description": "Leading manufacturer and supplier of industrial and commercial laundry equipment in India, specializing in high-performance washers, dryers, and finishing systems.",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "304, 3rd Floor, Gupta Palace, Rajouri Garden",
+                    "addressLocality": "New Delhi",
+                    "addressRegion": "Delhi",
+                    "postalCode": "110027",
+                    "addressCountry": "IN"
                 },
                 "contactPoint": {
                     "@type": "ContactPoint",
