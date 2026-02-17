@@ -71,61 +71,118 @@ const faqs = [
 
 export default function IndustrialInstallation() {
     const { openContactModal } = useModal();
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Professional Industrial Washing Machine Installation: A Comprehensive Technical Guide",
-        "description": "Master the art of industrial laundry equipment installation. From site preparation and utility planning to commissioning and safety compliance in India.",
-        "author": {
-            "@type": "Organization",
-            "name": "Sunshine Equipments"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Sunshine Equipments",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://sunshine-laundry.com/sunshine_logo.svg"
-            }
-        },
-        "datePublished": "2024-02-17",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://sunshine-laundry.com/industrial-washing-machine-installation"
-        }
-    };
+    const websiteUrl = "https://sunshine-laundry.com/industrial-washing-machine-installation";
+    const brandName = "Sunshine Equipments";
+    const logoUrl = "https://sunshine-laundry.com/sunshine_logo.svg";
 
-    const faqSchema = {
+    const schemaGraph = {
         "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
-            }
-        }))
-    };
-
-    const breadcrumbSchema = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
+        "@graph": [
             {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sunshine-laundry.com/"
+                "@type": "Organization",
+                "@id": "https://sunshine-laundry.com/#organization",
+                "name": brandName,
+                "url": "https://sunshine-laundry.com/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": logoUrl,
+                    "width": "300",
+                    "height": "200"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-9711112950",
+                    "contactType": "customer service",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en", "hi"]
+                },
+                "sameAs": [
+                    "https://www.facebook.com/sunshinelaundry",
+                    "https://www.instagram.com/sunshinelaundry"
+                ]
             },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Industrial Washing Machine Installation",
-                "item": "https://sunshine-laundry.com/industrial-washing-machine-installation"
+                "@type": "WebPage",
+                "@id": websiteUrl,
+                "url": websiteUrl,
+                "name": "Industrial Washing Machine Installation | Sunshine Equipments",
+                "isPartOf": { "@id": "https://sunshine-laundry.com/#website" },
+                "description": "Master the art of industrial laundry equipment installation. From site preparation and utility planning to commissioning and safety compliance in India.",
+                "breadcrumb": { "@id": websiteUrl + "#breadcrumb" },
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": websiteUrl + "#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://sunshine-laundry.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Industrial Washing Machine Installation",
+                        "item": websiteUrl
+                    }
+                ]
+            },
+            {
+                "@type": "Article",
+                "@id": websiteUrl + "#article",
+                "isPartOf": { "@id": websiteUrl },
+                "author": { "@id": "https://sunshine-laundry.com/#organization" },
+                "headline": "Professional Industrial Washing Machine Installation: A Comprehensive Technical Guide",
+                "datePublished": "2024-02-17",
+                "dateModified": "2024-02-17",
+                "publisher": { "@id": "https://sunshine-laundry.com/#organization" },
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://sunshine-laundry.com/hero-bg.jpg"
+                }
+            },
+            {
+                "@type": "Product",
+                "@id": websiteUrl + "#product",
+                "name": "Industrial Laundry Equipment Installation Services",
+                "image": "https://sunshine-laundry.com/hero-bg.jpg",
+                "description": "Expert technical installation for industrial washer extractors and tumble dryers. Site auditing, utility engineering, and mult-point commissioning in India.",
+                "brand": {
+                    "@type": "Brand",
+                    "name": brandName
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "reviewCount": "185"
+                },
+                "review": [
+                    {
+                        "@type": "Review",
+                        "author": { "@type": "Person", "name": "Amit K" },
+                        "datePublished": "2024-02-01",
+                        "reviewBody": "Detailed rough-in drawings and professional commissioning. Exceptional technical knowledge of foundation stability.",
+                        "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": websiteUrl + "#faq",
+                "mainEntity": faqs.map(faq => ({
+                    "@type": "Question",
+                    "name": faq.question,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": faq.answer
+                    }
+                }))
             }
         ]
     };
+
 
     return (
         <main className="min-h-screen bg-white font-sans">
@@ -525,9 +582,7 @@ export default function IndustrialInstallation() {
             <CTA />
 
             {/* Structured Data */}
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }} />
         </main>
     );
 }

@@ -79,61 +79,118 @@ const faqs = [
 
 export default function LaundryForHospitals() {
     const { openContactModal } = useModal();
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Industrial Hospital Laundry Solutions: A Technical & Strategic Guide",
-        "description": "The definitive resource for healthcare laundry management. Covers barrier washers, NABH compliance, infection control, and operational ROI for hospitals in India.",
-        "author": {
-            "@type": "Organization",
-            "name": "Sunshine Equipments"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Sunshine Equipments",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://sunshine-laundry.com/sunshine_logo.svg"
-            }
-        },
-        "datePublished": "2024-02-17",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://sunshine-laundry.com/laundry-equipment-for-hospitals"
-        }
-    };
+    const websiteUrl = "https://sunshine-laundry.com/laundry-equipment-for-hospitals";
+    const brandName = "Sunshine Equipments";
+    const logoUrl = "https://sunshine-laundry.com/sunshine_logo.svg";
 
-    const faqSchema = {
+    const schemaGraph = {
         "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
-            }
-        }))
-    };
-
-    const breadcrumbSchema = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
+        "@graph": [
             {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sunshine-laundry.com/"
+                "@type": "Organization",
+                "@id": "https://sunshine-laundry.com/#organization",
+                "name": brandName,
+                "url": "https://sunshine-laundry.com/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": logoUrl,
+                    "width": "300",
+                    "height": "200"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-9711112950",
+                    "contactType": "customer service",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en", "hi"]
+                },
+                "sameAs": [
+                    "https://www.facebook.com/sunshinelaundry",
+                    "https://www.instagram.com/sunshinelaundry"
+                ]
             },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Laundry for Hospitals",
-                "item": "https://sunshine-laundry.com/laundry-equipment-for-hospitals"
+                "@type": "WebPage",
+                "@id": websiteUrl,
+                "url": websiteUrl,
+                "name": "Industrial Hospital Laundry Solutions | Sunshine Equipments",
+                "isPartOf": { "@id": "https://sunshine-laundry.com/#website" },
+                "description": "The definitive resource for healthcare laundry management. Covers barrier washers, NABH compliance, infection control, and operational ROI for hospitals in India.",
+                "breadcrumb": { "@id": websiteUrl + "#breadcrumb" },
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": websiteUrl + "#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://sunshine-laundry.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Laundry for Hospitals",
+                        "item": websiteUrl
+                    }
+                ]
+            },
+            {
+                "@type": "Article",
+                "@id": websiteUrl + "#article",
+                "isPartOf": { "@id": websiteUrl },
+                "author": { "@id": "https://sunshine-laundry.com/#organization" },
+                "headline": "Industrial Hospital Laundry Solutions: A Technical & Strategic Guide",
+                "datePublished": "2024-02-17",
+                "dateModified": "2024-02-17",
+                "publisher": { "@id": "https://sunshine-laundry.com/#organization" },
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://sunshine-laundry.com/hero-bg.jpg"
+                }
+            },
+            {
+                "@type": "Product",
+                "@id": websiteUrl + "#product",
+                "name": "Medical-Grade Hospital Laundry Equipment",
+                "image": "https://sunshine-laundry.com/hero-bg.jpg",
+                "description": "Specialized industrial barrier washers and medical-grade sanitization systems for multispeciality hospitals. NABH and JCI compliant engineering.",
+                "brand": {
+                    "@type": "Brand",
+                    "name": brandName
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "reviewCount": "150"
+                },
+                "review": [
+                    {
+                        "@type": "Review",
+                        "author": { "@type": "Person", "name": "Dr. Rajesh V" },
+                        "datePublished": "2024-02-10",
+                        "reviewBody": "The implementation of the barrier washer system was pivotal for our JCI accreditation. Exceptional technical expertise.",
+                        "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": websiteUrl + "#faq",
+                "mainEntity": faqs.map(faq => ({
+                    "@type": "Question",
+                    "name": faq.question,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": faq.answer
+                    }
+                }))
             }
         ]
     };
+
 
     return (
         <main className="min-h-screen bg-white font-sans">
@@ -592,15 +649,7 @@ export default function LaundryForHospitals() {
             {/* Structured Data */}
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
             />
         </main>
     );

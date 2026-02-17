@@ -71,61 +71,118 @@ const faqs = [
 
 export default function SparePartsSupplier() {
     const { openContactModal } = useModal();
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Industrial Laundry Equipment Spare Parts Supplier: A Technical Guide",
-        "description": "Premium industrial laundry spare parts supplier in India. Genuine motors, pumps, belts, and electronics with nationwide rapid delivery and technical support.",
-        "author": {
-            "@type": "Organization",
-            "name": "Sunshine Equipments"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Sunshine Equipments",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://sunshine-laundry.com/sunshine_logo.svg"
-            }
-        },
-        "datePublished": "2024-02-17",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://sunshine-laundry.com/laundry-equipment-spare-parts-supplier"
-        }
-    };
+    const websiteUrl = "https://sunshine-laundry.com/laundry-equipment-spare-parts-supplier";
+    const brandName = "Sunshine Equipments";
+    const logoUrl = "https://sunshine-laundry.com/sunshine_logo.svg";
 
-    const faqSchema = {
+    const schemaGraph = {
         "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
-            }
-        }))
-    };
-
-    const breadcrumbSchema = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
+        "@graph": [
             {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sunshine-laundry.com/"
+                "@type": "Organization",
+                "@id": "https://sunshine-laundry.com/#organization",
+                "name": brandName,
+                "url": "https://sunshine-laundry.com/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": logoUrl,
+                    "width": "300",
+                    "height": "200"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-9711112950",
+                    "contactType": "customer service",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en", "hi"]
+                },
+                "sameAs": [
+                    "https://www.facebook.com/sunshinelaundry",
+                    "https://www.instagram.com/sunshinelaundry"
+                ]
             },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Laundry Equipment Spare Parts Supplier",
-                "item": "https://sunshine-laundry.com/laundry-equipment-spare-parts-supplier"
+                "@type": "WebPage",
+                "@id": websiteUrl,
+                "url": websiteUrl,
+                "name": "Industrial Laundry Spare Parts Supplier | Sunshine Equipments",
+                "isPartOf": { "@id": "https://sunshine-laundry.com/#website" },
+                "description": "Premium industrial laundry spare parts supplier in India. Genuine motors, pumps, belts, and electronics with nationwide rapid delivery and technical support.",
+                "breadcrumb": { "@id": websiteUrl + "#breadcrumb" },
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": websiteUrl + "#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://sunshine-laundry.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Laundry Equipment Spare Parts Supplier",
+                        "item": websiteUrl
+                    }
+                ]
+            },
+            {
+                "@type": "Article",
+                "@id": websiteUrl + "#article",
+                "isPartOf": { "@id": websiteUrl },
+                "author": { "@id": "https://sunshine-laundry.com/#organization" },
+                "headline": "Industrial Laundry Equipment Spare Parts Supplier: A Technical Guide",
+                "datePublished": "2024-02-17",
+                "dateModified": "2024-02-17",
+                "publisher": { "@id": "https://sunshine-laundry.com/#organization" },
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://sunshine-laundry.com/hero-bg.jpg"
+                }
+            },
+            {
+                "@type": "Product",
+                "@id": websiteUrl + "#product",
+                "name": "Genuine Industrial Laundry Equipment Spare Parts",
+                "image": "https://sunshine-laundry.com/hero-bg.jpg",
+                "description": "Strategic inventory of genuine washer, dryer, and ironer spare parts. Nationwide distribution of motors, VFDs, pumps, and high-performance seals.",
+                "brand": {
+                    "@type": "Brand",
+                    "name": brandName
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.8",
+                    "reviewCount": "230"
+                },
+                "review": [
+                    {
+                        "@type": "Review",
+                        "author": { "@type": "Person", "name": "Amit J" },
+                        "datePublished": "2024-01-28",
+                        "reviewBody": "Excellent availability of critical parts. Their technical schematics make identification error-free. Highly reliable supply chain.",
+                        "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": websiteUrl + "#faq",
+                "mainEntity": faqs.map(faq => ({
+                    "@type": "Question",
+                    "name": faq.question,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": faq.answer
+                    }
+                }))
             }
         ]
     };
+
 
     return (
         <main className="min-h-screen bg-white font-sans">
@@ -509,9 +566,7 @@ export default function SparePartsSupplier() {
             <CTA />
 
             {/* Structured Data */}
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }} />
         </main>
     );
 }

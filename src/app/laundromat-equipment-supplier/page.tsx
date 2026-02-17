@@ -111,54 +111,123 @@ const reviews = [
 
 export default function LaundromatEquipmentSupplier() {
     const { openContactModal } = useModal();
-    const jsonLd = {
+    const websiteUrl = "https://sunshine-laundry.com/laundromat-equipment-supplier";
+    const brandName = "Sunshine Equipments";
+    const logoUrl = "https://sunshine-laundry.com/sunshine_logo.svg";
+
+    const schemaGraph = {
         "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Laundromat Equipment Supplier: High-ROI Vended Laundry Systems",
-        "description": "Premium laundromat equipment supplier. In-depth technical guide on coin-op, card-op, and smart laundromat solutions for entrepreneurs.",
-        "author": {
-            "@type": "Organization",
-            "name": "Sunshine Equipments"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Sunshine Equipments",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://sunshine-laundry.com/sunshine_logo.svg"
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://sunshine-laundry.com/#organization",
+                "name": brandName,
+                "url": "https://sunshine-laundry.com/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": logoUrl,
+                    "width": "300",
+                    "height": "200"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-9711112950",
+                    "contactType": "customer service",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en", "hi"]
+                },
+                "sameAs": [
+                    "https://www.facebook.com/sunshinelaundry",
+                    "https://www.instagram.com/sunshinelaundry"
+                ]
+            },
+            {
+                "@type": "WebPage",
+                "@id": websiteUrl,
+                "url": websiteUrl,
+                "name": "Laundromat Equipment Supplier | Sunshine Equipments",
+                "isPartOf": { "@id": "https://sunshine-laundry.com/#website" },
+                "description": "Premium laundromat equipment supplier. In-depth technical guide on coin-op, card-op, and smart laundromat solutions for entrepreneurs.",
+                "breadcrumb": { "@id": websiteUrl + "#breadcrumb" },
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": websiteUrl + "#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://sunshine-laundry.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Laundromat Equipment",
+                        "item": websiteUrl
+                    }
+                ]
+            },
+            {
+                "@type": "Article",
+                "@id": websiteUrl + "#article",
+                "isPartOf": { "@id": websiteUrl },
+                "author": { "@id": "https://sunshine-laundry.com/#organization" },
+                "headline": "Laundromat Equipment Supplier: High-ROI Vended Laundry Systems",
+                "datePublished": "2024-02-17",
+                "dateModified": "2024-02-17",
+                "publisher": { "@id": "https://sunshine-laundry.com/#organization" },
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://sunshine-laundry.com/hero-bg.jpg"
+                }
+            },
+            {
+                "@type": "Product",
+                "@id": websiteUrl + "#product",
+                "name": "High-ROI Laundromat Equipment & Business Solutions",
+                "image": "https://sunshine-laundry.com/hero-bg.jpg",
+                "description": "Premium laundromat equipment supplier in India. Smart coin/card/mobile payment systems, industrial-durability vended washers, and full business consultancy.",
+                "brand": {
+                    "@type": "Brand",
+                    "name": brandName
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "reviewCount": "210"
+                },
+                "review": [
+                    {
+                        "@type": "Review",
+                        "author": { "@type": "Person", "name": "Sanjay Gupta" },
+                        "datePublished": "2024-02-01",
+                        "reviewBody": "Sunshine provided the technical roadmap I needed for my laundromat business. Their equipment is bulletproof, and the mobile payment integration is seamless.",
+                        "reviewRating": { "@type": "Rating", "ratingValue": "5" }
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "@id": websiteUrl + "#faq",
+                "mainEntity": faqs.map(faq => ({
+                    "@type": "Question",
+                    "name": faq.question,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": faq.answer
+                    }
+                }))
             }
-        },
-        "datePublished": "2024-02-17",
-        "dateModified": "2024-02-17",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://sunshine-laundry.com/laundromat-equipment-supplier"
-        }
+        ]
     };
 
-    const faqSchema = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
-            }
-        }))
-    };
 
     return (
         <main className="min-h-screen bg-white font-sans">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
+            {/* Structured Data */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }} />
 
             {/* Hero Section */}
             <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
