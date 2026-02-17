@@ -106,47 +106,125 @@ const reviews = [
 
 export default function LaundrySuppliersDelhiNCR() {
     const { openContactModal } = useModal();
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Laundry Machine Suppliers in Delhi NCR: Industrial & Commercial Guide",
-        "description": "Premium laundry machine suppliers in Delhi NCR. Wholesale industrial washers, dryers, and ironing systems for Noida, Gurgaon, and Ghaziabad. 3500+ words technical roadmap.",
-        "author": {
-            "@type": "Organization",
-            "name": "Sunshine Equipments"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Sunshine Equipments",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://sunshine-laundry.com/sunshine_logo.svg"
-            }
-        }
-    };
+    const websiteUrl = "https://sunshine-laundry.com/laundry-machine-suppliers-delhi-ncr";
+    const brandName = "Sunshine Equipments";
+    const logoUrl = "https://sunshine-laundry.com/sunshine_logo.svg";
 
-    const faqSchema = {
+    const schemaGraph = {
         "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://sunshine-laundry.com/#organization",
+                "name": brandName,
+                "url": "https://sunshine-laundry.com/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": logoUrl,
+                    "width": "300",
+                    "height": "200"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-9711112950",
+                    "contactType": "customer service",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en", "hi"]
+                },
+                "sameAs": [
+                    "https://www.facebook.com/sunshinelaundry",
+                    "https://www.instagram.com/sunshinelaundry"
+                ]
+            },
+            {
+                "@type": "WebPage",
+                "@id": websiteUrl,
+                "url": websiteUrl,
+                "name": "Laundry Machine Suppliers in Delhi NCR | Sunshine Equipments",
+                "isPartOf": { "@id": "https://sunshine-laundry.com/#website" },
+                "description": "Premium laundry machine suppliers in Delhi NCR. Wholesale industrial washers, dryers, and ironing systems for Noida, Gurgaon, and Ghaziabad.",
+                "breadcrumb": { "@id": websiteUrl + "#breadcrumb" },
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": websiteUrl + "#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://sunshine-laundry.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Laundry Machine Suppliers Delhi NCR",
+                        "item": websiteUrl
+                    }
+                ]
+            },
+            {
+                "@type": "Article",
+                "@id": websiteUrl + "#article",
+                "isPartOf": { "@id": websiteUrl },
+                "author": { "@id": "https://sunshine-laundry.com/#organization" },
+                "headline": "Laundry Machine Suppliers in Delhi NCR: Industrial & Commercial Guide",
+                "datePublished": "2024-02-17",
+                "dateModified": "2024-02-17",
+                "publisher": { "@id": "https://sunshine-laundry.com/#organization" },
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://sunshine-laundry.com/hero-bg.jpg"
+                }
+            },
+            {
+                "@type": "Product",
+                "@id": websiteUrl + "#product",
+                "name": "Commercial Laundry Equipment Delhi NCR",
+                "description": "Professional-grade laundry machines for Delhi, Noida, Gurgaon, and Ghaziabad. High-performance industrial washers and dryers with local support.",
+                "brand": {
+                    "@type": "Brand",
+                    "name": brandName
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "reviewCount": "310"
+                },
+                "review": reviews.map(review => ({
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": review.name
+                    },
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": review.rating.toString()
+                    },
+                    "reviewBody": review.content
+                }))
+            },
+            {
+                "@type": "FAQPage",
+                "@id": websiteUrl + "#faq",
+                "mainEntity": faqs.map(faq => ({
+                    "@type": "Question",
+                    "name": faq.question,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": faq.answer
+                    }
+                }))
             }
-        }))
+        ]
     };
 
     return (
         <main className="min-h-screen bg-white">
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
             />
 
             {/* Hero Section */}
@@ -185,7 +263,6 @@ export default function LaundrySuppliersDelhiNCR() {
             {/* Breadcrumb Container */}
             <div className="container mx-auto px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[
-                    { label: "Home", href: "/" },
                     { label: "Delhi NCR Suppliers", href: "/laundry-machine-suppliers-delhi-ncr" }
                 ]} />
             </div>

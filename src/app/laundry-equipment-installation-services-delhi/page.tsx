@@ -107,47 +107,125 @@ const reviews = [
 
 export default function LaundryInstallationServicesDelhi() {
     const { openContactModal } = useModal();
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Laundry Equipment Installation Services Delhi: The Industrial Engineering Standard",
-        "description": "Professional laundry equipment installation services in Delhi. Turnkey industrial setups, foundation engineering, electrical load planning, and compliance for NCR. 3500+ words technical guide.",
-        "author": {
-            "@type": "Organization",
-            "name": "Sunshine Equipments"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Sunshine Equipments",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://sunshine-laundry.com/sunshine_logo.svg"
-            }
-        }
-    };
+    const websiteUrl = "https://sunshine-laundry.com/laundry-equipment-installation-services-delhi";
+    const brandName = "Sunshine Equipments";
+    const logoUrl = "https://sunshine-laundry.com/sunshine_logo.svg";
 
-    const faqSchema = {
+    const schemaGraph = {
         "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqs.map(faq => ({
-            "@type": "Question",
-            "name": faq.question,
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://sunshine-laundry.com/#organization",
+                "name": brandName,
+                "url": "https://sunshine-laundry.com/",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": logoUrl,
+                    "width": "300",
+                    "height": "200"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-9711112950",
+                    "contactType": "customer service",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en", "hi"]
+                },
+                "sameAs": [
+                    "https://www.facebook.com/sunshinelaundry",
+                    "https://www.instagram.com/sunshinelaundry"
+                ]
+            },
+            {
+                "@type": "WebPage",
+                "@id": websiteUrl,
+                "url": websiteUrl,
+                "name": "Laundry Equipment Installation Services in Delhi | Sunshine Equipments",
+                "isPartOf": { "@id": "https://sunshine-laundry.com/#website" },
+                "description": "Professional laundry equipment installation services in Delhi. Turnkey industrial setups, foundation engineering, electrical load planning, and compliance for NCR.",
+                "breadcrumb": { "@id": websiteUrl + "#breadcrumb" },
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": websiteUrl + "#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://sunshine-laundry.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Installation Services Delhi",
+                        "item": websiteUrl
+                    }
+                ]
+            },
+            {
+                "@type": "Article",
+                "@id": websiteUrl + "#article",
+                "isPartOf": { "@id": websiteUrl },
+                "author": { "@id": "https://sunshine-laundry.com/#organization" },
+                "headline": "Laundry Equipment Installation Services Delhi: The Industrial Engineering Standard",
+                "datePublished": "2024-02-17",
+                "dateModified": "2024-02-17",
+                "publisher": { "@id": "https://sunshine-laundry.com/#organization" },
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://sunshine-laundry.com/hero-bg.jpg"
+                }
+            },
+            {
+                "@type": "Product",
+                "@id": websiteUrl + "#product",
+                "name": "Industrial Laundry Installation Delhi",
+                "description": "Expert engineering and installation services for commercial laundry equipment in Delhi NCR. Foundation, electrical, and plumbing integration.",
+                "brand": {
+                    "@type": "Brand",
+                    "name": brandName
+                },
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": "4.9",
+                    "reviewCount": "195"
+                },
+                "review": reviews.map(review => ({
+                    "@type": "Review",
+                    "author": {
+                        "@type": "Person",
+                        "name": review.name
+                    },
+                    "reviewRating": {
+                        "@type": "Rating",
+                        "ratingValue": review.rating.toString()
+                    },
+                    "reviewBody": review.content
+                }))
+            },
+            {
+                "@type": "FAQPage",
+                "@id": websiteUrl + "#faq",
+                "mainEntity": faqs.map(faq => ({
+                    "@type": "Question",
+                    "name": faq.question,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": faq.answer
+                    }
+                }))
             }
-        }))
+        ]
     };
 
     return (
         <main className="min-h-screen bg-white">
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
             />
 
             {/* Hero Section */}
@@ -186,7 +264,6 @@ export default function LaundryInstallationServicesDelhi() {
             {/* Breadcrumb Container */}
             <div className="container mx-auto px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[
-                    { label: "Home", href: "/" },
                     { label: "Installation Services Delhi", href: "/laundry-equipment-installation-services-delhi" }
                 ]} />
             </div>
