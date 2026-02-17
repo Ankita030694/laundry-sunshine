@@ -236,7 +236,7 @@ export default function IndustrialLaundrySolutionsIndia() {
 
                 <div className="container mx-auto px-6 relative z-10 text-center">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-sm font-bold mb-8 uppercase tracking-widest leading-none">
-                        <Globe size={16} className="text-brand-orange" /> Empowering India's Industrial Growth
+                        <Globe size={16} className="text-brand-orange" /> Empowering India&apos;s Industrial Growth
                     </div>
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
                         Industrial Laundry <br /><span className="text-brand-orange italic">Solutions India</span>

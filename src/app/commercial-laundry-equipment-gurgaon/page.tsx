@@ -235,13 +235,13 @@ export default function CommercialLaundryGurgaon() {
 
                 <div className="container mx-auto px-6 relative z-10 text-center">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-sm font-bold mb-8 uppercase tracking-widest leading-none">
-                        <MapPin size={16} className="text-brand-orange" /> Gurgaon & Delhi NCR Premier Supplier
+                        <MapPin size={16} className="text-brand-orange" /> Gurgaon &amp; Delhi NCR Premier Supplier
                     </div>
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
                         Commercial Laundry <br /><span className="text-brand-orange italic">Equipment in Gurgaon</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium transition-all duration-300">
-                        The ultimate destination for industrial washers, moisture-sensing dryers, and automated finishing systems. Engineered for the high-volume demands of Millennium City's hospitality and healthcare icons.
+                        The ultimate destination for industrial washers, moisture-sensing dryers, and automated finishing systems. Engineered for the high-volume demands of Millennium City&apos;s hospitality and healthcare icons.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <button

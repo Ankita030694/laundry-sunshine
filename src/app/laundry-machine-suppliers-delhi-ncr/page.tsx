@@ -235,13 +235,13 @@ export default function LaundrySuppliersDelhiNCR() {
 
                 <div className="container mx-auto px-6 relative z-10 text-center">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-sm font-bold mb-8 uppercase tracking-widest leading-none">
-                        <MapPin size={16} className="text-brand-orange" /> Delhi, Noida, Gurgaon & Beyond
+                        <MapPin size={16} className="text-brand-orange" /> Delhi, Noida, Gurgaon &amp; Beyond
                     </div>
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
                         Laundry Machine <br /><span className="text-brand-orange italic">Suppliers in Delhi NCR</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium transition-all duration-300">
-                        Strategically located to serve the National Capital Region's booming industrial corridors. Premium wholesale distribution of washer-extractors, dryers, and flatwork ironers with unmatched local technical support.
+                        Strategically located to serve the National Capital Region&apos;s booming industrial corridors. Premium wholesale distribution of washer-extractors, dryers, and flatwork ironers with unmatched local technical support.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <button

@@ -242,7 +242,7 @@ export default function LaundryMaintenanceGurgaon() {
                         Laundry Equipment <br /><span className="text-brand-orange italic">Maintenance Gurgaon</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium transition-all duration-300">
-                        Defeating the mineral-heavy water of the NCR through advanced descaling, predictive IoT monitoring, and a guaranteed 4-hour technical response. The definitive AMC standard for Gurgaon's hospitality and healthcare sectors.
+                        Defeating the mineral-heavy water of the NCR through advanced descaling, predictive IoT monitoring, and a guaranteed 4-hour technical response. The definitive AMC standard for Gurgaon&apos;s hospitality and healthcare sectors.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <button
