@@ -10,9 +10,10 @@ interface Section {
 interface TOCProps {
   sections: Section[];
   orientation?: 'vertical' | 'horizontal';
+  title?: string;
 }
 
-export default function TableOfContents({ sections, orientation = 'horizontal' }: TOCProps) {
+export default function TableOfContents({ sections, orientation = 'horizontal', title }: TOCProps) {
   const [activeId, setActiveId] = useState('');
 
   useEffect(() => {
@@ -49,18 +50,17 @@ export default function TableOfContents({ sections, orientation = 'horizontal' }
   if (orientation === 'vertical') {
     return (
       <div className="space-y-4">
-        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Table of Contents</h4>
+        <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">{title || 'Table of Contents'}</h4>
         <nav className="flex flex-col space-y-3">
           {sections.map((section) => (
             <a
               key={section.id}
               href={`#${section.id}`}
               onClick={(e) => handleClick(e, section.id)}
-              className={`text-sm transition-all duration-200 hover:text-brand-orange ${
-                activeId === section.id
-                  ? 'text-brand-orange font-bold border-l-2 border-brand-orange pl-3'
-                  : 'text-gray-500 pl-3 border-l-2 border-transparent'
-              }`}
+              className={`text-sm transition-all duration-200 hover:text-brand-orange ${activeId === section.id
+                ? 'text-brand-orange font-bold border-l-2 border-brand-orange pl-3'
+                : 'text-gray-500 pl-3 border-l-2 border-transparent'
+                }`}
             >
               {section.title}
             </a>
@@ -72,7 +72,7 @@ export default function TableOfContents({ sections, orientation = 'horizontal' }
 
   return (
     <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-      <h4 className="text-sm font-bold text-brand-blue uppercase tracking-widest mb-4">Quick Navigation</h4>
+      <h4 className="text-sm font-bold text-brand-blue uppercase tracking-widest mb-4">{title || 'Quick Navigation'}</h4>
       <nav className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {sections.map((section) => (
           <a

@@ -21,6 +21,21 @@ export default function Footer() {
               <li><Link href="/about" className="hover:text-brand-orange transition-colors">About Us</Link></li>
               <li><Link href="/laundry-equipment-for-hotels" className="hover:text-brand-orange transition-colors">Hotel Laundry Equipment</Link></li>
               <li><Link href="/laundry-equipment-for-hospitals" className="hover:text-brand-orange transition-colors">Hospital Laundry Equipment</Link></li>
+              <li><Link href="/commercial-laundry-equipment-supplier" className="hover:text-brand-orange transition-colors">Commercial Laundry Equipment</Link></li>
+              <li><Link href="/industrial-washing-machine-installation" className="hover:text-brand-orange transition-colors">Industrial Machine Installation</Link></li>
+              <li><Link href="/laundry-equipment-maintenance-services" className="hover:text-brand-orange transition-colors">Maintenance Services</Link></li>
+              <li><Link href="/after-sales-support-for-laundry-machines" className="hover:text-brand-orange transition-colors">After-Sales Support</Link></li>
+              <li><Link href="/laundry-equipment-spare-parts-supplier" className="hover:text-brand-orange transition-colors">Spare Parts Supplier</Link></li>
+              <li><Link href="/hotel-laundry-equipment-solutions" className="hover:text-brand-orange transition-colors">Hotel Laundry Solutions</Link></li>
+              <li><Link href="/hospital-laundry-systems-provider" className="hover:text-brand-orange transition-colors">Hospital Laundry Systems</Link></li>
+              <li><Link href="/laundromat-equipment-supplier" className="hover:text-brand-orange transition-colors">Laundromat Equipment</Link></li>
+              <li><Link href="/healthcare-laundry-equipment-maintenance" className="hover:text-brand-orange transition-colors">Healthcare Maintenance</Link></li>
+              <li><Link href="/hospitality-laundry-solutions" className="hover:text-brand-orange transition-colors">Hospitality Solutions</Link></li>
+              <li><Link href="/commercial-laundry-equipment-gurgaon" className="hover:text-brand-orange transition-colors">Gurgaon Laundry Equipment</Link></li>
+              <li><Link href="/laundry-machine-suppliers-delhi-ncr" className="hover:text-brand-orange transition-colors">Delhi NCR Suppliers</Link></li>
+              <li><Link href="/industrial-laundry-solutions-india" className="hover:text-brand-orange transition-colors">Industrial Solutions India</Link></li>
+              <li><Link href="/laundry-equipment-installation-services-delhi" className="hover:text-brand-orange transition-colors">Delhi Installation Services</Link></li>
+              <li><Link href="/laundry-equipment-maintenance-gurgaon" className="hover:text-brand-orange transition-colors">Gurgaon Maintenance</Link></li>
               <li><Link href="/services" className="hover:text-brand-orange transition-colors">Services</Link></li>
               <li><button onClick={openContactModal} className="hover:text-brand-orange transition-colors text-left outline-none">Get Free Quote</button></li>
             </ul>
