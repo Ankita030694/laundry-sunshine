@@ -19,6 +19,8 @@ export default function Footer() {
             <ul className="space-y-4 text-gray-600 font-medium">
               <li><Link href="/" className="hover:text-brand-orange transition-colors">Home</Link></li>
               <li><Link href="/about" className="hover:text-brand-orange transition-colors">About Us</Link></li>
+              <li><Link href="/laundry-equipment-for-hotels" className="hover:text-brand-orange transition-colors">Hotel Laundry Equipment</Link></li>
+              <li><Link href="/laundry-equipment-for-hospitals" className="hover:text-brand-orange transition-colors">Hospital Laundry Equipment</Link></li>
               <li><Link href="/services" className="hover:text-brand-orange transition-colors">Services</Link></li>
               <li><button onClick={openContactModal} className="hover:text-brand-orange transition-colors text-left outline-none">Get Free Quote</button></li>
             </ul>
@@ -73,7 +75,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          
+
           {/* Policies Section - spanning columns 3 & 4 */}
           <div className="col-span-1 md:col-span-2 p-8 md:px-12 md:py-8 border-r border-gray-400 flex items-center justify-end gap-8 text-gray-600 font-medium">
             <Link href="/privacy" className="hover:text-brand-orange transition-colors">Privacy Policy</Link>
@@ -87,15 +89,15 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 mb-12">
           {/* Logo and Brand Name */}
           <div className="flex items-center gap-4">
-            <Image 
-              src="/sunshine_logo.svg" 
-              alt="Sunshine Equipment Co Inc" 
-              width={300} 
-              height={200} 
+            <Image
+              src="/sunshine_logo.svg"
+              alt="Sunshine Equipment Co Inc"
+              width={300}
+              height={200}
               className="object-contain"
             />
           </div>
-          
+
           {/* Brand Promise */}
           <div className="max-w-md">
             <p className="text-lg text-gray-700 font-medium leading-tight">

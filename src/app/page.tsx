@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import CTA from "@/components/CTA";
@@ -10,8 +9,7 @@ import AboutUs from "@/components/AboutUs";
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-x-hidden">
-      <Navbar />
-      
+
       {/* Hero Section */}
       <section className="relative min-h-screen md:h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#1F2933]">
         {/* Background Image with Gradient Overlay */}
@@ -24,17 +22,17 @@ export default function Home() {
             priority
           />
           {/* Requested Gradient Overlay */}
-          <div 
-            className="absolute inset-0" 
+          <div
+            className="absolute inset-0"
             style={{ background: 'linear-gradient(180deg, rgba(31, 41, 51, 0.00) 0%, #1F2933 100%)' }}
           />
         </div>
 
         {/* Hero Content - Middle */}
         <div className="container relative z-10 mx-auto px-6 py-20 flex flex-col items-center justify-center text-center">
-          <h1 
+          <h1
             className="max-w-8xl text-white tracking-tight animate-fade-in"
-            style={{ 
+            style={{
               fontFamily: 'Satoshi, sans-serif',
               fontSize: 'clamp(32px, 8vw, 80px)',
               fontWeight: 700,
@@ -44,31 +42,31 @@ export default function Home() {
           >
             Commercial Laundry Solutions <br className="hidden md:block" /> Built for Performance
           </h1>
-          
+
           <p className="mt-6 text-white/80 text-lg md:text-2xl max-w-2xl md:hidden animate-fade-in delay-100">
             We supply, install, and maintain high-quality laundry machines across India.
           </p>
 
           {/* CTA Buttons - Refined with user specs */}
           <div className="mt-10 flex items-center gap-0 animate-fade-in delay-200 group cursor-pointer">
-            <button 
+            <button
               className="bg-[#E6763F] text-white font-bold transition-all hover:bg-[#d56530] flex justify-center items-center h-[54px] whitespace-nowrap px-8 md:px-10 text-base md:text-lg"
-              style={{ 
+              style={{
                 fontFamily: 'Satoshi, sans-serif'
               }}
             >
               Get Free Quote
             </button>
             <div className="transition-all duration-300 ml-[10px] group-hover:ml-0 h-[54px] w-[54px] bg-[#E6763F] flex items-center justify-center shrink-0">
-              <svg 
-                width="54" 
-                height="54" 
-                viewBox="0 0 65 65" 
-                fill="none" 
+              <svg
+                width="54"
+                height="54"
+                viewBox="0 0 65 65"
+                fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 className="transition-transform duration-300 group-hover:rotate-45"
               >
-                <path d="M25.5146 22.4853H42.4852M42.4852 22.4853V39.4558M42.4852 22.4853L22.6862 42.2843" stroke="#F9FAFB" strokeWidth="2"/>
+                <path d="M25.5146 22.4853H42.4852M42.4852 22.4853V39.4558M42.4852 22.4853L22.6862 42.2843" stroke="#F9FAFB" strokeWidth="2" />
               </svg>
             </div>
           </div>
@@ -76,9 +74,9 @@ export default function Home() {
 
         {/* Bottom Left Content - Moved from Right and Scaled down */}
         <div className="absolute bottom-12 left-12 z-10 max-w-xl text-left hidden lg:block animate-fade-in delay-500">
-          <p 
+          <p
             className="text-white"
-            style={{ 
+            style={{
               fontFamily: 'Satoshi, sans-serif',
               fontSize: '24px',
               fontWeight: 400,

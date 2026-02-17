@@ -31,6 +31,20 @@ body {
   overflow-x: hidden;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+}
+
+.prose {
+  font-family: var(--font-sans) !important;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  font-family: var(--font-sans) !important;
+  color: var(--brand-blue);
+  letter-spacing: -0.02em;
+}
+
 /* Custom Utilities */
 .glass {
   background: rgba(255, 255, 255, 0.85);
