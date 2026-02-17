@@ -36,6 +36,11 @@ export default function Footer() {
               <li><Link href="/industrial-laundry-solutions-india" className="hover:text-brand-orange transition-colors">Industrial Solutions India</Link></li>
               <li><Link href="/laundry-equipment-installation-services-delhi" className="hover:text-brand-orange transition-colors">Delhi Installation Services</Link></li>
               <li><Link href="/laundry-equipment-maintenance-gurgaon" className="hover:text-brand-orange transition-colors">Gurgaon Maintenance</Link></li>
+              <li><Link href="/laundry-machine-preventive-maintenance" className="hover:text-brand-orange transition-colors">Preventive Maintenance</Link></li>
+              <li><Link href="/oem-laundry-equipment-parts" className="hover:text-brand-orange transition-colors">OEM Spare Parts</Link></li>
+              <li><Link href="/laundry-equipment-troubleshooting-services" className="hover:text-brand-orange transition-colors">Troubleshooting Services</Link></li>
+              <li><Link href="/energy-efficient-laundry-systems" className="hover:text-brand-orange transition-colors">Energy Efficient Systems</Link></li>
+              <li><Link href="/smart-laundry-equipment-solutions" className="hover:text-brand-orange transition-colors">Smart Laundry Solutions</Link></li>
               <li><Link href="/services" className="hover:text-brand-orange transition-colors">Services</Link></li>
               <li><button onClick={openContactModal} className="hover:text-brand-orange transition-colors text-left outline-none">Get Free Quote</button></li>
             </ul>

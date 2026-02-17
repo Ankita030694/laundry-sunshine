@@ -134,5 +134,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'weekly',
             priority: 0.95,
         },
+        {
+            url: 'https://sunshine-laundry.com/laundry-machine-preventive-maintenance',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://sunshine-laundry.com/oem-laundry-equipment-parts',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://sunshine-laundry.com/laundry-equipment-troubleshooting-services',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://sunshine-laundry.com/energy-efficient-laundry-systems',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://sunshine-laundry.com/smart-laundry-equipment-solutions',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
     ]
 }
