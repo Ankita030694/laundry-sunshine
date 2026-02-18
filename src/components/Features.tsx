@@ -25,11 +25,11 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 md:py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <div 
+            <div
               key={index}
               className="relative p-8 md:p-10 group transition-all"
               style={{
@@ -38,20 +38,20 @@ const Features = () => {
             >
               {/* SVG Background Layer */}
               <div className="absolute inset-0 z-0">
-                <svg 
-                  width="100%" 
-                  height="100%" 
-                  viewBox="0 0 352 406" 
-                  fill="none" 
+                <svg
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 352 406"
+                  fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   preserveAspectRatio="none"
                   className="w-full h-full"
                 >
-                  <path 
-                    d="M351 1V316.613L270.559 405H1V1H351Z" 
+                  <path
+                    d="M351 1V316.613L270.559 405H1V1H351Z"
                     fill="white"
-                    stroke="#1F2933" 
-                    strokeOpacity="0.25" 
+                    stroke="#1F2933"
+                    strokeOpacity="0.25"
                     strokeWidth="2"
                   />
                 </svg>
@@ -59,17 +59,17 @@ const Features = () => {
 
               <div className="relative z-10 h-full flex flex-col">
                 <div className="mb-6 md:mb-8">
-                  <Image 
-                    src={feature.icon} 
-                    alt={feature.title} 
-                    width={48} 
-                    height={48} 
+                  <Image
+                    src={feature.icon}
+                    alt={feature.title}
+                    width={48}
+                    height={48}
                   />
                 </div>
-                
-                <h3 
+
+                <h3
                   className="text-[#E6763F] mb-4 text-xl md:text-2xl"
-                  style={{ 
+                  style={{
                     fontFamily: 'Satoshi, sans-serif',
                     fontWeight: 500,
                     lineHeight: '1.2'
@@ -77,10 +77,10 @@ const Features = () => {
                 >
                   {feature.title}
                 </h3>
-                
-                <p 
+
+                <p
                   className="text-gray-500 pb-10 md:pb-0 text-sm md:text-base"
-                  style={{ 
+                  style={{
                     fontFamily: 'Satoshi, sans-serif',
                     fontWeight: 400,
                     lineHeight: '1.5'

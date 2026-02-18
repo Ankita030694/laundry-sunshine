@@ -2,14 +2,14 @@ import Image from "next/image";
 
 const WhyChooseUs = () => {
   return (
-    <section className="bg-white pt-20">
+    <section className="bg-white py-12 md:py-20">
       <div className="container mx-auto px-6">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-16">
           <div className="max-w-3xl">
-            <span 
+            <span
               className="text-[#E6763F] block mb-5 tracking-wide"
-              style={{ 
+              style={{
                 fontFamily: 'Satoshi, sans-serif',
                 fontSize: '20px',
                 fontWeight: 500,
@@ -18,9 +18,9 @@ const WhyChooseUs = () => {
             >
               Why Choose Us
             </span>
-            <h2 
+            <h2
               className="text-[#0f172a] leading-[1.1]"
-              style={{ 
+              style={{
                 fontFamily: 'Satoshi, sans-serif',
                 fontSize: 'clamp(32px, 8vw, 52px)',
                 fontWeight: 500,
@@ -30,9 +30,9 @@ const WhyChooseUs = () => {
             </h2>
           </div>
           <div className="lg:max-w-sm pt-4 md:pt-6">
-            <p 
+            <p
               className="text-gray-600 leading-relaxed text-sm md:text-base"
-              style={{ 
+              style={{
                 fontFamily: 'Satoshi, sans-serif',
                 fontWeight: 400
               }}
@@ -51,17 +51,17 @@ const WhyChooseUs = () => {
             {/* Column 1 */}
             <div className="py-10 md:py-12 pr-6 border-b md:border-b-0 md:border-r border-gray-300 md:border-gray-400">
               <div className="mb-6 md:mb-8">
-                <Image 
-                  src="/handshake.svg" 
-                  alt="Trusted Expertise" 
-                  width={48} 
-                  height={48} 
+                <Image
+                  src="/handshake.svg"
+                  alt="Trusted Expertise"
+                  width={48}
+                  height={48}
                   className="md:w-[52px] md:h-[52px]"
                 />
               </div>
-              <p 
+              <p
                 className="text-[#0f172a] max-w-[200px] text-lg md:text-2xl"
-                style={{ 
+                style={{
                   fontFamily: 'Satoshi, sans-serif',
                   fontWeight: 400,
                   lineHeight: '1.2'
@@ -74,17 +74,17 @@ const WhyChooseUs = () => {
             {/* Column 2 */}
             <div className="py-10 md:py-12 px-0 md:px-6 border-b md:border-b-0 md:border-r border-gray-300 md:border-gray-400">
               <div className="mb-6 md:mb-8">
-                <Image 
-                  src="/badge.svg" 
-                  alt="Authorized Dealer" 
-                  width={48} 
-                  height={48} 
+                <Image
+                  src="/badge.svg"
+                  alt="Authorized Dealer"
+                  width={48}
+                  height={48}
                   className="md:w-[52px] md:h-[52px]"
                 />
               </div>
-              <p 
+              <p
                 className="text-[#0f172a] max-w-[240px] text-lg md:text-2xl"
-                style={{ 
+                style={{
                   fontFamily: 'Satoshi, sans-serif',
                   fontWeight: 400,
                   lineHeight: '1.2'
@@ -97,17 +97,17 @@ const WhyChooseUs = () => {
             {/* Column 3 */}
             <div className="py-10 md:py-12 pl-0 md:pl-6">
               <div className="mb-6 md:mb-8">
-                <Image 
-                  src="/plaas.svg" 
-                  alt="Complete Support" 
-                  width={48} 
-                  height={48} 
+                <Image
+                  src="/plaas.svg"
+                  alt="Complete Support"
+                  width={48}
+                  height={48}
                   className="md:w-[52px] md:h-[52px]"
                 />
               </div>
-              <p 
+              <p
                 className="text-[#0f172a] max-w-[260px] text-lg md:text-2xl"
-                style={{ 
+                style={{
                   fontFamily: 'Satoshi, sans-serif',
                   fontWeight: 400,
                   lineHeight: '1.2'

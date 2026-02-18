@@ -11,7 +11,7 @@ export default function Home() {
     <main className="relative min-h-screen overflow-x-hidden">
 
       {/* Hero Section */}
-      <section className="relative min-h-screen md:h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#1F2933]">
+      <section className="relative min-h-[85vh] md:min-h-0 md:h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#1F2933]">
         {/* Background Image with Gradient Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -29,9 +29,9 @@ export default function Home() {
         </div>
 
         {/* Hero Content - Middle */}
-        <div className="container relative z-10 mx-auto px-6 py-20 flex flex-col items-center justify-center text-center">
+        <div className="container relative z-10 mx-auto px-6 flex flex-col items-center justify-center text-center">
           <h1
-            className="max-w-8xl text-white tracking-tight animate-fade-in"
+            className="max-w-8xl text-white tracking-tight animate-fade-in px-4"
             style={{
               fontFamily: 'Satoshi, sans-serif',
               fontSize: 'clamp(32px, 8vw, 80px)',
@@ -43,12 +43,12 @@ export default function Home() {
             Commercial Laundry Solutions <br className="hidden md:block" /> Built for Performance
           </h1>
 
-          <p className="mt-6 text-white/80 text-lg md:text-2xl max-w-2xl md:hidden animate-fade-in delay-100">
-            We supply, install, and maintain high-quality laundry machines across India.
+          <p className="mt-6 text-white/80 text-lg md:text-2xl max-w-2xl px-4 animate-fade-in delay-100">
+            We supply, install, and maintain high-quality laundry machines for hotels, hospitals, and industrial facilities across India.
           </p>
 
           {/* CTA Buttons - Refined with user specs */}
-          <div className="mt-10 flex items-center gap-0 animate-fade-in delay-200 group cursor-pointer">
+          <div className="mt-8 md:mt-10 flex items-center gap-0 animate-fade-in delay-200 group cursor-pointer">
             <button
               className="bg-[#E6763F] text-white font-bold transition-all hover:bg-[#d56530] flex justify-center items-center h-[54px] whitespace-nowrap px-8 md:px-10 text-base md:text-lg"
               style={{

@@ -87,10 +87,10 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2 p-8 md:px-12 md:py-8 border-l md:border-r border-gray-400 flex items-center gap-8">
             <span className="text-lg font-bold text-gray-800 uppercase tracking-wide">Follow Us</span>
             <div className="flex gap-4">
-              <a href="#" className="p-2 bg-gray-100 rounded-full hover:bg-brand-orange hover:text-white transition-all">
+              <a href="https://www.instagram.com/sunshineequipments?igsh=djB3Ynl1ejA3cnk%3D" className="p-2 bg-gray-100 rounded-full hover:bg-brand-orange hover:text-white transition-all">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="p-2 bg-gray-100 rounded-full hover:bg-brand-orange hover:text-white transition-all">
+              <a href="https://www.facebook.com/people/Sunshine-Equipment-Co-Inc/100094629672265/" className="p-2 bg-gray-100 rounded-full hover:bg-brand-orange hover:text-white transition-all">
                 <Facebook size={20} />
               </a>
             </div>
