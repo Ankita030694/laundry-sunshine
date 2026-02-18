@@ -11,7 +11,7 @@ export default function Home() {
     <main className="relative min-h-screen overflow-x-hidden">
 
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] md:min-h-0 md:h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#1F2933]">
+      <section className="relative min-h-[85vh] md:min-h-0 md:pt-48 md:pb-32 w-full flex flex-col items-center justify-center overflow-hidden bg-[#1F2933]">
         {/* Background Image with Gradient Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -72,20 +72,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Bottom Left Content - Moved from Right and Scaled down */}
-        <div className="absolute bottom-12 left-12 z-10 max-w-xl text-left hidden lg:block animate-fade-in delay-500">
-          <p
-            className="text-white"
-            style={{
-              fontFamily: 'Satoshi, sans-serif',
-              fontSize: '24px',
-              fontWeight: 400,
-              lineHeight: '31px',
-            }}
-          >
-            We supply, install, and maintain high-quality laundry machines for hotels, hospitals, laundromats, and industrial facilities across India.
-          </p>
-        </div>
       </section>
 
       <Features />

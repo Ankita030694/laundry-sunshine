@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const WhyChooseUs = () => {
   return (
-    <section className="bg-white py-12 md:py-20">
+    <section className="bg-white py-12 md:py-16">
       <div className="container mx-auto px-6">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start gap-8 mb-16">

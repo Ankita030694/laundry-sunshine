@@ -10,7 +10,7 @@ const BrandPartners = () => {
   ];
 
   return (
-    <section className="bg-white py-12 md:py-20">
+    <section className="bg-white py-12 md:py-16">
       <div className="container mx-auto px-6">
         <h2
           className="mb-10 md:mb-16"
