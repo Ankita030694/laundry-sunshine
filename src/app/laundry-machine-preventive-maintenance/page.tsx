@@ -10,6 +10,7 @@ import {
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 const sections = [
@@ -166,35 +167,45 @@ export default function PreventiveMaintenancePage() {
 
     return (
         <main className="min-h-screen bg-white font-sans">
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
-                <div className="absolute inset-0 opacity-20">
-                    <Image src="/hero-bg.jpg" alt="Industrial Maintenance" fill className="object-cover" />
+            <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 bg-brand-blue text-white overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <Image src="/hero-bg.jpg" alt="Industrial Maintenance" fill className="object-cover opacity-30" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-brand-blue/0 to-brand-blue/100" />
                 </div>
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-sm font-bold mb-8 uppercase tracking-widest leading-none">
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-xs md:text-sm font-bold mb-8 uppercase tracking-widest leading-none animate-fade-in">
                         <Activity size={16} className="text-brand-orange" /> Engineered for Zero Downtime
                     </div>
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
-                        Industrial Laundry <br />
+                    <h1
+                        className="tracking-tight leading-tight mb-6 animate-fade-in delay-100 px-4"
+                        style={{
+                            fontFamily: 'Satoshi, sans-serif',
+                            fontSize: 'clamp(32px, 7vw, 72px)',
+                            fontWeight: 900
+                        }}
+                    >
+                        Industrial Laundry <br className="hidden md:block" />
                         <span className="text-brand-orange italic">Preventive Maintenance</span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium">
+                    <p className="text-lg md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium animate-fade-in delay-200">
                         The definitive technical guide to optimizing machine longevity. Master the protocols for industrial washers, moisture sensing dryers, and flatwork finishing systems to secure your facility&apos;s operational future.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-4">
-                        <button onClick={openContactModal} className="bg-brand-orange text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3">
+                    <div className="flex flex-wrap justify-center gap-4 animate-fade-in delay-300">
+                        <button onClick={openContactModal} className="bg-brand-orange text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3">
                             Consult an Expert <ArrowRight size={24} />
                         </button>
                     </div>
                 </div>
             </section>
 
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[{ label: "Preventive Maintenance", href: websiteUrl }]} />
             </div>
 
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <StickyMobileTOC sections={sections} />
+
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-12">
+                <div className="grid grid-cols-12 gap-6 lg:gap-12">
                     <aside className="lg:col-span-2 hidden lg:block">
                         <div className="sticky top-24 max-h-[80vh] overflow-y-auto pr-4 scrollbar-hide">
                             <TableOfContents sections={sections} orientation="vertical" />
@@ -202,8 +213,8 @@ export default function PreventiveMaintenancePage() {
                     </aside>
 
                     <article className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
-                        <section id="philosophy" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Core Philosophy of Zero Downtime</h2>
+                        <section id="philosophy" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Core Philosophy of Zero Downtime</h2>
                             <p>
                                 In the high stakes world of industrial laundry operations, time is the most expensive commodity. Every minute a washer extractor sits idle represents more than just a temporary halt in production; it is a direct hit to the facility&apos;s bottom line and guest satisfaction scores. The core philosophy of preventive maintenance is the transition from a reactive fix it when it breaks mentality to a proactive predict and prevent strategy. This paradigm shift is what separates elite hospitality and healthcare operations from their struggling competitors.
                             </p>
@@ -222,7 +233,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="anatomy-of-failure" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Anatomy of Commercial Laundry Failure</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Anatomy of Commercial Laundry Failure</h2>
                             <p>
                                 Most technical failures in industrial laundry machines do not happen overnight. They are the cumulative result of minor stresses that go unnoticed over weeks and months. A loose belt, a mineral coated heating element, or a slightly misaligned bearing are the quiet precursors to a catastrophic shutdown. Understanding the anatomy of these failures allows technicians to intervene at the earliest stage, saving thousands in repair costs.
                             </p>
@@ -241,7 +252,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="daily-vigilance" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Daily Vigilance: The 5-Minute Inspection</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Daily Vigilance: The 5-Minute Inspection</h2>
                             <p>
                                 The most effective form of maintenance is the daily check. These are simple tasks that can be performed by the machine operator at the start of every shift. They require no tools and take less than five minutes, but they are the first line of defense against breakdown. We call this daily vigilance. It is about being in tune with the machine and noticing changes in sound, smell, or visual appearance.
                             </p>
@@ -260,7 +271,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="weekly-optimization" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Weekly Optimization Checklist</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Weekly Optimization Checklist</h2>
                             <p>
                                 Once a week, the maintenance team should perform a slightly deeper dive into the equipment status. This weekly optimization focuses on components that require regular cleaning or adjustment but do not need daily attention. It is the bridge between operator checks and professional technical audits. This layer of care ensures that minor drifts in performance are corrected before they become problems.
                             </p>
@@ -276,7 +287,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="monthly-deep-dive" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Monthly Deep Dives: Technical Integrity</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Monthly Deep Dives: Technical Integrity</h2>
                             <p>
                                 Every four weeks, a formal technical inspection should be conducted by a trained engineer. This is a deep dive into the guts of the machine. It involves removing access panels to inspect internal components that are hidden from view. The focus here is on mechanical integrity and electrical health. This is where we look for the true signs of wear that indicating it is time to order a replacement part.
                             </p>
@@ -292,7 +303,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="quarterly-calibration" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Quarterly Precision & Calibration</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Quarterly Precision & Calibration</h2>
                             <p>
                                 Every three months, the focus shifts to precision. Machines are not just pieces of moving metal; they are scientific instruments that rely on precise values for timing, temperature, and torque. Over time, these values can drift. Quarterly calibration brings the machine back to its factory specifications, ensuring that every load is processed with the exact same parameters as the first day.
                             </p>
@@ -308,7 +319,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="annual-overhaul" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Annual Overhauls & Professional Auditing</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Annual Overhauls & Professional Auditing</h2>
                             <p>
                                 Once a year, every machine should undergo a comprehensive overhaul. This is more than an inspection; it is a renewal process. The goal is to return the machine to like new condition. This typically involves the replacement of major wear parts regardless of their current visible condition. This preventive replacement strategy is the ultimate guarantee of reliability for the following twelve months.
                             </p>
@@ -321,7 +332,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="washer-pm" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Washer-Extractor PM Specialization</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Washer-Extractor PM Specialization</h2>
                             <p>
                                 Industrial washers are the workhorses of the facility and require specialized maintenance focusing on the dynamic between water, mechanical action, and chemicals. The main bearing is the heart of the machine. It carries the entire weight of the wet load and must spin at incredible speeds. If the bearing seal fails, water enters the bearing housing, washing away the grease and leading to a metal-on-metal failure that can destroy the main drive shaft.
                             </p>
@@ -331,7 +342,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="dryer-fire-prevention" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Dryer PM: Fire Prevention First</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Dryer PM: Fire Prevention First</h2>
                             <p>
                                 Dryer maintenance is primarily a matter of safety. The combination of high heat, flammable lint, and oxygen is a dangerous trifecta. Our preventive maintenance for dryers ignores aesthetics and focuses purely on airflow and thermal control. If the air can&apos;t flow, the heat stays in the drum, and the fire risk triples. We look at every inch of the exhaust ducting, from the machine to the roof vent, ensuring it is clear of obstructions.
                             </p>
@@ -341,7 +352,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="ironer-maintenance" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Flatwork Ironer PM: The Finishing Touch</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Flatwork Ironer PM: The Finishing Touch</h2>
                             <p>
                                 Ironers are precision instruments that rely on a smooth, non stick surface. PM for ironers focuses on the rolls and the padding. Over time, the heavy duty fabric that wraps the ironing roll becomes compressed and loses its ability to absorb moisture. Replacing this padding annually ensures that your sheets come out crisp and smooth without any "wet spots" or "glazing." We also inspect the scraper bars that peel the linen off the roll to ensure they aren&apos;t snagging the fabric.
                             </p>
@@ -351,7 +362,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="steam-efficiency" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Steam System & Thermal Efficiency</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Steam System & Thermal Efficiency</h2>
                             <p>
                                 In large facilities, steam is the lifeblood of the laundry. Maintaining the integrity of the steam lines is critical for both safety and cost. A single leaking steam trap can consume hundreds of dollars in fuel every month. Our PM program includes a thermal audit of the entire steam distribution network. We check the insulation on all pipes to ensure that the heat reaches the machine rather than heating up the hallway.
                             </p>
@@ -361,7 +372,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="water-quality" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Water Quality Impact on Component Life</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Water Quality Impact on Component Life</h2>
                             <p>
                                 The water in your laundry is more than just a solvent; it is a chemical environment. High mineral content, known as hard water, is the enemy of maintenance. These minerals—primarily calcium and magnesium—precipitate out of the water when heated, forming a rock hard scale on internal components. This scale acts as an insulator, forcing your heating elements to run longer and hotter, which leads to their premature failure.
                             </p>
@@ -371,7 +382,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="lubrication-science" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Lubrication Science: Reducing Wear</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Lubrication Science: Reducing Wear</h2>
                             <p>
                                 Friction is the force that kills machines. Lubrication is the science of keeping that force at bay. But not just any grease will do. Industrial laundry machines operate in a unique environment of high heat, steam, and high pressure. Standard automotive greases will melt and run out of the bearing housing in days. We use specialized synthetic lubricants designed for the extreme conditions of industrial finishing.
                             </p>
@@ -381,7 +392,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="electrical-safety" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Electrical Safety & Panel Auditing</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Electrical Safety & Panel Auditing</h2>
                             <p>
                                 A periodic electrical audit is essential for any facility running heavy machinery. We don&apos;t just look for loose wires; we perform a full diagnostic of the power quality entering the building. Power surges and phase imbalances are common in many industrial areas and can destroy expensive PC boards in seconds. We install and maintain surge protection systems to shield your investment from the instability of the local grid.
                             </p>
@@ -391,7 +402,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="chemical-dosing" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Chemical Dosing System Integrity</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Chemical Dosing System Integrity</h2>
                             <p>
                                 The integrity of the chemical dosing system is vital for both textile care and machine health. A leaking chemical pump can drip concentrated acid or alkaline onto the machine frame, leading to rapid corrosion. We inspect the dosing lines for any signs of brittleness or leaks. We also verify the non return valves to ensure that chemicals aren&apos;t siphoning back into the water lines when the machine is idle.
                             </p>
@@ -401,7 +412,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="roi-analysis" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">ROI: Preventive vs Reactive Maintenance</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">ROI: Preventive vs Reactive Maintenance</h2>
                             <p>
                                 The financial argument for preventive maintenance is airtight. Reactive maintenance—fixing things only when they break—is the most expensive way to run a facility. You pay for emergency shipping of parts, premium rates for on-site technicians, and the massive hidden cost of lost production. In a hotel, a room that cannot be turned over because there are no clean towels is a room that cannot be sold. This lost revenue is far greater than the cost of a PM contract.
                             </p>
@@ -411,7 +422,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="staff-training" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Staff Training for Maintenance Excellence</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Staff Training for Maintenance Excellence</h2>
                             <p>
                                 We believe that training is a key part of the maintenance ecosystem. An operator who knows how to spot a loose belt or a leaking valve is worth more than a dozen sensors. We provide ongoing training for your staff, teaching them the language of the machine. They learn how to use their senses—sight, sound, and smell—to monitor the equipment throughout their shift. This "ownership" leads to better care and longer machine life.
                             </p>
@@ -421,7 +432,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="spare-parts" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Critical Spare Parts Inventory Management</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Critical Spare Parts Inventory Management</h2>
                             <p>
                                 No maintenance program is complete without a strategic inventory of spare parts. You don&apos;t want to be waiting for a shipment from Germany when your main dryer is down. We provide our clients with a "Critical Spares Kit" that contains the items most likely to fail or wear out. This includes things like door gaskets, drain valves, filter screens, and drive belts. Having these on site can mean the difference between thirty minutes of downtime and three days.
                             </p>
@@ -431,7 +442,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="regional-factors" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Regional Challenges in India</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Regional Challenges in India</h2>
                             <p>
                                 India presents a unique set of challenges for industrial maintenance. In cities like Delhi and Gurgaon, the high ambient temperature in summer can lead to motor overheating if cooling fans aren&apos;t perfectly clean. In coastal areas like Mumbai or Goa, the salt in the air accelerates corrosion on every exposed metal surface. Our PM schedules are tailored to these regional factors, with more frequent cleaning and specialized coatings for machines in "extreme" zones.
                             </p>
@@ -441,7 +452,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
 
                         <section id="future-predictive" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">AI-Driven Predictive Maintenance</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">AI-Driven Predictive Maintenance</h2>
                             <p>
                                 The future of maintenance is already here. Our latest generation of machines features IoT sensors that transmit data to our central monitoring station. We use AI algorithms to look for patterns that precede a failure. For example, a micro-increase in motor temperature or a subtle change in vibration frequency can trigger an automatic service alert weeks before the machine actually fails.
                             </p>
@@ -519,7 +530,7 @@ export default function PreventiveMaintenancePage() {
                         </section>
                     </article>
 
-                    <aside className="col-span-12 lg:col-span-3">
+                    <aside className="col-span-12 lg:col-span-3 mt-12 lg:mt-0">
                         <div className="sticky top-24 space-y-8">
                             <div className="bg-brand-blue text-white p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden group border-4 border-white">
                                 <div className="absolute top-0 right-0 p-4 opacity-10">

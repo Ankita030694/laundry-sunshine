@@ -6,6 +6,7 @@ import { CheckCircle2, Phone, Mail, ArrowRight, MessageSquare, Star, ChevronRigh
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 const sections = [
@@ -187,12 +188,12 @@ export default function MaintenanceServices() {
     return (
         <main className="min-h-screen bg-white font-sans">
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
+            <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 bg-brand-blue text-white overflow-hidden">
                 <div className="absolute inset-0 opacity-15">
                     <Image src="/hero-bg.jpg" alt="Laundry Equipment Maintenance Services" fill className="object-cover" />
                 </div>
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight px-4">
                         Professional Laundry <br />
                         <span className="text-brand-orange italic">Equipment Maintenance Services</span>
                     </h1>
@@ -211,13 +212,15 @@ export default function MaintenanceServices() {
             </section>
 
             {/* Breadcrumb Container */}
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[{ label: "Laundry Equipment Maintenance Services", href: "/laundry-equipment-maintenance-services" }]} />
             </div>
 
+            <StickyMobileTOC sections={sections} />
+
             {/* Main Content Layout */}
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-12">
+                <div className="grid grid-cols-12 gap-6 lg:gap-12">
                     {/* Left: Table of Contents */}
                     <aside className="lg:col-span-2 hidden lg:block">
                         <div className="sticky top-24 max-h-[80vh] overflow-y-auto pr-4 scrollbar-hide">
@@ -228,7 +231,7 @@ export default function MaintenanceServices() {
                     {/* Middle: Main Content */}
                     <article className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
                         <section id="intro" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Laundry Equipment Maintenance Services: The Lifeline of Industrial Operations</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Laundry Equipment Maintenance Services: The Lifeline of Industrial Operations</h2>
                             <p>
                                 In the high-pressure world of industrial laundry, equipment reliability is not just a convenience-it is the foundation of the business. Whether you are running a 5-star hotel laundry or a centralized hospital plant, an unplanned breakdown can trigger a cascade of operational failures, from linen shortages and compromised hygiene to significant financial losses. Professional maintenance services are the essential insurance policy that protects your capital investment and ensures your facility never stops running.
                             </p>
@@ -244,7 +247,7 @@ export default function MaintenanceServices() {
                         </section>
 
                         <section id="preventive-strategy" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Understanding Preventive Maintenance: A Strategic Overview</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Understanding Preventive Maintenance: A Strategic Overview</h2>
                             <p>
                                 Preventive Maintenance (PM) is a systematic approach to equipment care that involves performing regularly scheduled tasks to prevent unexpected failures. In an industrial setting, PM is the difference between a facility that is under control and one that is constantly in crisis. By adhering to manufacturer-recommended service intervals, you ensure that every component of your machine is operating within its designed tolerances, maximizing efficiency and safety.
                             </p>
@@ -260,7 +263,7 @@ export default function MaintenanceServices() {
                         </section>
 
                         <section id="daily-protocols" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Daily Operational Protocols: The First Line of Defense</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Daily Operational Protocols: The First Line of Defense</h2>
                             <p>
                                 The most effective maintenance tool is the eyes and ears of your operators. Daily checks are the first line of defense against equipment failure. These simple, habit-based tasks catch 80 percent of common laundry issues before they become serious problems. We provide our clients with easy-to-use daily checklists that empower operators to take ownership of their machines and contribute to the facility's overall success.
                             </p>
@@ -276,7 +279,7 @@ export default function MaintenanceServices() {
                         </section>
 
                         <section id="weekly-audits" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Weekly Technical Audits: Belts, Seals, and Pulley Integrity</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Weekly Technical Audits: Belts, Seals, and Pulley Integrity</h2>
                             <p>
                                 While daily checks focus on cleanliness and operation, weekly technical audits look at the mechanical health of the machine. These tasks require a deeper level of inspection, often involving opening access panels to check internal components. Weekly audits prevent the "Slow Degradation" of mechanical parts, ensuring that the machine maintains its power and precision throughout the week's heavy workloads.
                             </p>
@@ -292,7 +295,7 @@ export default function MaintenanceServices() {
                         </section>
 
                         <section id="monthly-inspections" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Monthly Industrial Inspections: Motor and Electronic Performance</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Monthly Industrial Inspections: Motor and Electronic Performance</h2>
                             <p>
                                 Monthly inspections are the point where professional technicians take a holistic look at the machine's performance. This involves specialized tools and deeper technical knowledge. At Sunshine, our monthly visits include a comprehensive "System Diagnostic"-checking the electronic controllers for hidden error codes and verifying that the machine's programming is still optimized for the facility's specific laundry requirements.
                             </p>
@@ -308,7 +311,7 @@ export default function MaintenanceServices() {
                         </section>
 
                         <section id="amc-benefits" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Anatomy of an Annual Maintenance Contract (AMC)</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Anatomy of an Annual Maintenance Contract (AMC)</h2>
                             <p>
                                 An Annual Maintenance Contract (AMC) is the most effective way to manage the lifecycle of your laundry equipment. For a fixed annual fee, you gain access to a comprehensive suite of services that remove the unpredictability of maintenance costs and ensure that your machines receive expert care from factory-trained technicians. In the Indian industrial sector, an AMC from a reputable provider like Sunshine is considered a gold standard for operational security.
                             </p>
@@ -324,7 +327,7 @@ export default function MaintenanceServices() {
                         </section>
 
                         <section id="water-scale" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Water Quality Management: Scale Prevention and Filter Systems</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Water Quality Management: Scale Prevention and Filter Systems</h2>
                             <p>
                                 Water quality is a silent killer of industrial laundry machines. In many parts of India, groundwater used in laundries has high levels of Total Dissolved Solids (TDS) and hardness. Over time, these minerals precipitate out of the water, especially when heated, and form a rock-hard layer of scale on heating elements, drum surfaces, and inside pipes and valves. Professional maintenance must include a robust water quality management strategy to prevent this damage.
                             </p>
@@ -340,7 +343,7 @@ export default function MaintenanceServices() {
                         </section>
 
                         <section id="thermal-maintenance" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Thermal System Maintenance: Steam Traps and Gas Burners</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Thermal System Maintenance: Steam Traps and Gas Burners</h2>
                             <p>
                                 Thermal systems-whether steam, gas, or electric-are the highest energy-consuming parts of any laundry. Maintaining these systems to a high technical standard is essential for both operational speed and safety. Steam systems, in particular, require expert care. A failing steam trap can allow live steam to blow through the machine without transferring its heat, leading to massive energy waste and potential damage to the condensate return system.
                             </p>
@@ -356,7 +359,7 @@ export default function MaintenanceServices() {
                         </section>
 
                         <section id="safety-audits" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Safety and Compliance Audits: Fire, Electrical, and Mechanical Hazards</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Safety and Compliance Audits: Fire, Electrical, and Mechanical Hazards</h2>
                             <p>
                                 An industrial laundry is legally defined as a high-hazard environment. The combination of high-speed moving parts, high-pressure steam, flammable lint, and wet electrical systems creates a unique profile of risk. Professional maintenance must include regular safety and compliance audits to protect the staff, the facility, and the business owner. At Sunshine, every maintenance visit is also a safety inspection, conducted to the standards of the Factories Act.
                             </p>
@@ -372,7 +375,7 @@ export default function MaintenanceServices() {
                         </section>
 
                         <section id="predictive-tech" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Predictive Maintenance: Using Data to Anticipate Component Failure</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Predictive Maintenance: Using Data to Anticipate Component Failure</h2>
                             <p>
                                 The future of laundry maintenance is "Predictive." Instead of waiting for a machine to break down (Reactive) or fixing it on a set schedule (Preventive), we use data and sensors to identify when a component is actually nearing the end of its life. This approach, known as <strong>Condition-Based Maintenance</strong>, is the most efficient way to manage a modern industrial laundry plant, and Sunshine is at the forefront of this technology in India.
                             </p>
@@ -388,7 +391,7 @@ export default function MaintenanceServices() {
                         </section>
 
                         <section id="staff-training" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Technical Empowerment: Training Staff for Basic Maintenance</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Technical Empowerment: Training Staff for Basic Maintenance</h2>
                             <p>
                                 A maintenance service is most effective when the on-site staff is technologically empowered. We do not want to be a "Secret Box" company; we want your team to understand their equipment. Every Sunshine maintenance contract includes regular on-site training sessions for your operators and facility engineers. This "First Responder" training allows your team to handle minor adjustments and troubleshooting without waiting for a service technician to arrive.
                             </p>
@@ -404,7 +407,7 @@ export default function MaintenanceServices() {
                         </section>
 
                         <section id="spare-parts-strategy" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Inventory Strategy: Keeping Critical Parts on Site</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Inventory Strategy: Keeping Critical Parts on Site</h2>
                             <p>
                                 In the world of industrial laundry, the longest part of any repair is often not the work itself, but the time spent waiting for a spare part to arrive. A professional maintenance program must include an on-site "Critical Spares Strategy." This involves identifying the high-wear parts that are most likely to fail-belts, seals, sensors, and fuses-and keeping a small, managed inventory in your laundry room.
                             </p>
@@ -420,7 +423,7 @@ export default function MaintenanceServices() {
                         </section>
 
                         <section id="operational-efficiency" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Direct Link Between Maintenance and Energy Savings</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Direct Link Between Maintenance and Energy Savings</h2>
                             <p>
                                 In an era of rising utility costs, laundry equipment maintenance is one of the most effective ways to improve your facility's energy efficiency. Industrial washers and dryers are high-intensity consumers of water, electricity, and gas. Even minor mechanical inefficiencies can lead to thousands of rupees in wasted utilities every month. A professional maintenance program ensures that every unit of energy you pay for is converted into clean, dry laundry as efficiently as possible.
                             </p>
@@ -436,7 +439,7 @@ export default function MaintenanceServices() {
                         </section>
 
                         <section id="expert-partnerships" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Why Partner with Sunshine for Your Maintenance Lifecycle</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Why Partner with Sunshine for Your Maintenance Lifecycle</h2>
                             <p>
                                 Maintenance is about trust. You are trusting a service provider with the heart of your operation and with your most expensive capital assets. In the Indian market, Sunshine Equipment has earned that trust through decades of technical excellence, transparent pricing, and an unwavering commitment to our clients' success. We don't just fix machines; we build high-performance laundry plants that stand as benchmarks of industrial quality.
                             </p>

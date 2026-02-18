@@ -6,6 +6,7 @@ import { CheckCircle2, Phone, Mail, ArrowRight, ShieldCheck, Zap, Droplets, Tren
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 const sections = [
@@ -228,16 +229,16 @@ export default function CommercialLaundryGurgaon() {
             />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
+            <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 bg-brand-blue text-white overflow-hidden">
                 <div className="absolute inset-0 opacity-20">
                     <Image src="/hero-bg.jpg" alt="Commercial Laundry Gurgaon" fill className="object-cover" priority />
                 </div>
 
-                <div className="container mx-auto px-6 relative z-10 text-center">
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-sm font-bold mb-8 uppercase tracking-widest leading-none">
                         <MapPin size={16} className="text-brand-orange" /> Gurgaon &amp; Delhi NCR Premier Supplier
                     </div>
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight px-4">
                         Commercial Laundry <br /><span className="text-brand-orange italic">Equipment in Gurgaon</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium transition-all duration-300">
@@ -261,15 +262,17 @@ export default function CommercialLaundryGurgaon() {
             </section>
 
             {/* Breadcrumb Container */}
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[
                     { label: "Gurgaon Commercial Equipment", href: "/commercial-laundry-equipment-gurgaon" }
                 ]} />
             </div>
 
+            <StickyMobileTOC sections={sections} />
+
             {/* Main Content Layout */}
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-12">
+                <div className="grid grid-cols-12 gap-6 lg:gap-12">
                     {/* Left: Table of Contents */}
                     <aside className="lg:col-span-2 hidden lg:block">
                         <div className="sticky top-24 max-h-[80vh] overflow-y-auto pr-4 scrollbar-hide">
@@ -281,7 +284,7 @@ export default function CommercialLaundryGurgaon() {
                     <article className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
 
                         <section id="gurgaon-revolution" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Gurgaon's Commercial Laundry Revolution</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Gurgaon's Commercial Laundry Revolution</h2>
                             <p>
                                 Gurugram, or Gurgaon as it is still widely known, has transitioned from a sleepy suburb to the "Millennium City" of India. This rapid transformation has brought with it an insatiable demand for world class infrastructure, and nowhere is this more evident than in the commercial laundry sector. As skyscrapers redefined the skyline, a parallel revolution was taking place in the basements and utility wings of these giants. The primitive, labor intensive laundry methods of the past were being replaced by localized, high efficiency <strong>commercial laundry equipment in Gurgaon</strong>.
                             </p>
@@ -307,7 +310,7 @@ export default function CommercialLaundryGurgaon() {
                         </section>
 
                         <section id="healthcare-sanitization" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Medical Laundry Excellence</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Medical Laundry Excellence</h2>
                             <p>
                                 If the hospitality sector is about comfort, the healthcare sector is about survival. Gurgaon's world-class medical hubs, including Medanta, Fortis, and Max, operate some of the most advanced healthcare systems in the world. In these environments, laundry is a critical component of infection control. A failure to properly decontaminate a single surgical drape can have catastrophic consequences.
                             </p>
@@ -333,7 +336,7 @@ export default function CommercialLaundryGurgaon() {
                         </section>
 
                         <section id="tech-specifications" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Technical Specifications</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Technical Specifications</h2>
                             <p>
                                 At the heart of our <strong>industrial laundry solutions India</strong> collection are the technical specifications that separate professional equipment from domestic grade appliances. Our washers are constructed using 304 or 316L grade stainless steel for all components in contact with the wash liquor. This ensures that even with the aggressive chemicals used in hospital laundries, the machines will not corrode over their 20 year lifespan.
                             </p>
@@ -353,7 +356,7 @@ export default function CommercialLaundryGurgaon() {
                         </section>
 
                         <section id="climate-drying" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Gurgaon Climate Drying Solutions</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Gurgaon Climate Drying Solutions</h2>
                             <p>
                                 Gurgaon's climate is one of extremes, from the 48 degrees Celsius dry heat of May to the 95 percent humidity of the monsoon in August. A standard dryer will perform very differently in these two scenarios. Our moisture-sensing dryers use internal sensors to measure the air temperature and humidity at the exhaust, automatically ending the cycle the moment the linen reaches the perfect "Residual Moisture Content" (RMC).
                             </p>
@@ -373,7 +376,7 @@ export default function CommercialLaundryGurgaon() {
                         </section>
 
                         <section id="iot-management" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">IOT & Smart Management</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">IOT & Smart Management</h2>
                             <p>
                                 The modern Gurgaon business leader wants data. Our smart machines provide it in real time. Our IoT-enabled controllers transmit data on water consumption, chemical usage, and cycle duration to a cloud based dashboard. This allows a property manager in Cyber Hub to see if the night shift is using the correct "Eco-Cycles" or if they are wasting water on half-empty loads.
                             </p>
@@ -393,7 +396,7 @@ export default function CommercialLaundryGurgaon() {
                         </section>
 
                         <section id="energy-recovery" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Energy Recovery Systems</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Energy Recovery Systems</h2>
                             <p>
                                 Heating water and air takes a massive amount of energy. Our energy recovery units capture the heat from the hot drain water and use it to pre-heat the incoming cold water. Similarly, our dryers can be fitted with air-recirculation systems that reuse the warm exhaust air. In a city like Gurgaon where electricity prices are high, these systems are common sense investments.
                             </p>
@@ -403,7 +406,7 @@ export default function CommercialLaundryGurgaon() {
                         </section>
 
                         <section id="safety-compliance" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Operational Safety</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Operational Safety</h2>
                             <p>
                                 Safety is non negotiable in an industrial environment. Our <strong>commercial laundry equipment in Gurgaon</strong> features localized emergency stops, door interlocks that prevent opening while the drum is spinning, and fire suppression sensors in dryers. We also focus on ergonomics, ensuring that machines are at the correct height to prevent staff back injuries.
                             </p>
@@ -433,7 +436,7 @@ export default function CommercialLaundryGurgaon() {
                         </section>
 
                         <section id="roi-economics" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Facility Economics & ROI</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Facility Economics & ROI</h2>
                             <p>
                                 At the end of the day, commercial laundry is a business. We provide our Gurgaon clients with a detailed ROI (Return on Investment) analysis before they even purchase a machine. We calculate the cost per kilogram of laundry, factoring in chemicals, utilities, labor, and equipment depreciation.
                             </p>

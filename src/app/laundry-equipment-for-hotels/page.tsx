@@ -6,6 +6,7 @@ import { CheckCircle2, Phone, Mail, ArrowRight, MessageSquare, Star, ChevronRigh
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 
@@ -197,28 +198,28 @@ export default function LaundryForHotels() {
         <main className="min-h-screen bg-white font-sans">
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
+            <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 bg-brand-blue text-white overflow-hidden">
                 <div className="absolute inset-0 opacity-20">
                     <Image src="/hero-bg.jpg" alt="Luxury Hotel Laundry" fill className="object-cover" />
                 </div>
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
-                        Professional Laundry Solutions <br />
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                    <h1 className="text-3xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight px-4">
+                        Professional Laundry Solutions <br className="hidden md:block" />
                         <span className="text-brand-orange italic">for Five Star Hospitality</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium">
                         Master your hospitality linen operations with our comprehensive guide. From technical equipment specs to financial ROI analysis, we provide the ultimate resource for hoteliers.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-4">
+                    <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <button
                             onClick={openContactModal}
-                            className="bg-brand-orange text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3"
+                            className="bg-brand-orange text-white px-6 md:px-10 py-4 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3"
                         >
                             Consult an Expert <ArrowRight size={24} />
                         </button>
                         <button
                             onClick={openContactModal}
-                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-10 py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all flex items-center gap-3"
+                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-6 md:px-10 py-4 md:py-5 rounded-2xl font-black text-base md:text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-3"
                         >
                             View Industrial Specs
                         </button>
@@ -227,13 +228,15 @@ export default function LaundryForHotels() {
             </section>
 
             {/* Breadcrumb Container */}
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[{ label: "Laundry for Hotels", href: "/laundry-equipment-for-hotels" }]} />
             </div>
 
+            <StickyMobileTOC sections={sections} />
+
             {/* Main Content Layout */}
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-8 md:py-12">
+                <div className="grid grid-cols-12 gap-6 lg:gap-12">
 
                     {/* Left: Table of Contents */}
                     <aside className="lg:col-span-2 hidden lg:block">
@@ -244,8 +247,8 @@ export default function LaundryForHotels() {
 
                     {/* Middle: Main Content */}
                     <article className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
-                        <section id="intro" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Critical Role of Laundry in Modern Hospitality</h2>
+                        <section id="intro" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Critical Role of Laundry in Modern Hospitality</h2>
                             <p>
                                 In the competitive world of hospitality, first impressions are everything. When a guest enters their room, the crispness of the bedsheets and the softness of the towels speak volumes about the hotel's commitment to quality. Commercial laundry is not just a utility but is a foundational pillar of the guest experience. A minor lapse in linen quality can lead to poor reviews and a tarnished reputation. Imagine a guest finding a faint stain on a duvet or feeling the rough texture of a poorly laundered towel. These small details can overshadow even the most beautiful decor and service.
                             </p>
@@ -263,8 +266,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="guest-experience" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Guest Experience Factor</h2>
+                        <section id="guest-experience" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Guest Experience Factor</h2>
                             <p>
                                 The sensory experience of linen is one of the most intimate interactions a guest has with your hotel. They spend roughly a third of their stay in direct contact with bedsheets, pillowcases, and bathrobes. This "textile touchpoint" is a powerful tool for building loyalty. A high thread count sheet that feels smooth and cool against the skin is a hallmark of luxury that guests remember and mention in their feedback.
                             </p>
@@ -279,8 +282,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="challenges" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Hospitality Laundry Challenges</h2>
+                        <section id="challenges" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Hospitality Laundry Challenges</h2>
                             <p>
                                 Hotel laundry faces unique challenges that distinguish it from residential or even other commercial sectors. The volume is immense. A luxury hotel might process thousands of kilograms of linen every single day. This includes everything from heavy duvets and plush towels to delicate restaurant napkins and staff uniforms. Managing this diverse mix requires sophisticated sorting and processing strategies to avoid bottlenecks.
                             </p>
@@ -298,8 +301,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="in-house-vs-outsourced" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">In-House vs Outsourced Laundry</h2>
+                        <section id="in-house-vs-outsourced" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">In-House vs Outsourced Laundry</h2>
                             <p>
                                 One of the most important decisions a hotel manager makes is whether to keep laundry operations on premise or outsource them to a third party service. Both models have their merits, but the trend among luxury establishments is moving toward on premise laundry (OPL) due to the higher quality control it affords.
                             </p>
@@ -317,8 +320,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="washers" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Industrial Washers & Extractors</h2>
+                        <section id="washers" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Industrial Washers & Extractors</h2>
                             <p>
                                 The foundation of any hotel laundry is the washer extractor. These are not just larger versions of home machines; they are precision engineered industrial tools. Our washers feature heavy duty suspension systems that allow for high extraction speeds, often exceeding 400 G-force. This speed is crucial because it pulls more water out of the fabric, which means less time in the dryer. Since dryers consume more energy than washers, high extraction is the single most effective way to lower your utility bills.
                             </p>
@@ -336,8 +339,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="dryers" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Commercial Drying Technology</h2>
+                        <section id="dryers" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Commercial Drying Technology</h2>
                             <p>
                                 Drying is the most energy intensive stage of the laundry process. Traditional dryers simply run for a set amount of time at a high temperature, which often results in over drying. Over drying makes the fibers in your linen brittle, leading to shedding (the lint in your filter is actually your linen disappearing) and a rough hand feel. Our dryers feature moisture sensing technology that stops the cycle the moment the linen reaches the ideal moisture level. This preservation of fabric integrity is essential for luxury hotels where linen softness is a key guest metric.
                             </p>
@@ -355,8 +358,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="ironers" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Flatwork Ironing & Finishing</h2>
+                        <section id="ironers" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Flatwork Ironing & Finishing</h2>
                             <p>
                                 The mark of a true luxury hotel is the perfectly pressed bedsheet. Achieving this finish manually with hand irons is labor intensive and inconsistent. Our flatwork ironers (manglers) allow you to feed damp linens directly from the washer extractor, bypassing the dryer entirely for certain items. This "wash to iron" workflow is the pinnacle of efficiency, as it uses the existing moisture in the fabric to achieve a superior, glass like finish.
                             </p>
@@ -374,8 +377,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="hygiene" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Post-Pandemic Hygiene Standards</h2>
+                        <section id="hygiene" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Post-Pandemic Hygiene Standards</h2>
                             <p>
                                 Since the global health crisis, guest awareness regarding hygiene has skyrocketed. They want to know that the linens they sleep on are not just visibly clean but biologically safe. Our equipment is built to meet the most stringent sanitization protocols. This is particularly important for high turnover environments where the risk of pathogen spread is magnified. Hygiene is no longer a "behind the scenes" function; it is a core promise of your brand.
                             </p>
@@ -390,8 +393,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="water-quality" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Water Quality & Softening</h2>
+                        <section id="water-quality" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Water Quality & Softening</h2>
                             <p>
                                 The quality of the water entering your laundry facility is often the most underestimated factor in achieving a five star finish. In many parts of India, groundwater is "hard," meaning it contains high levels of calcium and magnesium. When this water meets laundry detergent, it forms a soap scum that sticks to the fibers of your linen, making them feel stiff and gray. This buildup also coats the internal components of your machines, leading to higher energy consumption as the heating elements have to work harder.
                             </p>
@@ -406,8 +409,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="chemicals" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Advanced Chemical Dosing</h2>
+                        <section id="chemicals" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Advanced Chemical Dosing</h2>
                             <p>
                                 Manually pouring detergent into an industrial washer is an outdated and inefficient practice. It leads to waste, inconsistent cleaning, and the risk of operator error. Our systems use multi port chemical injection pumps that are directly linked to the machine's controller. Each cycle determines the exact amount of chemical needed down to the milliliter, injecting it at precisely the right moment in the wash process.
                             </p>
@@ -422,8 +425,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="sustainability" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Sustainable Laundry Practices</h2>
+                        <section id="sustainability" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Sustainable Laundry Practices</h2>
                             <p>
                                 Modern hotels are under pressure from both guests and investors to reduce their environmental footprint. Laundry is typically one of the largest consumers of water and energy in a building. Our goal is to make your laundry room as green as it is clean. This is not just about being eco friendly; it is about saving money on every single load. A sustainable laundry room is a more profitable laundry room.
                             </p>
@@ -438,8 +441,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="energy-efficiency" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Energy Recovery Systems</h2>
+                        <section id="energy-efficiency" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Energy Recovery Systems</h2>
                             <p>
                                 The heat generated by an industrial laundry is a valuable resource that is often wasted. In a typical setup, hot water is drained and hot air is exhausted from the building. Our energy recovery systems capture this waste heat and redirect it where it is needed most. For example, a waste water heat exchanger can capture the thermal energy from the hot wash water and use it to pre heat the incoming cold water. This can reduce the energy needed for heating by as much as 30 percent.
                             </p>
@@ -454,8 +457,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="rfid" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">RFID Linen Tracking</h2>
+                        <section id="rfid" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">RFID Linen Tracking</h2>
                             <p>
                                 Linen loss, also known as "inventory shrinkage," is a multi million dollar problem for the global hospitality industry. Between guest theft, accidental disposal, and losses at commercial laundry plants, hotels often lose 15 percent to 20 percent of their linen every year. Radio Frequency Identification (RFID) technology offers a high tech solution to this ancient problem. It provides total visibility into every piece of textile in your inventory.
                             </p>
@@ -470,8 +473,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="maintenance" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Preventative Maintenance</h2>
+                        <section id="maintenance" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Preventative Maintenance</h2>
                             <p>
                                 A commercial laundry room is a harsh environment. High heat, humidity, and constant mechanical stress can take a toll on even the best equipment. This is why a rigorous preventative maintenance schedule is non negotiable. For hotels, where a machine failure can lead to guests not having clean towels, maintenance is as much about risk management as it is about equipment health. A proactive approach is the only way to ensure 100 percent reliability.
                             </p>
@@ -489,8 +492,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="safety" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Operational Safety Protocols</h2>
+                        <section id="safety" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Operational Safety Protocols</h2>
                             <p>
                                 Operating industrial grade machinery requires a strong culture of safety. The combination of high heat, steam, and moving mechanical parts can be dangerous if not managed correctly. Our equipment is built with "Safety First" engineering, including localized emergency stops and automatic shut off sensors. However, technology is only part of the equation; staff training and clear protocols are essential. A safe laundry room is a productive laundry room.
                             </p>
@@ -505,8 +508,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="staff-training" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Training for Excellence</h2>
+                        <section id="staff-training" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Training for Excellence</h2>
                             <p>
                                 Even the most advanced laundry facility is only as effective as the people operating it. We believe that training is a continuous process, not just a one time event during installation. We provide structured training programs for three distinct groups: machine operators, laundry managers, and maintenance engineers. This ensuring that every level of your organization is empowered to get the best results from our equipment.
                             </p>
@@ -521,8 +524,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="facility-design" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Laundry Facility Design</h2>
+                        <section id="facility-design" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Laundry Facility Design</h2>
                             <p>
                                 Designing a hotel laundry facility is a complex engineering task. It involves more than just picking a room and moving the machines in. You have to consider floor loading, utility access, ventilation, and the flow of material. A poorly designed facility will have staff tripping over each other and carts blocking important exits. Our design team uses 3D modeling to create a "digital twin" of your facility before a single machine is ordered.
                             </p>
@@ -540,8 +543,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="roi" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Financial ROI & Economics</h2>
+                        <section id="roi" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Financial ROI & Economics</h2>
                             <p>
                                 When looking at the price tag of industrial laundry equipment, it is easy to focus on the initial capital expenditure. However, the true cost of a machine is measured over its entire lifespan. A cheap machine that consumes 30 percent more water and electricity will end up costing you three times its purchase price in utility bills over five years. We provide a full Total Cost of Ownership (TCO) analysis to help you see the long term reality.
                             </p>
@@ -559,8 +562,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="case-study" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Resort Case Study</h2>
+                        <section id="case-study" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Resort Case Study</h2>
                             <p>
                                 A 250 room luxury resort on the coast of Goa was struggling with their outsourced laundry provider. They were experiencing high linen loss rates, frequent delays in towel delivery, and a growing number of guest complaints about "musty" smelling linens caused by high humidity during transport. They were spending nearly 12,000 dollars a month on laundry services and still not meeting their own quality standards.
                             </p>
@@ -575,8 +578,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="regional-analysis" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Regional Challenges in India</h2>
+                        <section id="regional-analysis" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Regional Challenges in India</h2>
                             <p>
                                 India's diverse climate and infrastructure present unique challenges for hotel laundry. In the humid coastal regions like Mumbai or Kerala, drying times are naturally longer, and the risk of mildew is much higher. Machines in these areas require robust moisture control and anti microbial cycles to ensure linens stay fresh. We use high grade stainless steel that resists the salty air, preventing the rust that plagues lower quality brands in coastal environments.
                             </p>
@@ -591,8 +594,8 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="future-trends" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Future of Laundry</h2>
+                        <section id="future-trends" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Future of Laundry</h2>
                             <p>
                                 The future of hospitality laundry is digital and automated. We are already seeing the adoption of robotic hands for sorting and loading, which will further reduce the physical burden on staff. AI powered vision systems can now detect small tears or stains in linen before they reach the guest, ensuring 100 percent quality control. These technologies are currently in the early adoption phase but will become standard in the next decade.
                             </p>
@@ -604,7 +607,7 @@ export default function LaundryForHotels() {
                             </p>
                         </section>
 
-                        <section id="faqs" className="mb-20">
+                        <section id="faqs" className="mb-12 md:mb-20">
                             <h2 className="text-4xl font-black text-brand-blue mb-12 tracking-tighter">Frequently Asked Questions</h2>
                             <div className="space-y-8">
                                 {faqs.map((faq, index) => (
@@ -616,8 +619,8 @@ export default function LaundryForHotels() {
                             </div>
                         </section>
 
-                        <section className="mb-20 p-10 bg-slate-50 rounded-[3rem] border border-slate-100">
-                            <h2 className="text-3xl font-black text-brand-blue mb-8 text-center italic">Industry Review Highlights</h2>
+                        <section className="mb-12 md:mb-20 p-6 md:p-10 bg-slate-50 rounded-2xl md:rounded-[3rem] border border-slate-100">
+                            <h2 className="text-2xl md:text-3xl font-black text-brand-blue mb-8 text-center italic">Industry Review Highlights</h2>
                             <div className="grid gap-8">
                                 <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
                                     <div className="flex gap-1 text-brand-orange mb-4">
@@ -698,7 +701,7 @@ export default function LaundryForHotels() {
                     <aside className="col-span-12 lg:col-span-3">
                         <div className="sticky top-24 space-y-8">
                             {/* Sidebar CTA */}
-                            <div className="bg-brand-blue text-white p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden group border-4 border-white">
+                            <div className="bg-brand-blue text-white p-6 md:p-8 rounded-2xl md:rounded-[2.5rem] shadow-2xl relative overflow-hidden group border-4 border-white">
                                 <div className="absolute top-0 right-0 p-4 opacity-10">
                                     <Zap size={100} />
                                 </div>
@@ -715,7 +718,7 @@ export default function LaundryForHotels() {
                             </div>
 
                             {/* Related Pages */}
-                            <div className="bg-white p-8 rounded-[2.5rem] shadow-sm border border-gray-100">
+                            <div className="bg-white p-6 md:p-8 rounded-2xl md:rounded-[2.5rem] shadow-sm border border-gray-100">
                                 <h3 className="text-xl font-bold text-brand-blue mb-6">Explore More</h3>
                                 <nav className="space-y-4">
                                     <Link href="/laundry-equipment-for-hospitals" className="flex items-center justify-between group p-3 hover:bg-slate-50 rounded-xl transition-all">
@@ -750,7 +753,7 @@ export default function LaundryForHotels() {
                             </div>
 
                             {/* Contact Info */}
-                            <div className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100">
+                            <div className="p-6 md:p-8 bg-slate-50 rounded-2xl md:rounded-[2.5rem] border border-slate-100">
                                 <h4 className="font-bold text-brand-blue mb-4 uppercase text-[10px] tracking-[0.2em]">National Support Center</h4>
                                 <div className="space-y-6">
                                     <div className="flex gap-4">

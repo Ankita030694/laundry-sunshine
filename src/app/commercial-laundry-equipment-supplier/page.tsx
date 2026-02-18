@@ -6,6 +6,7 @@ import { CheckCircle2, Phone, Mail, ArrowRight, MessageSquare, Star, ChevronRigh
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 const sections = [
@@ -187,23 +188,23 @@ export default function CommercialLaundrySupplier() {
     return (
         <main className="min-h-screen bg-white font-sans">
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
+            <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 bg-brand-blue text-white overflow-hidden">
                 <div className="absolute inset-0 opacity-15">
                     <Image src="/hero-bg.jpg" alt="Industrial Laundry Facility" fill className="object-cover" />
                 </div>
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
-                        Powering Industrial Hygiene <br />
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
+                        Powering Industrial Hygiene <br className="hidden sm:block" />
                         <span className="text-brand-orange italic">India's Leading Equipment Supplier</span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium">
+                    <p className="text-lg md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium px-4">
                         World-class washer extractors, tumble dryers, and flatwork ironers engineered for 24/7 reliability. Transform your commercial laundry operations today.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-4">
-                        <button onClick={openContactModal} className="bg-brand-orange text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3">
+                    <div className="flex flex-col sm:flex-row justify-center gap-4 px-4">
+                        <button onClick={openContactModal} className="bg-brand-orange text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
                             Consult Our Experts <ArrowRight size={24} />
                         </button>
-                        <button onClick={openContactModal} className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-10 py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all flex items-center gap-3">
+                        <button onClick={openContactModal} className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-3">
                             Browse Industrial Catalog
                         </button>
                     </div>
@@ -211,13 +212,13 @@ export default function CommercialLaundrySupplier() {
             </section>
 
             {/* Breadcrumb Container */}
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-4 md:py-6 border-b border-gray-100">
                 <Breadcrumbs items={[{ label: "Commercial Laundry Equipment Supplier", href: "/commercial-laundry-equipment-supplier" }]} />
             </div>
 
             {/* Main Content Layout */}
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-8 md:py-12">
+                <div className="grid grid-cols-12 gap-8 lg:gap-12">
                     {/* Left: Table of Contents */}
                     <aside className="lg:col-span-2 hidden lg:block">
                         <div className="sticky top-24 max-h-[80vh] overflow-y-auto pr-4 scrollbar-hide">
@@ -227,8 +228,8 @@ export default function CommercialLaundrySupplier() {
 
                     {/* Middle: Main Content */}
                     <article className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
-                        <section id="intro" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Commercial Laundry Equipment: The Future of Industrial Hygiene</h2>
+                        <section id="intro" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Commercial Laundry Equipment: The Future of Industrial Hygiene</h2>
                             <p>
                                 The demand for high-performance commercial laundry equipment in India has never been higher. As the hospitality and healthcare sectors continue to grow, the need for robust, efficient, and reliable laundering systems has become a strategic priority for facility managers and business owners. Choosing the right commercial laundry equipment supplier is not just about purchasing a machine; it is about investing in a partnership that ensures operational uptime, hygiene excellence, and a measurable return on investment.
                             </p>
@@ -243,8 +244,8 @@ export default function CommercialLaundrySupplier() {
                             </p>
                         </section>
 
-                        <section id="market-overview" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Indian Commercial Laundry Landscape</h2>
+                        <section id="market-overview" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter text-center sm:text-left">The Indian Commercial Laundry Landscape</h2>
                             <p>
                                 India is currently witnessing a significant shift in its laundry infrastructure. The days of manual, labor-intensive washing are being replaced by automated, data-driven systems. This transition is driven by rising labor costs, stricter hygiene regulations, and an increasing awareness of environmental impact. Businesses are discovering that the true cost of laundering is not the capital investment in machines, but the ongoing expenses related to water, power, and chemicals.
                             </p>
@@ -259,8 +260,8 @@ export default function CommercialLaundrySupplier() {
                             </p>
                         </section>
 
-                        <section id="washer-extractors" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Washer Extractors: Precision Engineering</h2>
+                        <section id="washer-extractors" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Washer Extractors: Precision Engineering</h2>
                             <p>
                                 The washer extractor is the heart of any commercial laundry operation. Its primary task is to remove soil through the simultaneous application of water, chemicals, and mechanical agitation, followed by a high-speed spin cycle to extract as much moisture as possible. This moisture extraction is critical, as every milliliter of water left in the fabric must be removed in the dryer, which is far more expensive in terms of energy usage.
                             </p>
@@ -275,8 +276,8 @@ export default function CommercialLaundrySupplier() {
                             </p>
                         </section>
 
-                        <section id="extraction-logic" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Science of High-G Extraction</h2>
+                        <section id="extraction-logic" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter text-brand-orange italic">The Science of High-G Extraction</h2>
                             <p>
                                 Extraction is the most scientifically complex part of the wash cycle. As the machine enters the spin phase, it must balance the laundry load to prevent excessive vibration that could damage the building or the machine itself. High-performance industrial machines are classified into two categories: Hardmount and Softmount. Understanding the difference is vital for any commercial laundry equipment purchaser.
                             </p>
@@ -291,8 +292,8 @@ export default function CommercialLaundrySupplier() {
                             </p>
                         </section>
 
-                        <section id="tumble-dryers" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Industrial Tumble Dryers: Beyond Heat</h2>
+                        <section id="tumble-dryers" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Industrial Tumble Dryers: Beyond Heat</h2>
                             <p>
                                 Tumble drying is the most energy-intensive process in the laundry room. A professional tumble dryer must do more than just blow hot air; it must manage airflow and moisture levels with extreme precision to prevent fabric damage and minimize electricity or gas consumption. Our industrial dryers are engineered for "Speed and Safety," moving tons of linen through the drying phase without the risk of over-drying or fire.
                             </p>
@@ -307,8 +308,8 @@ export default function CommercialLaundrySupplier() {
                             </p>
                         </section>
 
-                        <section id="finishing-systems" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Flatwork Ironers and Finishing Systems</h2>
+                        <section id="finishing-systems" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Flatwork Ironers and Finishing Systems</h2>
                             <p>
                                 For hotels and hospitals, the quality of the finish is what the guest or patient perceives as "cleanliness." A wrinkled or damp sheet is a failure, no matter how much it was sanitized in the wash. Flatwork ironers are the professional solution for achieving a high-speed, glass-like finish on sheets, pillowcases, and tablecloths. These machines use a heated chest or roll to simultaneously dry and press the fabric as it is fed through at high speeds.
                             </p>
@@ -323,8 +324,8 @@ export default function CommercialLaundrySupplier() {
                             </p>
                         </section>
 
-                        <section id="hospitality-focus" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Solutions for the Hospitality Sector</h2>
+                        <section id="hospitality-focus" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Solutions for the Hospitality Sector</h2>
                             <p>
                                 In the hospitality world, linen is a major capital asset. Luxury sheets and towels represent a significant investment that must be protected. A professional commercial laundry equipment supplier understands that hotels need more than just "clean" laundry; they need "pristine" laundry. Our hospitality-focused systems are designed to deliver that "white and bright" finish that guests expect, while maximizing the life of the fabric through gentle, precise cycles.
                             </p>
@@ -339,8 +340,8 @@ export default function CommercialLaundrySupplier() {
                             </p>
                         </section>
 
-                        <section id="healthcare-standards" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Medical Grade Laundry Protocols</h2>
+                        <section id="healthcare-standards" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter text-brand-orange italic">Medical Grade Laundry Protocols</h2>
                             <p>
                                 Healthcare laundry is not about aesthetics; it is about biological safety. Hospitals are environments where the risk of cross-contamination is constant and the consequences of failure are severe. Any piece of medical textile that touches a patient must be "Hygienically Clean," meaning it has undergone a process that reduces microbial counts to safe levels. Sunshine Equipment specializes in the barrier washing systems and thermal disinfection protocols required to meet NABH and NQAS standards in India.
                             </p>
@@ -355,8 +356,8 @@ export default function CommercialLaundrySupplier() {
                             </p>
                         </section>
 
-                        <section id="iot-automation" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Smart Laundry: IoT and Automation</h2>
+                        <section id="iot-automation" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Smart Laundry: IoT and Automation</h2>
                             <p>
                                 The next frontier for commercial laundry equipment is the "Internet of Things" (IoT). By connecting laundry machines to a central management system, facility managers can gain real-time visibility into their entire operation. You can see which machines are running, which are idle, and most importantly, how many utility resources each load is consuming. This data-driven approach allows for a level of management that was previously impossible.
                             </p>
@@ -371,8 +372,8 @@ export default function CommercialLaundrySupplier() {
                             </p>
                         </section>
 
-                        <section id="utility-optimization" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Utility Optimization and Sustainability</h2>
+                        <section id="utility-optimization" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter text-center sm:text-left">Utility Optimization and Sustainability</h2>
                             <p>
                                 Utility costs-water, electricity, and heating fuel-typically represent 30 to 40 percent of a laundry's total operating budget. As an industrial laundry equipment supplier, we focus on "Utility-First" engineering. Every design choice we make is aimed at reducing the consumption of these precious resources. A sustainable laundry is not just better for the environment; it is a financial necessity in a competitive market like India.
                             </p>
@@ -387,8 +388,8 @@ export default function CommercialLaundrySupplier() {
                             </p>
                         </section>
 
-                        <section id="facility-design" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Laundry Facility Design and Planning</h2>
+                        <section id="facility-design" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Laundry Facility Design and Planning</h2>
                             <p>
                                 The success of a laundry operation is decided long before the first machine is installed. It starts with a professional facility design. A poorly planned laundry room creates bottlenecks, wastes labor, and increases the risk of accidents and cross-contamination. Sunshine Equipment provides comprehensive planning services, including 3D layout designs that optimize every square meter of your available space.
                             </p>
@@ -403,8 +404,8 @@ export default function CommercialLaundrySupplier() {
                             </p>
                         </section>
 
-                        <section id="maintenance-support" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Maintenance, AMC, and Parts Support</h2>
+                        <section id="maintenance-support" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Maintenance, AMC, and Parts Support</h2>
                             <p>
                                 Industrial laundry equipment represents a significant capital investment, and like any high-performance machinery, it requires regular professional care to maintain its efficiency. As a leading supplier, Sunshine Equipment provides more than just the machine; we provide a lifetime of support. Our Maintenance and AMC (Annual Maintenance Contract) programs are designed to eliminate downtime and ensure that your laundry room never stops moving.
                             </p>
@@ -419,8 +420,8 @@ export default function CommercialLaundrySupplier() {
                             </p>
                         </section>
 
-                        <section id="financial-roi" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Economics of Industrial Laundry</h2>
+                        <section id="financial-roi" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter text-brand-orange italic">The Economics of Industrial Laundry</h2>
                             <p>
                                 For a business owner or a hospital board, every decision must be backed by a financial rationale. We help our clients perform detailed ROI (Return on Investment) calculations to justify the purchase of premium industrial equipment. While the initial price might be higher than low-grade commercial units, the "Total Cost of Ownership" (TCO) is significantly lower over the 20-year life of the machine.
                             </p>
@@ -435,8 +436,8 @@ export default function CommercialLaundrySupplier() {
                             </p>
                         </section>
 
-                        <section id="case-studies" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Success Stories: Transforming Operations</h2>
+                        <section id="case-studies" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Success Stories: Transforming Operations</h2>
                             <p>
                                 At Sunshine Equipment, our success is measured by the success of our clients. We have transformed hundreds of laundry facilities across India, helping them achieve new levels of hygiene, efficiency, and profitability. One notable case involved a 400-bed multispeciality hospital in Bangalore that was struggling with high infection rates and escalating utility costs. After installing our barrier washer system and implementing a unidirectional workflow, they saw a 30 percent drop in HAIs and a 40 percent reduction in water consumption.
                             </p>
@@ -451,8 +452,8 @@ export default function CommercialLaundrySupplier() {
                             </p>
                         </section>
 
-                        <section id="faqs" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-12 tracking-tighter">Frequently Asked Questions</h2>
+                        <section id="faqs" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-8 md:mb-12 tracking-tighter text-center sm:text-left">Frequently Asked Questions</h2>
                             <div className="space-y-8">
                                 {faqs.map((faq, index) => (
                                     <div key={index} className="border-b border-gray-100 pb-8">
@@ -464,12 +465,12 @@ export default function CommercialLaundrySupplier() {
                         </section>
 
                         {/* Customer Reviews Section */}
-                        <section className="mb-20 p-10 bg-slate-50 rounded-[3rem] border border-slate-100">
-                            <h2 className="text-3xl font-black text-brand-blue mb-8 text-center italic">Industry Feedback</h2>
+                        <section className="mb-12 md:mb-20 p-6 md:p-10 bg-slate-50 rounded-[2rem] md:rounded-[3rem] border border-slate-100">
+                            <h2 className="text-2xl md:text-3xl font-black text-brand-blue mb-8 text-center italic">Industry Feedback</h2>
                             <div className="grid gap-8">
-                                <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                                <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
                                     <div className="flex gap-1 text-brand-orange mb-4">
-                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={20} fill="currentColor" />)}
+                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={18} fill="currentColor" />)}
                                     </div>
                                     <p className="italic text-gray-700 text-lg">"The level of technical expertise Sunshine brings is unparalleled. Their transition to our new industrial facility was seamless, and the ROI has exceeded our expectations within just 18 months."</p>
                                     <p className="mt-6 font-bold text-brand-blue flex items-center gap-2">
@@ -477,9 +478,9 @@ export default function CommercialLaundrySupplier() {
                                         CEO, Regional Laundry Chain
                                     </p>
                                 </div>
-                                <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                                <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
                                     <div className="flex gap-1 text-brand-orange mb-4">
-                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={20} fill="currentColor" />)}
+                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={18} fill="currentColor" />)}
                                     </div>
                                     <p className="italic text-gray-700 text-lg">"Reliability is everything. We process over 3 tons of medical linen daily on Sunshine equipment, and the uptime is nearly 100 percent. Their preventative maintenance is world-class."</p>
                                     <p className="mt-6 font-bold text-brand-blue flex items-center gap-2">
@@ -487,9 +488,9 @@ export default function CommercialLaundrySupplier() {
                                         Head Engineer, Multispeciality Hospital
                                     </p>
                                 </div>
-                                <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                                <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
                                     <div className="flex gap-1 text-brand-orange mb-4">
-                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={20} fill="currentColor" />)}
+                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={18} fill="currentColor" />)}
                                     </div>
                                     <p className="italic text-gray-700 text-lg">"The high-speed extraction logic on their washer extractors has significantly shortened our drying times, saving us nearly 20 percent on our monthly electricity bills."</p>
                                     <p className="mt-6 font-bold text-brand-blue flex items-center gap-2">
@@ -497,9 +498,9 @@ export default function CommercialLaundrySupplier() {
                                         Facility Manager, Luxury Resort Goa
                                     </p>
                                 </div>
-                                <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                                <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
                                     <div className="flex gap-1 text-brand-orange mb-4">
-                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={20} fill="currentColor" />)}
+                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={18} fill="currentColor" />)}
                                     </div>
                                     <p className="italic text-gray-700 text-lg">"The industrial tumble dryers from Sunshine have been a game-changer for our high-volume operations. The moisture-sensing technology ensures we never over-process our delicates while maintaining a rapid turnaround for heavy linens."</p>
                                     <p className="mt-6 font-bold text-brand-blue flex items-center gap-2">
@@ -507,9 +508,9 @@ export default function CommercialLaundrySupplier() {
                                         Operations Director, Premium Hospitality Group
                                     </p>
                                 </div>
-                                <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                                <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
                                     <div className="flex gap-1 text-brand-orange mb-4">
-                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={20} fill="currentColor" />)}
+                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={18} fill="currentColor" />)}
                                     </div>
                                     <p className="italic text-gray-700 text-lg">"Switching to Sunshine's medical-grade barrier washers allowed us to achieve full NQAS compliance with ease. Their technical support throughout the installation and commissioning phase was exceptional."</p>
                                     <p className="mt-6 font-bold text-brand-blue flex items-center gap-2">
@@ -517,9 +518,9 @@ export default function CommercialLaundrySupplier() {
                                         Project Manager, Specialized Healthcare Trust
                                     </p>
                                 </div>
-                                <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                                <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
                                     <div className="flex gap-1 text-brand-orange mb-4">
-                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={20} fill="currentColor" />)}
+                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={18} fill="currentColor" />)}
                                     </div>
                                     <p className="italic text-gray-700 text-lg">"The energy efficiency of these machines is remarkable. We've seen a consistent 15 percent reduction in our steam and water costs since the upgrade. Truly a sustainable investment for large-scale laundry plants."</p>
                                     <p className="mt-6 font-bold text-brand-blue flex items-center gap-2">
@@ -527,9 +528,9 @@ export default function CommercialLaundrySupplier() {
                                         Environmental Lead, Industrial Services Pvt Ltd
                                     </p>
                                 </div>
-                                <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                                <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
                                     <div className="flex gap-1 text-brand-orange mb-4">
-                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={20} fill="currentColor" />)}
+                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={18} fill="currentColor" />)}
                                     </div>
                                     <p className="italic text-gray-700 text-lg">"Sunshine's flatwork ironers provide a finish that our high-end boutique clients absolutely love. The automated folding logic has reduced our manual labor requirements by half, allowing us to scale faster."</p>
                                     <p className="mt-6 font-bold text-brand-blue flex items-center gap-2">
@@ -537,9 +538,9 @@ export default function CommercialLaundrySupplier() {
                                         Founder, Urban Laundry Networks
                                     </p>
                                 </div>
-                                <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                                <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
                                     <div className="flex gap-1 text-brand-orange mb-4">
-                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={20} fill="currentColor" />)}
+                                        {[1, 2, 3, 4, 5].map(s => <Star key={s} size={18} fill="currentColor" />)}
                                     </div>
                                     <p className="italic text-gray-700 text-lg">"Highly impressed with the preventative maintenance program. We process over 5,000 kg daily, and the uptime on these machines is incredible. The immediate spare parts availability is a major peace of mind."</p>
                                     <p className="mt-6 font-bold text-brand-blue flex items-center gap-2">
@@ -554,55 +555,55 @@ export default function CommercialLaundrySupplier() {
                     {/* Right Column: CTA & Related */}
                     <aside className="col-span-12 lg:col-span-3">
                         <div className="sticky top-24 space-y-8">
-                            <div className="bg-brand-blue text-white p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden group border-4 border-white">
-                                <div className="absolute top-0 right-0 p-4 opacity-10">
+                            <div className="bg-brand-blue text-white p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] shadow-2xl relative overflow-hidden group border-4 border-white">
+                                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:rotate-12 transition-transform duration-500">
                                     <TrendingUp size={100} />
                                 </div>
-                                <h3 className="text-2xl font-black mb-4 relative z-10 tracking-tight">Free Site Audit</h3>
-                                <p className="text-white/80 mb-6 relative z-10 font-medium">
-                                    Our industrial experts will visit your facility and provide a complete utility and efficiency assessment.
+                                <h3 className="text-xl md:text-2xl font-black mb-4 relative z-10 tracking-tight text-brand-orange uppercase text-[10px] tracking-[0.2em] italic">Free Site Audit</h3>
+                                <p className="text-white mb-6 relative z-10 font-black text-xl md:text-2xl leading-tight">
+                                    Analyze My Facility Efficiency
                                 </p>
-                                <button onClick={openContactModal} className="bg-brand-orange text-white w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-white hover:text-brand-orange transition-all relative z-10 shadow-lg">
-                                    Request Your Audit <ArrowUpRight size={20} />
+                                <button onClick={openContactModal} className="bg-brand-orange text-white w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-white hover:text-brand-orange transition-all relative z-10 shadow-lg group">
+                                    Request Your Audit <ArrowUpRight size={20} className="group-hover:translate-x-1 transition-transform" />
                                 </button>
                             </div>
 
-                            <div className="bg-white p-8 rounded-[2.5rem] shadow-sm border border-gray-100">
-                                <h3 className="text-xl font-bold text-brand-blue mb-6">Related Solutions</h3>
-                                <nav className="space-y-4">
+                            <div className="bg-white p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] shadow-sm border border-gray-100">
+                                <h3 className="text-lg md:text-xl font-bold text-brand-blue mb-6 border-b border-gray-50 pb-2">Related Solutions</h3>
+                                <nav className="space-y-2 md:space-y-4">
                                     <Link href="/laundry-equipment-for-hotels" className="flex items-center justify-between group p-3 hover:bg-slate-50 rounded-xl transition-all">
                                         <div className="flex items-center gap-3">
                                             <Building2 size={18} className="text-brand-orange" />
-                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors">Hotel Equipment</span>
+                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors text-sm">Hotel Equipment</span>
                                         </div>
                                         <ChevronRight size={18} className="text-gray-400 group-hover:translate-x-1 transition-transform" />
                                     </Link>
                                     <Link href="/laundry-equipment-for-hospitals" className="flex items-center justify-between group p-3 hover:bg-slate-50 rounded-xl transition-all">
                                         <div className="flex items-center gap-3">
                                             <ShieldCheck size={18} className="text-brand-orange" />
-                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors">Hospital Equipment</span>
+                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors text-sm">Hospital Equipment</span>
                                         </div>
                                         <ChevronRight size={18} className="text-gray-400 group-hover:translate-x-1 transition-transform" />
                                     </Link>
                                     <Link href="/services/laundry-setup" className="flex items-center justify-between group p-3 hover:bg-slate-50 rounded-xl transition-all">
                                         <div className="flex items-center gap-3">
                                             <Workflow size={18} className="text-brand-orange" />
-                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors">Plant Design</span>
+                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors text-sm">Plant Design</span>
                                         </div>
                                         <ChevronRight size={18} className="text-gray-400 group-hover:translate-x-1 transition-transform" />
                                     </Link>
                                     <Link href="/services/amc" className="flex items-center justify-between group p-3 hover:bg-slate-50 rounded-xl transition-all">
                                         <div className="flex items-center gap-3">
                                             <Settings size={18} className="text-brand-orange" />
-                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors">AMC Support</span>
+                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors text-sm">AMC Support</span>
                                         </div>
                                         <ChevronRight size={18} className="text-gray-400 group-hover:translate-x-1 transition-transform" />
                                     </Link>
                                 </nav>
                             </div>
 
-                            <div className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100">
-                                <h4 className="font-bold text-brand-blue mb-4 uppercase text-[10px] tracking-[0.2em]">Regional Support Centers</h4>
+                            <div className="p-6 md:p-8 bg-slate-50 rounded-[2rem] md:rounded-[2.5rem] border border-slate-100">
+                                <h4 className="font-black text-brand-blue mb-4 uppercase text-[10px] tracking-[0.2em] italic">Regional Support Centers</h4>
                                 <div className="space-y-6">
                                     <div className="flex gap-4">
                                         <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shrink-0 border border-gray-100 shadow-sm">
@@ -610,7 +611,7 @@ export default function CommercialLaundrySupplier() {
                                         </div>
                                         <div>
                                             <p className="text-[10px] text-gray-500 font-black uppercase mb-1">Service Helpline</p>
-                                            <a href="tel:+919711112950" className="text-sm font-bold text-gray-800 hover:text-brand-orange tracking-tight">+91 97111 12950</a>
+                                            <a href="tel:+919711112950" className="text-sm font-bold text-gray-800 hover:text-brand-orange tracking-tight transition-colors">+91 97111 12950</a>
                                         </div>
                                     </div>
                                     <div className="flex gap-4">
@@ -619,7 +620,7 @@ export default function CommercialLaundrySupplier() {
                                         </div>
                                         <div>
                                             <p className="text-[10px] text-gray-500 font-black uppercase mb-1">Sales Inquiries</p>
-                                            <a href="mailto:info@sunshine-laundry.com" className="text-sm font-bold text-gray-800 hover:text-brand-orange leading-none break-all">info@sunshine-laundry.com</a>
+                                            <a href="mailto:info@sunshine-laundry.com" className="text-sm font-bold text-gray-800 hover:text-brand-orange leading-none break-all transition-colors">info@sunshine-laundry.com</a>
                                         </div>
                                     </div>
                                 </div>
@@ -633,6 +634,9 @@ export default function CommercialLaundrySupplier() {
 
             {/* Structured Data */}
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }} />
+
+            {/* Sticky Mobile TOC */}
+            <StickyMobileTOC sections={sections} />
         </main>
     );
 }

@@ -6,6 +6,7 @@ import { CheckCircle2, Phone, Mail, ArrowRight, ShieldCheck, Zap, Droplets, Hear
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 const sections = [
@@ -230,28 +231,39 @@ export default function HospitalLaundryProvider() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }} />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
-                <div className="absolute inset-0 opacity-20">
-                    <Image src="/hero-bg.jpg" alt="Industrial Hospital Laundry Solutions" fill className="object-cover" />
+            <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 bg-brand-blue text-white overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <Image src="/hero-bg.jpg" alt="Industrial Hospital Laundry Solutions" fill className="object-cover opacity-30" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-brand-blue/0 to-brand-blue/100" />
                 </div>
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
-                        Hospital Laundry Systems <br />
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-xs md:text-sm font-bold mb-8 uppercase tracking-widest leading-none animate-fade-in shadow-lg">
+                        <Activity size={16} className="text-brand-orange" /> Engineered for Zero Infection Risk
+                    </div>
+                    <h1
+                        className="tracking-tight leading-tight mb-6 animate-fade-in delay-100 px-4"
+                        style={{
+                            fontFamily: 'Satoshi, sans-serif',
+                            fontSize: 'clamp(32px, 7vw, 72px)',
+                            fontWeight: 900
+                        }}
+                    >
+                        Hospital Laundry Systems <br className="hidden md:block" />
                         <span className="text-brand-orange italic">Provider & Medical Engineering</span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium">
+                    <p className="text-lg md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium animate-fade-in delay-200">
                         Ensuring Patient Safety through Advanced Barrier Technology, Thermal Disinfection, and Certified Medical-Grade Laundry Solutions.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-4">
+                    <div className="flex flex-wrap justify-center gap-4 animate-fade-in delay-300">
                         <button
                             onClick={openContactModal}
-                            className="bg-brand-orange text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3"
+                            className="bg-brand-orange text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3"
                         >
                             Consult an Expert <ArrowRight size={24} />
                         </button>
                         <button
                             onClick={openContactModal}
-                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-10 py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all flex items-center gap-3"
+                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-base md:text-lg hover:bg-white/20 transition-all flex items-center gap-3"
                         >
                             View Medical Specs
                         </button>
@@ -260,13 +272,15 @@ export default function HospitalLaundryProvider() {
             </section>
 
             {/* Breadcrumb Container */}
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[{ label: "Hospital Laundry Systems", href: "/hospital-laundry-systems-provider" }]} />
             </div>
 
+            <StickyMobileTOC sections={sections} />
+
             {/* Main Content Layout */}
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-12">
+                <div className="grid grid-cols-12 gap-6 lg:gap-12">
 
                     {/* Left Column: Table of Contents */}
                     <aside className="lg:col-span-2 hidden lg:block">
@@ -277,8 +291,9 @@ export default function HospitalLaundryProvider() {
 
                     {/* Middle Column: 3500+ Words Content */}
                     <main className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
-                        <section id="intro" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Introduction to Healthcare & Hospital Laundry Systems</h2>
+                        <section id="intro" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">
+                                Introduction to Healthcare & Hospital Laundry Systems</h2>
                             <p>
                                 In the hierarchy of hospital operations, the laundry system stands as a critical line of defense against Healthcare-Associated Infections (HAIs). As a leading <strong>hospital laundry systems provider</strong>, Sunshine Equipments recognizes that medical textiles are not just fabrics; they are potential vectors for pathogens if not handled with scientific precision. From bed linens and patient gowns to reusable surgical drapes and staff uniforms, every item processed must meet a "log-reduction" standard that guarantees the elimination of bacteria, viruses, and fungi.
                             </p>
@@ -291,7 +306,7 @@ export default function HospitalLaundryProvider() {
                         </section>
 
                         <section id="infection-control" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Infection Control & Patient Safety</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Infection Control & Patient Safety</h2>
                             <p>
                                 Patient safety is the primary metric by which any hospital laundry system is measured. Cross-contamination is the most significant risk in medical textile processing. Traditional washers, where the same door is used for loading soiled items and unloading clean ones, are increasingly being replaced by barrier technology in high-authority medical environments.
                             </p>
@@ -323,7 +338,7 @@ export default function HospitalLaundryProvider() {
                         </section>
 
                         <section id="barrier-washers" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Barrier Washer-Extractors</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Barrier Washer-Extractors</h2>
                             <p>
                                 The Barrier Washer-Extractor is the defining characteristic of a professional hospital laundry system. These machines are installed as part of a physical wall separating the "Soiled Side" from the "Clean Side" of the facility. Soiled linen is loaded from the dirty room, and once the cycle is complete, the machine can only be opened from the clean room door.
                             </p>
@@ -339,7 +354,7 @@ export default function HospitalLaundryProvider() {
                         </section>
 
                         <section id="thermal-disinfection" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Thermal and Chemical Sterilization</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Thermal and Chemical Sterilization</h2>
                             <p>
                                 Verification of disinfection is the most critical technical aspect of our medical laundry solutions. Our integrated chemical dosing systems communicate in real-time with the washer controller. If the water temperature drops below the required disinfection threshold, the system automatically pauses the cycle and notifies the operator.
                             </p>
@@ -356,7 +371,7 @@ export default function HospitalLaundryProvider() {
                         </section>
 
                         <section id="facility-design" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Medical Finishing & Folding</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Medical Finishing & Folding</h2>
                             <p>
                                 In a hospital setting, finishing is more about hygiene and organization than aesthetics. However, professional ironing and folding help in identifying tears or stains that were missed in the pre-wash sort. Our hospital-grade ironers use high-pressure rollers to sanitize the surface of the linen, providing a final thermal "hit" that further ensures sterility.
                             </p>
@@ -366,7 +381,7 @@ export default function HospitalLaundryProvider() {
                         </section>
 
                         <section id="traceability" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Compliance & JCI Accreditation</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Compliance & JCI Accreditation</h2>
                             <p>
                                 As a leading hospital laundry systems provider, we help healthcare facilities achieve and maintain JCI (Joint Commission International) and NABH (National Accreditation Board for Hospitals) standards. Our "Compliance Kit" includes software and hardware that logs every single wash and dry cycle.
                             </p>
@@ -381,7 +396,7 @@ export default function HospitalLaundryProvider() {
                         </section>
 
                         <section id="sustainability" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">High-G Extraction & Energy Savings</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">High-G Extraction & Energy Savings</h2>
                             <p>
                                 Hospitals operate 24/7, making them high-intensity energy users. Our medical-grade washers feature high-G extraction (up to 400G), which removes significantly more water than standard commercial machines. This reduces the time needed in the dryer, which is where 70% of a laundry's energy is consumed.
                             </p>
@@ -391,7 +406,7 @@ export default function HospitalLaundryProvider() {
                         </section>
 
                         <section id="roi" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Comparative Analysis of Medical Laundry Tech</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Comparative Analysis of Medical Laundry Tech</h2>
                             <div className="overflow-x-auto my-12">
                                 <table className="min-w-full bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm">
                                     <thead>
@@ -458,7 +473,7 @@ export default function HospitalLaundryProvider() {
                     </main>
 
                     {/* Right Column: Sticky CTA & Related */}
-                    <aside className="col-span-12 lg:col-span-3">
+                    <aside className="col-span-12 lg:col-span-3 mt-12 lg:mt-0">
                         <div className="sticky top-24 space-y-8">
                             {/* Sidebar CTA */}
                             <div className="bg-brand-blue text-white p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden group border-4 border-white">

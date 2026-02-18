@@ -6,6 +6,7 @@ import { CheckCircle2, Phone, Mail, ArrowRight, MessageSquare, Star, ChevronRigh
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 const sections = [
@@ -246,28 +247,39 @@ export default function HotelLaundrySolutions() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }} />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
-                <div className="absolute inset-0 opacity-20">
-                    <Image src="/hero-bg.jpg" alt="Industrial Hotel Laundry Solutions" fill className="object-cover" />
+            <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 bg-brand-blue text-white overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <Image src="/hero-bg.jpg" alt="Industrial Hotel Laundry Solutions" fill className="object-cover opacity-30" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-brand-blue/0 to-brand-blue/100" />
                 </div>
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
-                        Hotel Laundry Equipment <br />
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-xs md:text-sm font-bold mb-8 uppercase tracking-widest leading-none animate-fade-in shadow-lg">
+                        <Star size={16} className="text-brand-orange" /> 5-Star Commercial Excellence
+                    </div>
+                    <h1
+                        className="tracking-tight leading-tight mb-6 animate-fade-in delay-100 px-4"
+                        style={{
+                            fontFamily: 'Satoshi, sans-serif',
+                            fontSize: 'clamp(32px, 7vw, 72px)',
+                            fontWeight: 900
+                        }}
+                    >
+                        Hotel Laundry Equipment <br className="hidden md:block" />
                         <span className="text-brand-orange italic">Solutions & Precision Engineering</span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium">
+                    <p className="text-lg md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium animate-fade-in delay-200">
                         Elevating Hospitality Standards Through Advanced Industrial Technology, Precision Engineering, and Sustainable Laundry Practices.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-4">
+                    <div className="flex flex-wrap justify-center gap-4 animate-fade-in delay-300">
                         <button
                             onClick={openContactModal}
-                            className="bg-brand-orange text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3"
+                            className="bg-brand-orange text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3"
                         >
                             Consult an Expert <ArrowRight size={24} />
                         </button>
                         <button
                             onClick={openContactModal}
-                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-10 py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all flex items-center gap-3"
+                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-base md:text-lg hover:bg-white/20 transition-all flex items-center gap-3"
                         >
                             View Industrial Specs
                         </button>
@@ -276,13 +288,15 @@ export default function HotelLaundrySolutions() {
             </section>
 
             {/* Breadcrumb Container */}
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[{ label: "Hotel Laundry Solutions", href: "/hotel-laundry-equipment-solutions" }]} />
             </div>
 
+            <StickyMobileTOC sections={sections} />
+
             {/* Main Content Layout */}
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-12">
+                <div className="grid grid-cols-12 gap-6 lg:gap-12">
 
                     {/* Left Column: Table of Contents */}
                     <aside className="lg:col-span-2 hidden lg:block">
@@ -293,8 +307,9 @@ export default function HotelLaundrySolutions() {
 
                     {/* Middle Column: 3500+ Words Content */}
                     <main className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
-                        <section id="intro" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Introduction to Modern Hotel Laundry Solutions</h2>
+                        <section id="intro" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">
+                                Introduction to Modern Hotel Laundry Solutions</h2>
                             <p>
                                 In the competitive landscape of the global hospitality industry, the quality of linen and the efficiency of laundry operations are no longer secondary considerations. They are fundamental pillars of the guest experience and operational profitability. <strong>Hotel laundry equipment solutions</strong> encompass a wide array of specialized machinery designed to handle the rigorous demands of luxury hotels, resorts, and boutique stays. From the crispness of a 500-thread-count sheet to the plush softness of a premium bath towel, every touchpoint a guest has with hotel textiles is a direct result of the technology and processes within the laundry facility.
                             </p>
@@ -307,7 +322,7 @@ export default function HotelLaundrySolutions() {
                         </section>
 
                         <section id="guest-experience" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Impact on Guest Satisfaction</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Impact on Guest Satisfaction</h2>
                             <p>
                                 For a hotel guest, luxury is often defined by the senses. The visual impact of a bright white, wrinkle-free pillowcase and the tactile sensation of a fresh, absorbent towel are among the most memorable aspects of a stay. These sensations are directly influenced by the quality of the wash and finish cycles. Standard commercial machines often struggle with the "greying" effect over time, caused by poor water extraction or chemical residue. Advanced hotel laundry equipment solutions solve this through precision-controlled wash profiles.
                             </p>
@@ -339,7 +354,7 @@ export default function HotelLaundrySolutions() {
                         </section>
 
                         <section id="washers" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Industrial Washer-Extractors</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Industrial Washer-Extractors</h2>
                             <p>
                                 The industrial washer-extractor is the workhorse of the hospitality laundry. Unlike domestic or light-commercial machines, these units are engineered for high-volume, continuous operation. The "extractor" component is critical; it uses centrifugal force to pull water out of the fabrics before they enter the dryer. The higher the G-force of extraction, the less moisture remains, and the less energy is required for drying.
                             </p>
@@ -358,7 +373,7 @@ export default function HotelLaundrySolutions() {
                         </section>
 
                         <section id="dryers" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">High-Efficiency Drying Systems</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">High-Efficiency Drying Systems</h2>
                             <p>
                                 Drying is the most energy-intensive part of the laundry process. Traditional dryers use a "time-based" approach, which often leads to over-drying. Over-drying is the primary cause of fabric shrinkage and fiber damage. Modern hotel laundry equipment solutions utilize "OPTidry" or moisture-sensing technology. These sensors detect exactly when the linen has reached the optimal humidity level (usually 5%) and stop the heater, entering a cool-down phase immediately.
                             </p>
@@ -378,7 +393,7 @@ export default function HotelLaundrySolutions() {
                         </section>
 
                         <section id="ironers" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Flatwork Ironers & Finishing</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Flatwork Ironers & Finishing</h2>
                             <p>
                                 No hotel laundry equipment solution is complete without a high-performance finishing line. A flatwork ironer (or calender) is what gives hotel sheets that distinctive, crisp look and feel. These machines dry and iron large flat items like sheets and tablecloths directly from the washer, skipping the dryer entirely for these items.
                             </p>
@@ -388,7 +403,7 @@ export default function HotelLaundrySolutions() {
                         </section>
 
                         <section id="smart-laundry" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">IoT & Smart Management</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">IoT & Smart Management</h2>
                             <p>
                                 The "Smart Laundry" is no longer a futuristic concept; it is the current standard for high-authority hotel laundry equipment solutions. By integrating IoT sensors into every machine, we provide hotel managers with a "Linen Dashboard" accessible from any smartphone or tablet.
                             </p>
@@ -403,7 +418,7 @@ export default function HotelLaundrySolutions() {
                         </section>
 
                         <section id="sustainability" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Eco-Friendly Operations</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Eco-Friendly Operations</h2>
                             <p>
                                 Sustainability is the most significant trend in the hospitality industry today. Guests are actively choosing hotels that demonstrate environmental responsibility. Our hotel laundry equipment solutions are designed to meet and exceed global green standards.
                             </p>
@@ -413,7 +428,7 @@ export default function HotelLaundrySolutions() {
                         </section>
 
                         <section id="roi" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Financial ROI Analysis</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Financial ROI Analysis</h2>
                             <p>
                                 Investing in premium hotel laundry equipment solutions is a capital-intensive decision. However, the ROI is typically realized much faster than most hotel owners expect. The economic benefits come from utilities, linen replacement, labor, and downtime reduction.
                             </p>
@@ -490,7 +505,7 @@ export default function HotelLaundrySolutions() {
                     </main>
 
                     {/* Right Column: Sticky CTA & Related */}
-                    <aside className="col-span-12 lg:col-span-3">
+                    <aside className="col-span-12 lg:col-span-3 mt-12 lg:mt-0">
                         <div className="sticky top-24 space-y-8">
                             {/* Sidebar CTA */}
                             <div className="bg-brand-blue text-white p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden group border-4 border-white">

@@ -6,6 +6,7 @@ import { CheckCircle2, Phone, Mail, ArrowRight, Zap, Droplets, Star, Briefcase, 
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 const sections = [
@@ -229,29 +230,32 @@ export default function LaundromatEquipmentSupplier() {
             {/* Structured Data */}
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }} />
 
+            {/* Sticky Mobile TOC */}
+            <StickyMobileTOC sections={sections} />
+
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
+            <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 bg-brand-blue text-white overflow-hidden">
                 <div className="absolute inset-0 opacity-20">
                     <Image src="/hero-bg.jpg" alt="Industrial Laundromat Solutions" fill className="object-cover" />
                 </div>
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
-                        Laundromat Equipment <br />
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
+                        Laundromat Equipment <br className="hidden sm:block" />
                         <span className="text-brand-orange italic">Supplier & Business Partner</span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium">
+                    <p className="text-lg md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium px-4">
                         Empowering Entrepreneurs and Property Managers with High-ROI Vended Laundry Systems, Smart Payment Tech, and Industrial Durability.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-4">
+                    <div className="flex flex-col sm:flex-row justify-center gap-4 px-4">
                         <button
                             onClick={openContactModal}
-                            className="bg-brand-orange text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3"
+                            className="bg-brand-orange text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3"
                         >
                             Get Business Plan <ArrowRight size={24} />
                         </button>
                         <button
                             onClick={openContactModal}
-                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-10 py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all flex items-center gap-3"
+                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-3"
                         >
                             View Pro Equipment
                         </button>
@@ -260,13 +264,13 @@ export default function LaundromatEquipmentSupplier() {
             </section>
 
             {/* Breadcrumb Container */}
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-4 md:py-6 border-b border-gray-100">
                 <Breadcrumbs items={[{ label: "Laundromat Equipment", href: "/laundromat-equipment-supplier" }]} />
             </div>
 
             {/* Main Content Layout */}
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-8 md:py-12">
+                <div className="grid grid-cols-12 gap-8 lg:gap-12">
 
                     {/* Left Column: Table of Contents */}
                     <aside className="lg:col-span-2 hidden lg:block">
@@ -277,8 +281,8 @@ export default function LaundromatEquipmentSupplier() {
 
                     {/* Middle Column: 3500+ Words Content */}
                     <main className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
-                        <section id="intro" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Laundromat Investment Landscape in the Modern Era</h2>
+                        <section id="intro" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Laundromat Investment Landscape in the Modern Era</h2>
                             <p>
                                 The vended laundry industry, traditionally known as "laundromats," is undergoing a profound transformation. What was once seen as a utility for those without home laundry is now becoming a premium service industry. In urban centers across India and beyond, the rise of the "Smart Laundromat" is attracting a new demographic of users and investors alike. As a premier <strong>laundromat equipment supplier</strong>, Sunshine Equipments is dedicated to helping entrepreneurs capitalize on this $5 billion global market opportunity.
                             </p>
@@ -290,26 +294,26 @@ export default function LaundromatEquipmentSupplier() {
                             </p>
                         </section>
 
-                        <section id="entrepreneurship" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Starting a Laundromat Business</h2>
+                        <section id="entrepreneurship" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Starting a Laundromat Business</h2>
                             <p>
                                 Success in the laundry industry is 80% preparation and 20% execution. The first step for any aspiring owner is choosing the right location. A successful laundromat thrives in areas with high rental density, multi-family housing, and a significant percentage of "tech-savvy" youth. Once the site is secured, the technical design of the facility begins.
                             </p>
-                            <div className="bg-slate-50 p-10 rounded-[3rem] border border-slate-100 my-12">
-                                <h4 className="text-xl font-bold text-brand-blue mb-6 flex items-center gap-2">
+                            <div className="bg-slate-50 p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-slate-100 my-8 md:my-12">
+                                <h4 className="text-lg md:text-xl font-bold text-brand-blue mb-6 flex items-center gap-2">
                                     <TrendingUp className="w-5 h-5 text-brand-orange" /> Critical Business Benchmarks:
                                 </h4>
-                                <ul className="grid md:grid-cols-2 gap-4 list-none p-0">
-                                    <li className="flex items-center gap-2 text-gray-700 font-bold">
+                                <ul className="grid sm:grid-cols-2 gap-4 list-none p-0">
+                                    <li className="flex items-center gap-2 text-gray-700 font-bold text-sm md:text-base">
                                         <CheckCircle2 className="w-5 h-5 text-brand-orange" /> Location Optimization
                                     </li>
-                                    <li className="flex items-center gap-2 text-gray-700 font-bold">
+                                    <li className="flex items-center gap-2 text-gray-700 font-bold text-sm md:text-base">
                                         <CheckCircle2 className="w-5 h-5 text-brand-orange" /> Utility Load Analysis
                                     </li>
-                                    <li className="flex items-center gap-2 text-gray-700 font-bold">
+                                    <li className="flex items-center gap-2 text-gray-700 font-bold text-sm md:text-base">
                                         <CheckCircle2 className="w-5 h-5 text-brand-orange" /> Ergnomic Workflow
                                     </li>
-                                    <li className="flex items-center gap-2 text-gray-700 font-bold">
+                                    <li className="flex items-center gap-2 text-gray-700 font-bold text-sm md:text-base">
                                         <CheckCircle2 className="w-5 h-5 text-brand-orange" /> Zoning & Permits
                                     </li>
                                 </ul>
@@ -319,48 +323,48 @@ export default function LaundromatEquipmentSupplier() {
                             </p>
                         </section>
 
-                        <section id="equipment-mix" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Optimizing Your Equipment Mix</h2>
+                        <section id="equipment-mix" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Optimizing Your Equipment Mix</h2>
                             <p>
                                 One of the most common mistakes new owners make is buying identical machines. A profitable store needs a diverse "Equipment Mix." Families want 25kg giant washers to do their weekly laundry in one go, while individuals may only need a 10kg unit.
                             </p>
-                            <h3 className="text-2xl font-bold text-brand-blue mb-4">High-Capacity anchors</h3>
+                            <h3 className="text-xl md:text-2xl font-bold text-brand-blue mb-4">High-Capacity anchors</h3>
                             <p>
                                 Our G-Force extraction technology is a critical competitive advantage. Most domestic-style machines leave significantly more water in the clothes. Sunshine's industrial vended washers extract water at 400G, meaning the clothes spend 30% less time in the dryer. This saves you on gas bills and allows the customer to finish their chores faster.
                             </p>
-                            <ul>
+                            <ul className="space-y-2">
                                 <li><strong>High-Capacity Units:</strong> For bulk family loads that drive higher margins.</li>
                                 <li><strong>Stackable Designs:</strong> Doubling your revenue per square foot in tight urban spaces.</li>
                                 <li><strong>Moisture Sensors:</strong> Dryers that stop automatically, preventing over-drying and utility waste.</li>
                             </ul>
                         </section>
 
-                        <section id="payment-systems" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Coin vs. Card vs. Mobile Payments</h2>
+                        <section id="payment-systems" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Coin vs. Card vs. Mobile Payments</h2>
                             <p>
                                 The way customers pay for laundry is evolving. While the clink of coins is nostalgic, it presents several headaches for owners: physical collection time, the risk of theft, and the mechanical wear of coin-slides. A modern <strong>laundromat equipment supplier</strong> must provide digital alternatives.
                             </p>
-                            <div className="grid md:grid-cols-3 gap-8 my-12">
-                                <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 text-center">
-                                    <Coins className="w-10 h-10 text-brand-orange mx-auto mb-4" />
-                                    <h4 className="text-lg font-bold text-brand-blue mb-2">Coin-Op</h4>
-                                    <p className="text-sm">Traditional and simple for users but a security risk.</p>
+                            <div className="grid sm:grid-cols-3 gap-4 md:gap-8 my-8 md:my-12">
+                                <div className="bg-slate-50 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-slate-100 text-center">
+                                    <Coins className="w-8 md:w-10 h-8 md:h-10 text-brand-orange mx-auto mb-4" />
+                                    <h4 className="text-base md:text-lg font-bold text-brand-blue mb-2">Coin-Op</h4>
+                                    <p className="text-xs md:text-sm">Traditional and simple for users but a security risk.</p>
                                 </div>
-                                <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 text-center">
-                                    <CreditCard className="w-10 h-10 text-brand-orange mx-auto mb-4" />
-                                    <h4 className="text-lg font-bold text-brand-blue mb-2">Card-Based</h4>
-                                    <p className="text-sm">Store cards or credit cards. Excellent for loyalty data.</p>
+                                <div className="bg-slate-50 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-slate-100 text-center">
+                                    <CreditCard className="w-8 md:w-10 h-8 md:h-10 text-brand-orange mx-auto mb-4" />
+                                    <h4 className="text-base md:text-lg font-bold text-brand-blue mb-2">Card-Based</h4>
+                                    <p className="text-xs md:text-sm">Store cards or credit cards. Excellent for loyalty data.</p>
                                 </div>
-                                <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 text-center">
-                                    <Smartphone className="w-10 h-10 text-brand-orange mx-auto mb-4" />
-                                    <h4 className="text-lg font-bold text-brand-blue mb-2">Mobile App</h4>
-                                    <p className="text-sm">UPI and App based. The modern urban standard.</p>
+                                <div className="bg-slate-50 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-slate-100 text-center">
+                                    <Smartphone className="w-8 md:w-10 h-8 md:h-10 text-brand-orange mx-auto mb-4" />
+                                    <h4 className="text-base md:text-lg font-bold text-brand-blue mb-2">Mobile App</h4>
+                                    <p className="text-xs md:text-sm">UPI and App based. The modern urban standard.</p>
                                 </div>
                             </div>
                         </section>
 
-                        <section id="multi-housing" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Multi-Housing Laundry Solutions</h2>
+                        <section id="multi-housing" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Multi-Housing Laundry Solutions</h2>
                             <p>
                                 Apartments, student hostels, and co-living spaces are prime candidates for professional laundry management. Property managers often struggle with old, broken-down machines that frustrate residents. Sunshine provides a "Managed Service" model for multi-housing.
                             </p>
@@ -369,8 +373,8 @@ export default function LaundromatEquipmentSupplier() {
                             </p>
                         </section>
 
-                        <section id="maintenance" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Durability & Industrial Engineering</h2>
+                        <section id="maintenance" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Durability & Industrial Engineering</h2>
                             <p>
                                 There is a significant difference between a machine bought at a retail store and an industrial unit from a specialist <strong>laundromat equipment supplier</strong>. Retail "commercial-grade" machines are often just domestic units with a coin-box attached. They are built for 5-7 years of occasional use.
                             </p>
@@ -379,8 +383,8 @@ export default function LaundromatEquipmentSupplier() {
                             </p>
                         </section>
 
-                        <section id="roi-analysis" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Financial ROI & Profitability</h2>
+                        <section id="roi-analysis" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Financial ROI & Profitability</h2>
                             <p>
                                 To understand the ROI, you must look at the "Unit Economics" of a single wash cycle. For a typical 10kg washer, the cost of water, electricity, and chemicals might be ₹40, while the vend price is ₹150. This gives you a gross profit margin of over 70% per cycle.
                             </p>
@@ -389,8 +393,8 @@ export default function LaundromatEquipmentSupplier() {
                             </p>
                         </section>
 
-                        <section id="utility-efficiency" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Water & Energy Conservation</h2>
+                        <section id="utility-efficiency" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Water & Energy Conservation</h2>
                             <p>
                                 In many parts of India, water is a precious resource with rising costs. Our vended washers use a "Low-Water-Factor" design. By optimizing the drum shape and rotation speed, we can achieve superior cleaning results with 40% less water than traditional top-loaders.
                             </p>
@@ -399,61 +403,64 @@ export default function LaundromatEquipmentSupplier() {
                             </p>
                         </section>
 
-                        <section id="future-tech" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Smart Laundromat Revolution</h2>
+                        <section id="future-tech" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Smart Laundromat Revolution</h2>
                             <p>
                                 The future of the industry is in connectivity. Our <strong>CloudConnect</strong> dashboard allows you to run multiple stores from a single screen. This technology isn't just about convenience; it's about scalability.
                             </p>
-                            <div className="bg-brand-blue p-10 rounded-[3rem] text-white my-12">
-                                <h4 className="text-2xl font-bold mb-6 flex items-center gap-2">
+                            <div className="bg-brand-blue p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] text-white my-8 md:my-12">
+                                <h4 className="text-xl md:text-2xl font-bold mb-6 flex items-center gap-2">
                                     <LayoutDashboard className="w-6 h-6 text-brand-orange" /> Digital ROI Multipliers:
                                 </h4>
-                                <ul className="grid md:grid-cols-2 gap-4 list-none p-0">
-                                    <li className="flex items-center gap-2 text-white/90 font-bold">
+                                <ul className="grid sm:grid-cols-2 gap-4 list-none p-0">
+                                    <li className="flex items-center gap-2 text-white/90 font-bold text-sm md:text-base">
                                         <CheckCircle2 className="w-5 h-5 text-brand-orange" /> Real-time Revenue Tracking
                                     </li>
-                                    <li className="flex items-center gap-2 text-white/90 font-bold">
+                                    <li className="flex items-center gap-2 text-white/90 font-bold text-sm md:text-base">
                                         <CheckCircle2 className="w-5 h-5 text-brand-orange" /> Predictive Maintenance
                                     </li>
-                                    <li className="flex items-center gap-2 text-white/90 font-bold">
+                                    <li className="flex items-center gap-2 text-white/90 font-bold text-sm md:text-base">
                                         <CheckCircle2 className="w-5 h-5 text-brand-orange" /> Dynamic Pricing
                                     </li>
-                                    <li className="flex items-center gap-2 text-white/90 font-bold">
+                                    <li className="flex items-center gap-2 text-white/90 font-bold text-sm md:text-base">
                                         <CheckCircle2 className="w-5 h-5 text-brand-orange" /> Remote Troubleshooting
                                     </li>
                                 </ul>
                             </div>
                         </section>
 
-                        <section id="faqs" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-12 tracking-tighter">Frequently Asked Questions</h2>
-                            <div className="space-y-8">
+                        <section id="faqs" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-8 md:mb-12 tracking-tighter text-center sm:text-left">Frequently Asked Questions</h2>
+                            <div className="space-y-6 md:space-y-8">
                                 {faqs.map((faq, index) => (
-                                    <div key={index} className="border-b border-gray-100 pb-8">
-                                        <h3 className="text-xl font-bold text-brand-blue mb-4">{faq.question}</h3>
-                                        <p className="text-gray-600">{faq.answer}</p>
+                                    <div key={index} className="border-b border-gray-100 pb-6 md:pb-8">
+                                        <h3 className="text-lg md:text-xl font-bold text-brand-blue mb-3 md:mb-4">{faq.question}</h3>
+                                        <p className="text-gray-600 text-base">{faq.answer}</p>
                                     </div>
                                 ))}
                             </div>
                         </section>
 
-                        <section className="mb-20 p-10 bg-slate-50 rounded-[3rem] border border-slate-100">
-                            <h2 className="text-3xl font-black text-brand-blue mb-8 text-center italic">Investor Feedback</h2>
-                            <div className="grid gap-8">
+                        <section className="mb-12 md:mb-20 p-6 md:p-10 bg-slate-50 rounded-[2rem] md:rounded-[3rem] border border-slate-100">
+                            <h2 className="text-2xl md:text-3xl font-black text-brand-blue mb-8 text-center italic">Investor Feedback</h2>
+                            <div className="grid gap-6 md:gap-8">
                                 {reviews.map((review, index) => (
-                                    <div key={index} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                                    <div key={index} className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
                                         <div className="flex gap-1 text-brand-orange mb-4">
                                             {[...Array(review.rating)].map((_, i) => (
-                                                <Star key={i} size={20} fill="currentColor" />
+                                                <Star key={i} size={18} fill="currentColor" />
                                             ))}
                                         </div>
-                                        <p className="italic text-gray-700 text-lg">"{review.content}"</p>
-                                        <p className="mt-6 font-bold text-brand-blue flex items-center gap-2">
-                                            <span className="w-8 h-8 bg-brand-orange rounded-full flex items-center justify-center text-white text-xs">
+                                        <p className="italic text-gray-700 text-base md:text-lg">"{review.content}"</p>
+                                        <div className="mt-6 flex items-center gap-2">
+                                            <span className="w-8 h-8 bg-brand-orange rounded-full flex items-center justify-center text-white text-[10px] font-black uppercase">
                                                 {review.name.split(' ').map(n => n[0]).join('')}
                                             </span>
-                                            {review.role}
-                                        </p>
+                                            <div>
+                                                <p className="text-sm font-black text-brand-blue italic">{review.name}</p>
+                                                <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider leading-none mt-1">{review.role}</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
@@ -462,53 +469,53 @@ export default function LaundromatEquipmentSupplier() {
 
                     {/* Right Column: Sticky CTA & Related */}
                     <aside className="col-span-12 lg:col-span-3">
-                        <div className="sticky top-24 space-y-8">
+                        <div className="sticky top-24 space-y-6 md:space-y-8">
                             {/* Sidebar CTA */}
-                            <div className="bg-brand-blue text-white p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden group border-4 border-white">
-                                <div className="absolute top-0 right-0 p-4 opacity-10">
+                            <div className="bg-brand-blue text-white p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] shadow-2xl relative overflow-hidden group border-4 border-white">
+                                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:rotate-12 transition-transform duration-500">
                                     <TrendingUp size={100} />
                                 </div>
-                                <h3 className="text-2xl font-black mb-4 relative z-10 tracking-tight">Free Audit</h3>
-                                <p className="text-white/80 mb-6 relative z-10 font-medium">
+                                <h3 className="text-xl md:text-2xl font-black mb-4 relative z-10 tracking-tight italic">Free Business Audit</h3>
+                                <p className="text-white/80 mb-6 relative z-10 font-medium text-sm md:text-base">
                                     Request a personalized ROI analysis for your proposed laundromat location.
                                 </p>
                                 <button
                                     onClick={openContactModal}
-                                    className="bg-brand-orange text-white w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-white hover:text-brand-orange transition-all relative z-10 shadow-lg"
+                                    className="bg-brand-orange text-white w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-white hover:text-brand-orange transition-all relative z-10 shadow-lg group"
                                 >
-                                    Get Analysis <ArrowRight size={20} />
+                                    Get Analysis <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                                 </button>
                             </div>
 
                             {/* Related Pages */}
-                            <div className="bg-white p-8 rounded-[2.5rem] shadow-sm border border-gray-100">
-                                <h3 className="text-xl font-bold text-brand-blue mb-6">Explore More</h3>
-                                <nav className="space-y-4">
+                            <div className="bg-white p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] shadow-sm border border-gray-100">
+                                <h3 className="text-lg md:text-xl font-bold text-brand-blue mb-6">Explore More</h3>
+                                <nav className="space-y-2 md:space-y-4">
                                     <Link href="/hotel-laundry-equipment-solutions" className="flex items-center justify-between group p-3 hover:bg-slate-50 rounded-xl transition-all">
                                         <div className="flex items-center gap-3">
                                             <Zap size={18} className="text-brand-orange" />
-                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors">Hotel Solutions</span>
+                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors text-sm">Hotel Solutions</span>
                                         </div>
                                         <ChevronRight size={18} className="text-gray-400 group-hover:translate-x-1 transition-transform" />
                                     </Link>
                                     <Link href="/hospital-laundry-systems-provider" className="flex items-center justify-between group p-3 hover:bg-slate-50 rounded-xl transition-all">
                                         <div className="flex items-center gap-3">
                                             <ShieldCheck size={18} className="text-brand-orange" />
-                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors">Hospital Solutions</span>
+                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors text-sm">Hospital Solutions</span>
                                         </div>
                                         <ChevronRight size={18} className="text-gray-400 group-hover:translate-x-1 transition-transform" />
                                     </Link>
                                     <Link href="/healthcare-laundry-equipment-maintenance" className="flex items-center justify-between group p-3 hover:bg-slate-50 rounded-xl transition-all">
                                         <div className="flex items-center gap-3">
                                             <Heart size={18} className="text-brand-orange" />
-                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors">Maintenance Services</span>
+                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors text-sm">Maintenance Services</span>
                                         </div>
                                         <ChevronRight size={18} className="text-gray-400 group-hover:translate-x-1 transition-transform" />
                                     </Link>
                                     <Link href="/industrial-washing-machine-installation" className="flex items-center justify-between group p-3 hover:bg-slate-50 rounded-xl transition-all">
                                         <div className="flex items-center gap-3">
                                             <Zap size={18} className="text-brand-orange" />
-                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors">Installation Services</span>
+                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors text-sm">Installation Services</span>
                                         </div>
                                         <ChevronRight size={18} className="text-gray-400 group-hover:translate-x-1 transition-transform" />
                                     </Link>
@@ -516,8 +523,8 @@ export default function LaundromatEquipmentSupplier() {
                             </div>
 
                             {/* Contact Info */}
-                            <div className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100">
-                                <h4 className="font-bold text-brand-blue mb-4 uppercase text-[10px] tracking-[0.2em]">Investor Support</h4>
+                            <div className="p-6 md:p-8 bg-slate-50 rounded-[2rem] md:rounded-[2.5rem] border border-slate-100">
+                                <h4 className="font-black text-brand-blue mb-4 uppercase text-[10px] tracking-[0.2em] italic">Investor Support</h4>
                                 <div className="space-y-6">
                                     <div className="flex gap-4">
                                         <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shrink-0 border border-gray-100 shadow-sm">
@@ -525,7 +532,7 @@ export default function LaundromatEquipmentSupplier() {
                                         </div>
                                         <div>
                                             <p className="text-[10px] text-gray-500 font-black uppercase mb-1">Expert Consultation</p>
-                                            <a href="tel:+919711112950" className="text-sm font-bold text-gray-800 hover:text-brand-orange tracking-tight">+91 97111 12950</a>
+                                            <a href="tel:+919711112950" className="text-sm font-bold text-gray-800 hover:text-brand-orange tracking-tight transition-colors">+91 97111 12950</a>
                                         </div>
                                     </div>
                                     <div className="flex gap-4">
@@ -534,7 +541,7 @@ export default function LaundromatEquipmentSupplier() {
                                         </div>
                                         <div>
                                             <p className="text-[10px] text-gray-500 font-black uppercase mb-1">Project Proposal</p>
-                                            <a href="mailto:info@sunshine-laundry.com" className="text-sm font-bold text-gray-800 hover:text-brand-orange leading-none break-all">info@sunshine-laundry.com</a>
+                                            <a href="mailto:info@sunshine-laundry.com" className="text-sm font-bold text-gray-800 hover:text-brand-orange leading-none break-all transition-colors">info@sunshine-laundry.com</a>
                                         </div>
                                     </div>
                                 </div>

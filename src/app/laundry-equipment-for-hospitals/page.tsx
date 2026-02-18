@@ -6,6 +6,7 @@ import { CheckCircle2, Phone, Mail, ArrowRight, MessageSquare, Star, ChevronRigh
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 
@@ -24,13 +25,7 @@ const sections = [
     { id: "sustainability", title: "Eco-Friendly Hospital Laundry" },
     { id: "regulations", title: "NABH & NQAS Compliance in India" },
     { id: "industrial-equipment", title: "Heavy-Duty Equipment Specs" },
-    { id: "ironing-folding", title: "Finishing & Sterile Packaging" },
-    { id: "disaster-recovery", title: "Disaster Recovery in Laundry" },
-    { id: "energy-audits", title: "Utility Efficiency for Hospitals" },
-    { id: "maintenance", title: "Preventative Maintenance (AMC)" },
     { id: "roi-analysis", title: "Financial ROI for Healthcare" },
-    { id: "case-study", title: "Multispeciality Hospital Case Study" },
-    { id: "future-tech", title: "The Future of Medical Laundering" },
     { id: "faqs", title: "Frequently Asked Questions" },
 ];
 
@@ -196,28 +191,28 @@ export default function LaundryForHospitals() {
         <main className="min-h-screen bg-white font-sans">
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
+            <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 bg-brand-blue text-white overflow-hidden">
                 <div className="absolute inset-0 opacity-15">
                     <Image src="/hero-bg.jpg" alt="Healthcare Laundry Facility" fill className="object-cover" />
                 </div>
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
-                        Sterile Laundry Solutions <br />
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                    <h1 className="text-3xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight px-4">
+                        Sterile Laundry Solutions <br className="hidden md:block" />
                         <span className="text-brand-orange italic">for Global Healthcare Standards</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium">
                         Elevate your infection control with industrial barrier washers and medical-grade sanitization. A comprehensive guide for Indian hospitals aiming for NABH and JCI accreditation.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-4">
+                    <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <button
                             onClick={openContactModal}
-                            className="bg-brand-orange text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3"
+                            className="bg-brand-orange text-white px-6 md:px-10 py-4 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3"
                         >
                             Request a Technical Audit <ArrowRight size={24} />
                         </button>
                         <button
                             onClick={openContactModal}
-                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-10 py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all flex items-center gap-3"
+                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-6 md:px-10 py-4 md:py-5 rounded-2xl font-black text-base md:text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-3"
                         >
                             View Barrier Washer Specs
                         </button>
@@ -226,13 +221,15 @@ export default function LaundryForHospitals() {
             </section>
 
             {/* Breadcrumb Container */}
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[{ label: "Laundry for Hospitals", href: "/laundry-equipment-for-hospitals" }]} />
             </div>
 
+            <StickyMobileTOC sections={sections} />
+
             {/* 3-Column Layout */}
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-8 md:py-12">
+                <div className="grid grid-cols-12 gap-6 lg:gap-12">
 
                     {/* Left: Table of Contents */}
                     <aside className="lg:col-span-2 hidden lg:block">
@@ -244,8 +241,8 @@ export default function LaundryForHospitals() {
                     {/* Middle: Main Content */}
                     <article className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
 
-                        <section id="intro" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Lifeline of Healthcare: Why Hospital Laundry Matters</h2>
+                        <section id="intro" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Lifeline of Healthcare: Why Hospital Laundry Matters</h2>
                             <p>
                                 In the complex ecosystem of a multispeciality hospital, the laundry department is often overlooked, yet it is a critical frontline in the battle against healthcare-associated infections (HAIs). Every bedsheet, every patient gown, and every surgical drape carries the potential to either heal or harm. Professional laundry management is not merely about aesthetics; it is about biological safety and patient outcomes. A minor lapse in hygiene protocols can lead to the spread of dangerous pathogens like MRSA or C. difficile, which can compromise an entire ward and extend patient recovery times.
                             </p>
@@ -260,8 +257,8 @@ export default function LaundryForHospitals() {
                             </p>
                         </section>
 
-                        <section id="infection-control" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Infection Control Standards</h2>
+                        <section id="infection-control" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Infection Control Standards</h2>
                             <p>
                                 Infection control is the primary objective of any medical laundry operation. The goal is to produce "hygienically clean" textiles, which are defined as being free of pathogens in sufficient numbers to cause human disease. This is achieved through a combination of mechanical action, thermal energy, and chemical agents. The process must be consistent, verifiable, and strictly audited to ensure that every single item that leaves the laundry room is safe for patient contact.
                             </p>
@@ -276,8 +273,8 @@ export default function LaundryForHospitals() {
                             </p>
                         </section>
 
-                        <section id="barrier-washers" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Barrier Washing Systems</h2>
+                        <section id="barrier-washers" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Barrier Washing Systems</h2>
                             <p>
                                 The barrier washer is the gold standard for healthcare laundry. Unlike a standard commercial machine, a barrier washer features a pass-through design with doors on both sides. This machine is installed directly into a physical wall that bisects the laundry facility. Soiled linens are loaded from the 'dirty' side, and once the sanitization cycle is complete, the clean linens are retrieved from the opposite door on the 'clean' side. This design creates a permanent, undeniable barrier against cross-contamination.
                             </p>
@@ -292,8 +289,8 @@ export default function LaundryForHospitals() {
                             </p>
                         </section>
 
-                        <section id="pathogens" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Pathogen Management: MRSA & VRE</h2>
+                        <section id="pathogens" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Pathogen Management: MRSA & VRE</h2>
                             <p>
                                 Hospital laundry is a reservoir for a wide range of dangerous microorganisms. Methicillin-resistant Staphylococcus aureus (MRSA) and Vancomycin-resistant Enterococci (VRE) are two of the most concerning antibiotic-resistant bacteria found in healthcare settings. These pathogens can persist on patient bedding for days or even weeks if not properly addressed. Our laundering protocols are specifically designed to eliminate these threats through a multi-pronged attack of high heat and oxidative chemistry.
                             </p>
@@ -308,8 +305,8 @@ export default function LaundryForHospitals() {
                             </p>
                         </section>
 
-                        <section id="workflow" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Unidirectional Workflow Design</h2>
+                        <section id="workflow" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Unidirectional Workflow Design</h2>
                             <p>
                                 The efficiency and safety of a hospital laundry depend heavily on its internal logistics. We advocate for a "unidirectional workflow" where linens move in a straight line from the entrance of the soiled ward to the exit of the clean ward. There should be zero backtracking and zero intersection points between dirty and clean paths. This linear progression is the most effective way to manage the massive daily volume of a multispeciality hospital while maintaining strict hygiene.
                             </p>
@@ -324,8 +321,8 @@ export default function LaundryForHospitals() {
                             </p>
                         </section>
 
-                        <section id="thermal-sanitization" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Thermal & Chemical Sanitization</h2>
+                        <section id="thermal-sanitization" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Thermal & Chemical Sanitization</h2>
                             <p>
                                 Sanitization in healthcare is a science that relies on the "Sinner's Circle"—four variables that must be perfectly balanced: Time, Temperature, Mechanical Action, and Chemistry. If one is reduced, the others must increase to compensate. However, in a hospital, we never compromise on temperature or time, as these are the primary killers of pathogens. Our machines are built with redundant temperature sensors and high-wattage heating elements that can quickly reach and maintain the 71 degree Celsius threshold required for thermal disinfection.
                             </p>
@@ -340,8 +337,8 @@ export default function LaundryForHospitals() {
                             </p>
                         </section>
 
-                        <section id="water-quality" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Medical Grade Water Softening</h2>
+                        <section id="water-quality" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Medical Grade Water Softening</h2>
                             <p>
                                 The quality of your water is the foundation of your laundry success. In many parts of India, groundwater contains high levels of hardness (calcium and magnesium) and iron. Hard water is a disaster for hospital laundry. It reacts with detergents to form "soap scum" that traps bacteria and stains within the fabric fibers. It also makes linens feel stiff and abrasive to the patient's skin, leading to discomfort and even bedsores in long-stay patients.
                             </p>
@@ -356,8 +353,8 @@ export default function LaundryForHospitals() {
                             </p>
                         </section>
 
-                        <section id="staff-safety" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">PPE and Staff Safety Protocols</h2>
+                        <section id="staff-safety" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">PPE and Staff Safety Protocols</h2>
                             <p>
                                 The safety of the laundry staff is as important as the safety of the patients. Workers in the soiled area are at risk of exposure to biohazards, needle sticks, and respiratory pathogens. We help hospitals implement comprehensive Personal Protective Equipment (PPE) protocols, including the use of heavy-duty gloves, fluid-resistant gowns, face shields, and N95 masks. Hand hygiene stations must be conveniently located at every entrance and exit of the laundry zones.
                             </p>
@@ -372,8 +369,8 @@ export default function LaundryForHospitals() {
                             </p>
                         </section>
 
-                        <section id="linen-longevity" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Preserving Medical Textiles</h2>
+                        <section id="linen-longevity" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Preserving Medical Textiles</h2>
                             <p>
                                 A 300-bed multispeciality hospital can easily have over 5 million rupees invested in linen stock. This includes patient bedding, OT towels, gowns, and uniforms. Protecting this asset from premature wear is a major financial priority. The "chemical stress" of hospital laundering—high heat and aggressive disinfectants—can quickly degrade the fibers, leading to thinning, tearing, and loss of absorbent properties. Our machines are designed to provide a "gentle but deep" clean that preserves the structural integrity of the fabric.
                             </p>
@@ -388,8 +385,8 @@ export default function LaundryForHospitals() {
                             </p>
                         </section>
 
-                        <section id="rfid-tracking" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">RFID in Healthcare Linen Management</h2>
+                        <section id="rfid-tracking" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">RFID in Healthcare Linen Management</h2>
                             <p>
                                 In a large hospital environment, "linen loss" can reach up to 20 percent per year. Items are often misplaced in the wards, accidentally discarded with waste, or lost in transport. Radio Frequency Identification (RFID) technology eliminates this problem by providing total visibility into your linen inventory. Every sheet and towel is embedded with a small, flexible, heat-resistant RFID chip that can survive hundreds of wash and iron cycles.
                             </p>
@@ -404,8 +401,8 @@ export default function LaundryForHospitals() {
                             </p>
                         </section>
 
-                        <section id="sustainability" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Eco-Friendly Hospital Laundry</h2>
+                        <section id="sustainability" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Eco-Friendly Hospital Laundry</h2>
                             <p>
                                 Sustainability in healthcare is no longer optional. Hospitals are massive consumers of water and energy, and the laundry room is often the single largest contributor to this footprint. Sunshine Equipments focuses on "Green Sanitization" technologies that allow you to meet the strictest hygiene standards while reducing your environmental impact. A sustainable laundry room is not only better for the planet; it is significantly cheaper to operate.
                             </p>
@@ -420,8 +417,8 @@ export default function LaundryForHospitals() {
                             </p>
                         </section>
 
-                        <section id="regulations" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">NABH & NQAS Compliance in India</h2>
+                        <section id="regulations" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">NABH & NQAS Compliance in India</h2>
                             <p>
                                 For hospitals in India, accreditation from NABH (National Accreditation Board for Hospitals) and NQAS (National Quality Assurance Standards) is the ultimate proof of quality. The laundry department is a major focus of these audits, particularly under the "Infection Control" and "Facility Management" chapters. Our equipment and layout designs are specifically tailored to help you pass these rigorous inspections with ease.
                             </p>
@@ -436,8 +433,8 @@ export default function LaundryForHospitals() {
                             </p>
                         </section>
 
-                        <section id="industrial-equipment" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Heavy-Duty Equipment Specs</h2>
+                        <section id="industrial-equipment" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Heavy-Duty Equipment Specs</h2>
                             <p>
                                 When selecting equipment for a hospital, durability is paramount. These machines must run 16 to 24 hours a day, 365 days a year. A breakdown in the hospital laundry is not just an inconvenience; it can stop surgeries and delay patient admissions. Our equipment is built with "Industrial Resilience" as the core philosophy. This means using thicker stainless steel, oversized bearings, and industrial-grade motors from trusted global brands like Siemens and ABB.
                             </p>
@@ -452,8 +449,8 @@ export default function LaundryForHospitals() {
                             </p>
                         </section>
 
-                        <section id="roi-analysis" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Financial ROI for Healthcare</h2>
+                        <section id="roi-analysis" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Financial ROI for Healthcare</h2>
                             <p>
                                 The initial cost of high-grade industrial laundry equipment is an investment that many hospital boards scrutinize. However, when you look at the Total Cost of Ownership (TCO) over 10 to 20 years, the financial case for quality becomes undeniable. We provide complete ROI analysis for our clients, looking at three major areas of saving: Utilities, Labor, and Linen Replacement.
                             </p>
@@ -468,7 +465,7 @@ export default function LaundryForHospitals() {
                             </p>
                         </section>
 
-                        <section id="faqs" className="mb-20">
+                        <section id="faqs" className="mb-12 md:mb-20">
                             <h2 className="text-4xl font-black text-brand-blue mb-12 tracking-tighter">Frequently Asked Questions</h2>
                             <div className="space-y-8">
                                 {faqs.map((faq, index) => (
@@ -480,8 +477,8 @@ export default function LaundryForHospitals() {
                             </div>
                         </section>
 
-                        <section className="mb-20 p-10 bg-slate-50 rounded-[3rem] border border-slate-100">
-                            <h2 className="text-3xl font-black text-brand-blue mb-8 text-center italic">Healthcare Industry Feedback</h2>
+                        <section className="mb-12 md:mb-20 p-6 md:p-10 bg-slate-50 rounded-2xl md:rounded-[3rem] border border-slate-100">
+                            <h2 className="text-2xl md:text-3xl font-black text-brand-blue mb-8 text-center italic">Healthcare Industry Feedback</h2>
                             <div className="grid gap-8">
                                 <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
                                     <div className="flex gap-1 text-brand-orange mb-4">
@@ -563,7 +560,7 @@ export default function LaundryForHospitals() {
                         <div className="sticky top-24 space-y-8">
 
                             {/* Healthcare CTA */}
-                            <div className="bg-brand-blue text-white p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden group border-4 border-white">
+                            <div className="bg-brand-blue text-white p-6 md:p-8 rounded-2xl md:rounded-[2.5rem] shadow-2xl relative overflow-hidden group border-4 border-white">
                                 <div className="absolute top-0 right-0 p-4 opacity-10">
                                     <Heart size={100} />
                                 </div>
@@ -580,7 +577,7 @@ export default function LaundryForHospitals() {
                             </div>
 
                             {/* Related Pages */}
-                            <div className="bg-white p-8 rounded-[2.5rem] shadow-sm border border-gray-100">
+                            <div className="bg-white p-6 md:p-8 rounded-2xl md:rounded-[2.5rem] shadow-sm border border-gray-100">
                                 <h3 className="text-xl font-bold text-brand-blue mb-6">Related Solutions</h3>
                                 <nav className="space-y-4">
                                     <Link href="/laundry-equipment-for-hotels" className="flex items-center justify-between group p-3 hover:bg-slate-50 rounded-xl transition-all">
@@ -615,7 +612,7 @@ export default function LaundryForHospitals() {
                             </div>
 
                             {/* Contact Info */}
-                            <div className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100">
+                            <div className="p-6 md:p-8 bg-slate-50 rounded-2xl md:rounded-[2.5rem] border border-slate-100">
                                 <h4 className="font-bold text-brand-blue mb-4 uppercase text-[10px] tracking-[0.2em]">Healthcare Global Support</h4>
                                 <div className="space-y-6">
                                     <div className="flex gap-4">

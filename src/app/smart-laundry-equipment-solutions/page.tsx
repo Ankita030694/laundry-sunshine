@@ -10,6 +10,7 @@ import {
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 const sections = [
@@ -166,35 +167,45 @@ export default function SmartSolutionsPage() {
 
     return (
         <main className="min-h-screen bg-white font-sans">
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
-                <div className="absolute inset-0 opacity-20">
-                    <Image src="/hero-bg.jpg" alt="Smart Laundry Technology" fill className="object-cover" />
+            <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 bg-brand-blue text-white overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <Image src="/hero-bg.jpg" alt="Smart Laundry Technology" fill className="object-cover opacity-30" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-brand-blue/0 to-brand-blue/100" />
                 </div>
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-sm font-bold mb-8 uppercase tracking-widest leading-none">
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-xs md:text-sm font-bold mb-8 uppercase tracking-widest leading-none animate-fade-in">
                         <Cpu size={16} className="text-brand-orange" /> Powered by AI & IoT
                     </div>
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
-                        Smart Laundry <br />
+                    <h1
+                        className="tracking-tight leading-tight mb-6 animate-fade-in delay-100 px-4"
+                        style={{
+                            fontFamily: 'Satoshi, sans-serif',
+                            fontSize: 'clamp(32px, 7vw, 72px)',
+                            fontWeight: 900
+                        }}
+                    >
+                        Smart Laundry <br className="hidden md:block" />
                         <span className="text-brand-orange italic">Equipment Solutions</span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium transition-all duration-300">
+                    <p className="text-lg md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium animate-fade-in delay-200">
                         The digitalization of textile care has arrived. Harness the power of cloud analytics, RFID tracking, and predictive AI to transform your facility into a high-efficiency data-driven enterprise.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-4">
-                        <button onClick={openContactModal} className="bg-brand-orange text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3">
+                    <div className="flex flex-wrap justify-center gap-4 animate-fade-in delay-300">
+                        <button onClick={openContactModal} className="bg-brand-orange text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3">
                             Request Demo <ArrowRight size={24} />
                         </button>
                     </div>
                 </div>
             </section>
 
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[{ label: "Smart Solutions", href: websiteUrl }]} />
             </div>
 
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <StickyMobileTOC sections={sections} />
+
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-12">
+                <div className="grid grid-cols-12 gap-6 lg:gap-12">
                     <aside className="lg:col-span-2 hidden lg:block">
                         <div className="sticky top-24 max-h-[80vh] overflow-y-auto pr-4 scrollbar-hide">
                             <TableOfContents sections={sections} orientation="vertical" />
@@ -202,8 +213,9 @@ export default function SmartSolutionsPage() {
                     </aside>
 
                     <article className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
-                        <section id="digital-transformation" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Digital Transformation of Textile Care</h2>
+                        <section id="digital-transformation" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">
+                                The Digital Transformation of Textile Care</h2>
                             <p>
                                 The industrial laundry industry is currently undergoing its most significant evolution since the invention of the continuous batch washer. This evolution is the digital transformation—a shift from mechanical automation to digital intelligence. In a smart laundry facility, machines are no longer isolated islands of activity; they are nodes in a connected data network. At Sunshine Equipments, we are leading this charge, helping our clients move from "running a laundry" to "managing a digital textile ecosystem."
                             </p>
@@ -222,7 +234,7 @@ export default function SmartSolutionsPage() {
                         </section>
 
                         <section id="iot-connectivity" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">IoT Connectivity: Connecting the Fleet</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">IoT Connectivity: Connecting the Fleet</h2>
                             <p>
                                 The foundation of any smart system is connectivity. Our Internet of Things (IoT) architecture connects every washer, dryer, and ironer to a central cloud server. We use industrial-grade Wi-Fi and Zigbee mesh networks to ensure that even in the harsh, RF-noisy environment of a laundry room, the data stream remains unbroken. Connectivity is the bridge that allows your machines to "talk" to each other and to you.
                             </p>
@@ -235,7 +247,7 @@ export default function SmartSolutionsPage() {
                         </section>
 
                         <section id="ai-predictive" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">AI-Driven Predictive Maintenance</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">AI-Driven Predictive Maintenance</h2>
                             <p>
                                 Breakdowns are the single biggest enemy of laundry profitability. In a traditional facility, you fix things when they break. In a Sunshine smart facility, the machines tell you when they are *about* to break. We utilize Artificial Intelligence (AI) to analyze the vibration, temperature, and electrical signatures of every machine. Over time, the AI learns what a "perfectly healthy" machine sounds like and identifies the subtle deviations that precede a major failure.
                             </p>
@@ -245,7 +257,7 @@ export default function SmartSolutionsPage() {
                         </section>
 
                         <section id="rfid-tracking" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">RFID Linen Tracking: Eliminating Loss</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">RFID Linen Tracking: Eliminating Loss</h2>
                             <p>
                                 Every year, the average hotel loses fifteen to twenty percent of its linen inventory to theft, misplacement, or accidental disposal. RFID (Radio Frequency Identification) tracking puts an end to this "hidden tax." By sewing a tiny, heat-resistant RFID chip into every towel and sheet, we can track the exact location of every piece of inventory in real-time. You know exactly what went in the washer, what came out of the ironer, and what returned to the floor.
                             </p>
@@ -255,7 +267,7 @@ export default function SmartSolutionsPage() {
                         </section>
 
                         <section id="pms-integration" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">PMS Integration: Seamless Operations</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">PMS Integration: Seamless Operations</h2>
                             <p>
                                 The laundry room does not exist in a vacuum; it is a service department for the rest of the hotel. Our smart software integrates directly with your Property Management System (PMS). When the front desk checks in a large group, the laundry room gets a real-time update on the required linen volumes. If the hotel is at full occupancy, the machines automatically prioritize the heavy-demand items like king-size sheets and bath towels.
                             </p>
@@ -265,7 +277,7 @@ export default function SmartSolutionsPage() {
                         </section>
 
                         <section id="chemical-sync" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Automated Chemical Dosing Synchronization</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Automated Chemical Dosing Synchronization</h2>
                             <p>
                                 Over-dosing chemicals is bad for the environment and bad for the linen. Under-dosing is bad for the guest. Our smart washers are perfectly synchronized with the chemical pumps. The machine communicates the exact weight and type of linen to the dosing system, which then delivers the precise milliliter of detergent, bleach, and softener required. This eliminates human error and ensures that every load is perfectly clean and perfectly safe.
                             </p>
@@ -275,7 +287,7 @@ export default function SmartSolutionsPage() {
                         </section>
 
                         <section id="utility-dashboards" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Real-Time Utility Dashboards & Analytics</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Real-Time Utility Dashboards & Analytics</h2>
                             <p>
                                 Data is only valuable if it is understandable. Our "Sunshine Clarity" dashboard transforms the thousands of raw data points from your machines into a series of clear, easy-to-read charts and KPIs. You can see your cost-per-kilogram for water, gas, and electricity in real-time. You can compare the efficiency of different shifts or even different facilities across a national group. Transparency is the first step toward optimization.
                             </p>
@@ -285,91 +297,91 @@ export default function SmartSolutionsPage() {
                         </section>
 
                         <section id="cloud-management" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Cloud-Based Facility Management</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Cloud-Based Facility Management</h2>
                             <p>
                                 The cloud is the modern command center for the laundry industry. By hosting your data in the cloud, we ensure it is safe, backed up, and accessible from anywhere. A regional director in Delhi can view the performance of a resort in Goa with a single click. This centralized visibility allows for the standardization of best practices across an entire organization. If one facility finds a way to save energy on its wash cycles, those settings can be pushed to every other machine in the group instantly.
                             </p>
                         </section>
 
                         <section id="machine-learning" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Machine Learning for Cycle Optimization</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Machine Learning for Cycle Optimization</h2>
                             <p>
                                 Our systems don&apos;t just follow programs; they learn from them. We use Machine Learning (ML) to analyze thousands of wash cycles to find the perfect balance of mechanical action, time, and temperature for every fabric type. The more you use the machine, the "smarter" it gets. It identifies the shortest possible cycle that achieves the desired cleaning result, further reducing your utility costs and increasing your daily capacity.
                             </p>
                         </section>
 
                         <section id="remote-updates" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Remote Troubleshooting & Firmware</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Remote Troubleshooting & Firmware</h2>
                             <p>
                                 In the digital age, many mechanical problems are actually software issues. Our remote connectivity allows our senior engineers to "log in" to your machines from our central office. We can view motor loads, valve timings, and error logs in real-time. We can often resolve glitches or perform firmware updates without ever having to send a technician on-site. This "remote-first" service model reduces your costs and restores operation in minutes.
                             </p>
                         </section>
 
                         <section id="labor-management" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Data-Driven Labor Management</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Data-Driven Labor Management</h2>
                             <p>
                                 Labor is often the largest expense in a laundry department. Smart systems help you manage this expense through data. By tracking machine "uptime" and "idle time," you can identify shifts where the workflow is inefficient. You can see exactly how long it takes to fold a load of towels versus a load of sheets, allowing for more accurate staffing levels. We turn human activity into a measurable KPI, helping you build a more productive and balanced workforce.
                             </p>
                         </section>
 
                         <section id="smart-sorting" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Smart Sorting & Automated Handling</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Smart Sorting & Automated Handling</h2>
                             <p>
                                 The future of the smart laundry room involves the automation of the "handoff" between machines. We are integrating our software with smart conveyor systems and automated sorting racks. These systems use the RFID data to automatically route the clean linen to the correct ironer or folder based on the material type. This reduces manual handling, prevents sorting errors, and speeds up the entire transit from washer to linen room.
                             </p>
                         </section>
 
                         <section id="data-security" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Security & Data Privacy in Industrial IoT</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Security & Data Privacy in Industrial IoT</h2>
                             <p>
                                 As we move more data to the cloud, security becomes paramount. Sunshine Equipments uses bank-level encryption for all data transmissions between your machine and our servers. We follow the principle of "privacy by design," ensuring that your operational metrics are accessible only to your authorized users. Our architecture is hardened against external threats, ensuring that your laundry room is as secure as it is smart.
                             </p>
                         </section>
 
                         <section id="smart-economics" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Economics of the Smart Laundry Room</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Economics of the Smart Laundry Room</h2>
                             <p>
                                 The economics of a smart facility are driven by the elimination of "invisible waste." Invisible waste is the 10% extra detergent used, the 5 minutes of idle time between loads, and the 2% of linen lost to the trash every month. While these seem small, they add up to millions of rupees over a year in a large facility. A smart system makes this waste visible and manageable. It is the ultimate tool for lean operational excellence in the textile care industry.
                             </p>
                         </section>
 
                         <section id="future-robotics" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Future Trends: Robotics & Full Automation</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Future Trends: Robotics & Full Automation</h2>
                             <p>
                                 We are currently piloting the next generation of smart laundry: robotic feeding and folding. These robots use machine vision to identify a piece of linen, pick it up, and feed it into the ironer with greater precision than any human. When paired with our AI-driven fleet management, we are moving toward the "Lights-Out Laundry Room"—a facility that can operate with minimal human intervention, providing the ultimate level of safety and efficiency.
                             </p>
                         </section>
 
                         <section id="roi-from-data" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">ROI: Turning Data into Profit</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">ROI: Turning Data into Profit</h2>
                             <p>
                                 Calculating the ROI of a smart system involves more than just utility savings. We look at the reduction in linen replacement costs (via RFID), the reduction in emergency repair premiums (via AI maintenance), and the improvement in labor productivity. On average, our clients see their total operating costs drop by twenty-five percent. In a five-star hotel with a multi-crore laundry budget, this translates into massive annual profit growth. Data is the new currency of industrial success.
                             </p>
                         </section>
 
                         <section id="digital-training" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Staff Training for the Digital Age</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Staff Training for the Digital Age</h2>
                             <p>
                                 We believe that any technology is only as good as the people who use it. We provide comprehensive "Digital Literacy" training for your laundry team. They learn how to use the dashboards, how to respond to the predictive alerts, and how to manage the RFID tracking system. We make the technology accessible and exciting, fostering a culture of innovation within your department. Empowering your staff with digital tools is the best way to secure your facility&apos;s future.
                             </p>
                         </section>
 
                         <section id="case-study-mumbai" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Case Study: Smart Hospital in Mumbai</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Case Study: Smart Hospital in Mumbai</h2>
                             <p>
                                 A leading multispecialty hospital in Mumbai implemented our full Smart Intelligence Suite. In the first year, they reduced linen loss by forty percent using RFID tracking and cut their emergency repair costs to zero using AI predictive alerts. Most importantly, the digital "wash record" for their surgical linens allowed them to pass a major international safety audit with zero non-conformities. They proved that a smart laundry is a safer laundry.
                             </p>
                         </section>
 
                         <section id="connectivity-india" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Regional Connectivity Challenges in India</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Regional Connectivity Challenges in India</h2>
                             <p>
                                 Operating a digital facility in India requires resilient technology. We have designed our IoT modules to be "offline-resilient." In areas with unstable internet, the machines continue to log data locally and sync with the cloud the moment the connection returns. We also offer dual-SIM cellular connectivity for facilities in remote locations or industrial zones where fiber internet is unavailable. We ensure your data flows, regardless of the local infrastructure challenges.
                             </p>
                         </section>
 
                         <section id="laundry-2030" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Building the Laundry Room of 2030</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Building the Laundry Room of 2030</h2>
                             <p>
                                 A smart laundry room is a future-proof investment. As technology continues to evolve, our software-upgradable machines ensure that your facility stays at the cutting edge without needing to replace the hardware. You are not just buying a machine; you are buying into a living digital platform that will continue to get smarter, faster, and more efficient every year. Join us in building the laundry room of 2030, today.
                             </p>
@@ -444,7 +456,7 @@ export default function SmartSolutionsPage() {
                         </section>
                     </article>
 
-                    <aside className="col-span-12 lg:col-span-3">
+                    <aside className="col-span-12 lg:col-span-3 mt-12 lg:mt-0">
                         <div className="sticky top-24 space-y-8">
                             <div className="bg-brand-blue text-white p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden group border-4 border-white">
                                 <div className="absolute top-0 right-0 p-4 opacity-10">

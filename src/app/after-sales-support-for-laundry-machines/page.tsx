@@ -6,6 +6,7 @@ import { CheckCircle2, Phone, Mail, ArrowRight, MessageSquare, Star, ChevronRigh
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 const sections = [
@@ -187,12 +188,12 @@ export default function AfterSalesSupport() {
     return (
         <main className="min-h-screen bg-white font-sans">
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
+            <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 bg-brand-blue text-white overflow-hidden">
                 <div className="absolute inset-0 opacity-15">
                     <Image src="/hero-bg.jpg" alt="After-Sales Support for Laundry Machines" fill className="object-cover" />
                 </div>
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight px-4">
                         World-Class <br />
                         <span className="text-brand-orange italic">After-Sales Support Services</span>
                     </h1>
@@ -211,13 +212,15 @@ export default function AfterSalesSupport() {
             </section>
 
             {/* Breadcrumb Container */}
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[{ label: "After-Sales Support", href: "/after-sales-support-for-laundry-machines" }]} />
             </div>
 
+            <StickyMobileTOC sections={sections} />
+
             {/* Main Content Layout */}
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-12">
+                <div className="grid grid-cols-12 gap-6 lg:gap-12">
                     {/* Left: Table of Contents */}
                     <aside className="lg:col-span-2 hidden lg:block">
                         <div className="sticky top-24 max-h-[80vh] overflow-y-auto pr-4 scrollbar-hide">
@@ -228,7 +231,7 @@ export default function AfterSalesSupport() {
                     {/* Middle: Main Content */}
                     <article className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
                         <section id="intro" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">After-Sales Support for Laundry Machines: Beyond the Initial Investment</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">After-Sales Support for Laundry Machines: Beyond the Initial Investment</h2>
                             <p>
                                 In the industrial laundry sector, the purchase of a machine is merely the beginning of a relationship that spans decades. The true value of a machinery partner is revealed not in the sales showroom, but in the months and years of high-intensity operation that follow. After-sales support is the critical bridge between a capital investment and sustained operational profitability. At Sunshine Equipment, we believe that our responsibility only begins once your machine is commissioned.
                             </p>
@@ -244,7 +247,7 @@ export default function AfterSalesSupport() {
                         </section>
 
                         <section id="technical-assistance" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Precision Engineering Support: The 24/7 Technical Hotline</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Precision Engineering Support: The 24/7 Technical Hotline</h2>
                             <p>
                                 The first line of response in any support situation is our 24/7 Technical Hotline. Staffed by senior industrial engineers, not just call-center agents, our helpdesk is a source of immediate technical solutions. We understand that many laundry issues are operational or electronic in nature and can be resolved through professional guidance. This "Phone-First" approach resolves over 35 percent of service queries instantly, saving our clients time and money.
                             </p>
@@ -260,7 +263,7 @@ export default function AfterSalesSupport() {
                         </section>
 
                         <section id="onsite-support" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Nationwide Rapid Response: Expert Engineering at Your Site</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Nationwide Rapid Response: Expert Engineering at Your Site</h2>
                             <p>
                                 When a physical intervention is required, our nationwide network of service engineers comes into action. With a presence in every major Indian state and a dedicated fleet of service vehicles, we provide a level of on-site coverage that is unmatched in the industry. Our engineers are factory-trained and carry specialized diagnostic tools—from thermal cameras and laser alignment devices to digital vibration analyzers—to ensure every repair is performed to factory standards.
                             </p>
@@ -276,7 +279,7 @@ export default function AfterSalesSupport() {
                         </section>
 
                         <section id="training-programs" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Institutional Knowledge: Comprehensive Operator Training</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Institutional Knowledge: Comprehensive Operator Training</h2>
                             <p>
                                 The performance of an industrial machine is inextricably linked to the skill of the person operating it. Over 70 percent of machinery downtime in India is the direct result of operator error—incorrect loading, poor program selection, or ignoring early warning signs. Our after-sales support program addresses this by prioritizing <strong>Institutional Knowledge</strong>. We provide deep, hands-on training that empowers your staff to become experts in their own right.
                             </p>
@@ -292,7 +295,7 @@ export default function AfterSalesSupport() {
                         </section>
 
                         <section id="warranty-mgmt" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Strategic Warranty Management: Safeguarding Your Assets</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Strategic Warranty Management: Safeguarding Your Assets</h2>
                             <p>
                                 A warranty is more than just a piece of paper; it is a technical promise of quality. Our strategic warranty management program is designed to provide you with complete peace of mind during the most critical early years of your equipment's life. We offer some of the most comprehensive warranties in the industry, covering all major structural, mechanical, and electronic components. Our goal is to ensure that your capital investment is 100 percent protected against any manufacturing defect.
                             </p>
@@ -308,7 +311,7 @@ export default function AfterSalesSupport() {
                         </section>
 
                         <section id="digital-diagnostics" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Remote Support and Digital Diagnostics: The Future of Service</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Remote Support and Digital Diagnostics: The Future of Service</h2>
                             <p>
                                 The integration of IoT (Internet of Things) and Cloud Diagnostics has revolutionized the way we support our machinery in India. Today, a Sunshine technician in Delhi can "Look Inside" a machine in Bangalore in real-time. Our advanced digital diagnostics allow us to monitor hundreds of data points—from motor temperatures and water flow rates to exact cycle durations and energy consumption—all from our central control room.
                             </p>
@@ -324,7 +327,7 @@ export default function AfterSalesSupport() {
                         </section>
 
                         <section id="lifecycle-optimization" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Lifecycle Support: Upgrades, Modernization, and Retrofitting</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Lifecycle Support: Upgrades, Modernization, and Retrofitting</h2>
                             <p>
                                 An industrial washing machine is built for a 20-year lifespan, but technology evolves much faster. Our lifecycle support services are designed to ensure your machines never become obsolete. We provide a range of <strong>Modernization and Retrofit Kits</strong> that allow you to add the latest energy-saving, water-recycling, and digital-control features to your existing fleet. This is often a much more cost-effective way to improve performance than replacing the entire machine.
                             </p>
@@ -340,7 +343,7 @@ export default function AfterSalesSupport() {
                         </section>
 
                         <section id="emergency-protocols" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Emergency Management: The 4-Hour Response Commitment</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Emergency Management: The 4-Hour Response Commitment</h2>
                             <p>
                                 In an industrial environment, some breakdowns are more than just an inconvenience—they are emergencies. A major flood from a burst pipe, a smoke event from a dryer, or a total power failure in a large hospital laundry requires immediate, high-level action. Our <strong>Emergency Management Protocol</strong> is designed to provide our clients with the fastest possible relief during these critical moments.
                             </p>
@@ -356,7 +359,7 @@ export default function AfterSalesSupport() {
                         </section>
 
                         <section id="chemical-integration" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Technical Synergy: Chemical Dosing and Support Integration</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Technical Synergy: Chemical Dosing and Support Integration</h2>
                             <p>
                                 The performance of an industrial washer is a three-way partnership between the machine, the water, and the chemicals. A failure in any one of these three will result in poor wash quality or equipment damage. Our after-sales support program includes a deep focus on <strong>Technical Synergy</strong>—ensuring that your machines are perfectly synchronized with your detergent and chemical dosing systems.
                             </p>
@@ -372,7 +375,7 @@ export default function AfterSalesSupport() {
                         </section>
 
                         <section id="documentation" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Professional Documentation: Manuals, Schematics, and Logs</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Professional Documentation: Manuals, Schematics, and Logs</h2>
                             <p>
                                 Professional support is impossible without professional documentation. At Sunshine, we believe that transparency is the ultimate sign of quality. Every machine we deliver is accompanied by a comprehensive documentation pack that is also available digitally through our customer portal. This high-level technical detail is what allows your in-house team to perform their duties safely and effectively.
                             </p>
@@ -388,7 +391,7 @@ export default function AfterSalesSupport() {
                         </section>
 
                         <section id="staff-augmentation" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Staff Augmentation: On-Site Resident Engineering Services</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Staff Augmentation: On-Site Resident Engineering Services</h2>
                             <p>
                                 For facilities where downtime is simply not an option—such as 1000-bed hospitals or massive 24-hour centralized laundry plants—we offer <strong>Staff Augmentation services</strong>. This involves placing a full-time, dedicated Sunshine engineer on your site. This "Resident Engineer" is a senior professional who is integrated into your facility's management team, taking 100 percent responsibility for the health and performance of your laundry equipment.
                             </p>
@@ -404,7 +407,7 @@ export default function AfterSalesSupport() {
                         </section>
 
                         <section id="customer-success" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Customer Success Management: A Partnership for Performance</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Customer Success Management: A Partnership for Performance</h2>
                             <p>
                                 After-sales support at Sunshine is not just about fixing machines; it is about managing your <strong>success</strong>. Every major client is assigned a dedicated "Customer Success Manager" (CSM). The CSM is not a salesperson; they are a technical strategist who acts as your single point of contact for everything from service scheduling and training needs to future facility planning. They are your voice inside Sunshine Equipment.
                             </p>
@@ -420,7 +423,7 @@ export default function AfterSalesSupport() {
                         </section>
 
                         <section id="compliance-support" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Regulatory and Compliance Support for Indian Facilities</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Regulatory and Compliance Support for Indian Facilities</h2>
                             <p>
                                 Navigating the regulatory landscape for industrial facilities in India can be a daunting task. Between fire safety certificates, electrical board approvals, environmental clearances (ETP), and labor department safety audits, there are dozens of standards that must be met. Our after-sales support includes a dedicated <strong>Compliance Support Service</strong> that helps you maintain your legal "License to Operate" with zero stress.
                             </p>

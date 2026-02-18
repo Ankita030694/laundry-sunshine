@@ -10,6 +10,7 @@ import {
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 const sections = [
@@ -166,35 +167,45 @@ export default function OEMPartsPage() {
 
     return (
         <main className="min-h-screen bg-white font-sans">
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
-                <div className="absolute inset-0 opacity-20">
-                    <Image src="/hero-bg.jpg" alt="OEM Parts Inventory" fill className="object-cover" />
+            <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 bg-brand-blue text-white overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <Image src="/hero-bg.jpg" alt="OEM Parts Inventory" fill className="object-cover opacity-30" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-brand-blue/0 to-brand-blue/100" />
                 </div>
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-sm font-bold mb-8 uppercase tracking-widest leading-none">
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-xs md:text-sm font-bold mb-8 uppercase tracking-widest leading-none animate-fade-in">
                         <Shield size={16} className="text-brand-orange" /> 100% Genuine Certified
                     </div>
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
-                        Genuine OEM <br />
+                    <h1
+                        className="tracking-tight leading-tight mb-6 animate-fade-in delay-100 px-4"
+                        style={{
+                            fontFamily: 'Satoshi, sans-serif',
+                            fontSize: 'clamp(32px, 7vw, 72px)',
+                            fontWeight: 900
+                        }}
+                    >
+                        Genuine OEM <br className="hidden md:block" />
                         <span className="text-brand-orange italic">Laundry Equipment Parts</span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium transition-all duration-300">
+                    <p className="text-lg md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium animate-fade-in delay-200">
                         Protect your industrial investment with factory-certified components. The definitive guide to selecting genuine spare parts for absolute reliability and optimized facility performance.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-4">
-                        <button onClick={openContactModal} className="bg-brand-orange text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3">
+                    <div className="flex flex-wrap justify-center gap-4 animate-fade-in delay-300">
+                        <button onClick={openContactModal} className="bg-brand-orange text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3">
                             Order Parts Now <ArrowRight size={24} />
                         </button>
                     </div>
                 </div>
             </section>
 
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[{ label: "OEM Parts", href: websiteUrl }]} />
             </div>
 
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <StickyMobileTOC sections={sections} />
+
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-12">
+                <div className="grid grid-cols-12 gap-6 lg:gap-12">
                     <aside className="lg:col-span-2 hidden lg:block">
                         <div className="sticky top-24 max-h-[80vh] overflow-y-auto pr-4 scrollbar-hide">
                             <TableOfContents sections={sections} orientation="vertical" />
@@ -202,8 +213,8 @@ export default function OEMPartsPage() {
                     </aside>
 
                     <article className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
-                        <section id="strategic-value" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Strategic Value of Genuine Components</h2>
+                        <section id="strategic-value" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Strategic Value of Genuine Components</h2>
                             <p>
                                 In the industrial laundry sector, the quality of your spare parts defines the lifespan of your heavy machinery. Every machine is a complex ecosystem of thousands of individual components, each engineered to perform under specific loads, temperatures, and chemical environments. The strategic value of genuine Original Equipment Manufacturer (OEM) parts lies in their absolute compatibility. When you replace a part with an OEM equivalent, you are not just fixing a machine; you are restoring it to its original factory configuration.
                             </p>
@@ -222,7 +233,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="oem-vs-aftermarket" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">OEM vs Aftermarket: A Technical Breakdown</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">OEM vs Aftermarket: A Technical Breakdown</h2>
                             <p>
                                 To the untrained eye, a generic part may look identical to an OEM component. However, the technical differences are profound and usually hidden beneath the surface. Original Equipment Manufacturers specify the exact metallurgical composition of their parts. For example, a Sunshine main drive shaft is forged from a specific grade of stainless steel that balances strength with flexibility. A generic aftermarket copy is often cast from cheaper alloys that are prone to brittle failure under the torque of a 100kg load.
                             </p>
@@ -241,7 +252,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="hidden-risks" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Hidden Risks of Generic Replacements</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Hidden Risks of Generic Replacements</h2>
                             <p>
                                 The most dangerous aspect of generic parts is the risk they pose that isn&apos;t immediately visible. When a generic part fails, it rarely does so in isolation. A snapped non-OEM belt can whip around and destroy sensitive sensors or cut electrical lines. A generic water valve that fails to close can lead to a machine flood that ruins the surrounding flooring and damages the motors of adjacent machines. These "secondary damages" often cost ten times as much as the initial savings on the part.
                             </p>
@@ -260,7 +271,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="machine-life" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Maximizing Machine Life Through Genuine Parts</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Maximizing Machine Life Through Genuine Parts</h2>
                             <p>
                                 The secret to the legendary thirty-year lifespan of Sunshine equipment is the consistent use of genuine parts. When you maintain a machine exclusively with OEM spares, you are essentially hitting a "reset button" on its wear. The machine continues to operate with the same tolerances and efficiency it had on Day One. This preservation of technical integrity is what allows our clients to see their hardware through three decades of service, while competitors are replacing their whole fleet every ten years.
                             </p>
@@ -270,7 +281,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="economic-calculus" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Economic Calculus of ROI</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Economic Calculus of ROI</h2>
                             <p>
                                 Calculating the ROI of OEM parts requires looking at the Total Cost of Ownership (TCO). A generic part might cost 500 rupees while the OEM equivalent costs 1000. On the surface, the generic seems like a win. However, if the generic part lasts for 6 months and the OEM part lasts for 36 months, the generic part will cost you 3000 rupees in parts alone over that three-year period. Add in the cost of six separate maintenance calls versus one, and the economic choice becomes clear.
                             </p>
@@ -280,7 +291,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="safety-standards" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Safety Standards & Certifications</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Safety Standards & Certifications</h2>
                             <p>
                                 Industrial laundry machinery is subject to stringent global safety standards. For example, pressure vessels in ironers and high-speed extractors must meet specific metallurgical certifications. Genuine OEM parts are manufactured to these exact standards, ensuring that the machine remains in compliance with its original safety certifications. A generic replacement part often has no such certification, or its "certification" is from an unverified third-party lab.
                             </p>
@@ -290,7 +301,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="warranty-protection" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Warranty Protection & Liability</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Warranty Protection & Liability</h2>
                             <p>
                                 Your machine&apos;s warranty is a valuable asset that protects you from expensive major repairs. However, this warranty is almost always conditional on the use of genuine spare parts and authorized service. Installing a single non-OEM sensor or belt can provide the manufacturer with the legal grounds to void your entire warranty. By sticking to genuine components, you keep your protection in place, ensuring that Sunshine remains your partner in case of a major mechanical event.
                             </p>
@@ -300,7 +311,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="washer-parts" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Critical Washer Component Guide</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Critical Washer Component Guide</h2>
                             <p>
                                 The most critical OEM parts for a washer-extractor are the bearings and the seals. The "seal kit" is the primary defense against water entering the bearing housing. Our OEM seals are made from specialized Viton or PTFE compounds that can resist the corrosive action of industrial chemicals while maintaining their shape under the heat of a 90-degree Celsius wash. Replacing these with generic rubber seals is a recipe for a 50,000-rupee repair bill within six months.
                             </p>
@@ -310,7 +321,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="dryer-parts" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Essential Dryer Component Guide</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Essential Dryer Component Guide</h2>
                             <p>
                                 In industrial dryers, the sensor bars and the heating elements are the most vital components. Moisture sensor bars rely on precise electrical conductivity to determine when the linen is dry. Generic bars often have uneven conductivity, leading to over-drying or under-drying. Replacing these with genuine parts ensures that your energy bills stay low and your linens stay soft. It is a small part that has a massive impact on the facility&apos;s daily operational costs.
                             </p>
@@ -320,7 +331,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="ironer-parts" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">High-Precision Ironer Components</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">High-Precision Ironer Components</h2>
                             <p>
                                 Ironers require a level of precision measured in fractions of a millimeter. The padding and the belts on an ironer are subject to extreme heat and pressure. OEM ironer padding is formulated to maintain its elasticity and breathability for much longer than generic alternatives. This ensures a consistent, glass-like finish on your linens load after load. Using inferior padding results in a rough finish and increased moisture retention, often requiring the linens to be run through the ironer twice.
                             </p>
@@ -330,7 +341,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="electronics" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Electronics & Control Board Integrity</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Electronics & Control Board Integrity</h2>
                             <p>
                                 The brain of a modern industrial laundry machine is its control board. These are sensitive electronic components that manage everything from water levels to motor speeds. Using a non-genuine control board is a massive risk. These parts interact with the machine&apos;s firmware, and any mismatch can lead to erratic behavior, such as the machine skipping rinse cycles or failing to drain at the correct time. Maintenance of the digital ecosystem is just as important as mechanical care.
                             </p>
@@ -340,7 +351,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="gaskets-seals" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Science of Gaskets & Seals</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Science of Gaskets & Seals</h2>
                             <p>
                                 Gaskets and seals are the silent guardians of your laundry machines. They keep the chemicals in and the water out. The engineering of an OEM seal is a study in polymer science. They must remain flexible at zero degrees Celsius and not melt at one hundred. They must resist the swelling caused by detergents and the drying caused by high-speed airflow. This unique material property is why generic "one-size-fits-all" seals always fail prematurely in a Sunshine machine.
                             </p>
@@ -350,7 +361,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="drive-belts" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Drive Belts: The Unsung Heroes of Torque</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Drive Belts: The Unsung Heroes of Torque</h2>
                             <p>
                                 An industrial washer generates massive torque. Moving two hundred kilograms of wet laundry from a standstill to eighty RPM is a huge physical challenge. The drive belt is the component that must transmit this power without slipping or snapping. OEM belts are reinforced with Aramid or Carbon fibers to ensure they don&apos;t stretch under load. A generic belt will often "glaze" due to heat, losing its grip and causing the machine to fail to reach its full extraction speed.
                             </p>
@@ -360,7 +371,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="heating-elements" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Heating Elements & Thermal Precision</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Heating Elements & Thermal Precision</h2>
                             <p>
                                 Thermal efficiency is the key to low utility bills. Our OEM heating elements are made from Incoloy or specialized stainless alloys that resist the mineral scaling that kills cheaper elements. They are also designed with a specific "watt-density" that prevents the localized boiling that causes mineral deposits to form in the first place. By staying cleaner for longer, these elements maintain their heat transfer rate, ensuring that your wash water reaches temperature in the minimum possible time.
                             </p>
@@ -370,7 +381,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="valves-control" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Water & Steam Valves: Precision Control</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Water & Steam Valves: Precision Control</h2>
                             <p>
                                 In an industrial laundry, seconds matter. A water valve that takes five seconds to open and close can add minutes to every cycle, reducing your facility&apos;s daily capacity by ten percent. Our OEM valves are high-flow units designed to work with the machine&apos;s pressure sensors for absolute precision. They close with a "soft" action to prevent water-hammer and provide a 100% airtight seal against the high pressures of industrial steam and water systems.
                             </p>
@@ -380,7 +391,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="lubricants" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Lubricants as Part of the OEM Ecosystem</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Lubricants as Part of the OEM Ecosystem</h2>
                             <p>
                                 We do not treat lubricants as a separate commodity; we treat them as a spare part. The grease inside a bearing is a mechanical component that must perform under pressure. Our OEM lubricants are formulated to be compatible with our seals and bearing alloys. Standard "multipurpose" greases often contain additives that can attack the very seals they are meant to protect. By using our factory-certified grease, you ensure that your bearings stay quiet and cool for their entire rated lifespan.
                             </p>
@@ -390,7 +401,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="counterfeit-id" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Identifying Genuine vs Counterfeit Parts</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Identifying Genuine vs Counterfeit Parts</h2>
                             <p>
                                 Counterfeit parts are a growing problem in the global parts market. These are parts that are intentionally made to look like genuine items, even down to the logo and packaging. However, they are almost always made in uncertified factories using scrap materials. We help our clients identify these fakes by teaching them to look for specific anti-counterfeit features like holograms, unique QR codes, and laser-etched serial numbers that can be verified in our central database.
                             </p>
@@ -400,7 +411,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="logistics-india" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Logistics: Reliable Supply Chain in India</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Logistics: Reliable Supply Chain in India</h2>
                             <p>
                                 In India, getting the right part at the right time is the biggest maintenance challenge. Geography and infrastructure can often turn a simple repair into a week-long crisis. Sunshine Equipments has solved this through a massive investment in local logistics. We maintain a central warehouse that stays stocked with over ten thousand unique part numbers. Whether you need a tiny spring or a massive five-hundred-kilogram drum assembly, we have it on the shelf and ready to ship.
                             </p>
@@ -410,7 +421,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="regional-hubs" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Regional Strategy & Rapid Fulfillment</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Regional Strategy & Rapid Fulfillment</h2>
                             <p>
                                 We operate regional hubs in major corridors including Delhi NCR, Mumbai, and Goa. These hubs are more than just warehouses; they are rapid-fulfillment centers that offer same-day delivery for our most critical parts. If a hotel in Gurgaon has a motor failure at ten AM, we can often have the replacement part on-site by two PM. This level of responsiveness is unique in the Indian market and is the ultimate "insurance policy" for your facility&apos;s operational continuity.
                             </p>
@@ -420,7 +431,7 @@ export default function OEMPartsPage() {
                         </section>
 
                         <section id="future-trends" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Future: Digital Inventory & 3D Printing</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Future: Digital Inventory & 3D Printing</h2>
                             <p>
                                 The future of spare parts is digital. We are moving toward a models where parts are tracked via IoT and ordered automatically the moment a failure pattern is detected. This eliminates human error and ensures that the part is already in transit before your maintenance staff even realizes there is a problem. We are also exploring 3D printing for non-critical plastic components, allowing us to "print" a replacement part on-site for immediate temporary repair while the OEM metal part is in transit.
                             </p>
@@ -498,7 +509,7 @@ export default function OEMPartsPage() {
                         </section>
                     </article>
 
-                    <aside className="col-span-12 lg:col-span-3">
+                    <aside className="col-span-12 lg:col-span-3 mt-12 lg:mt-0">
                         <div className="sticky top-24 space-y-8">
                             <div className="bg-brand-blue text-white p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden group border-4 border-white">
                                 <div className="absolute top-0 right-0 p-4 opacity-10">

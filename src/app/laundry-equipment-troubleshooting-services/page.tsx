@@ -10,6 +10,7 @@ import {
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 const sections = [
@@ -166,35 +167,45 @@ export default function TroubleshootingPage() {
 
     return (
         <main className="min-h-screen bg-white font-sans">
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
-                <div className="absolute inset-0 opacity-20">
-                    <Image src="/hero-bg.jpg" alt="Technical Troubleshooting" fill className="object-cover" />
+            <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 bg-brand-blue text-white overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <Image src="/hero-bg.jpg" alt="Technical Troubleshooting" fill className="object-cover opacity-30" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-brand-blue/0 to-brand-blue/100" />
                 </div>
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-sm font-bold mb-8 uppercase tracking-widest leading-none">
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-xs md:text-sm font-bold mb-8 uppercase tracking-widest leading-none animate-fade-in">
                         <Wrench size={16} className="text-brand-orange" /> Expert Diagnostics & Rapid Repair
                     </div>
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
-                        Advanced Laundry <br />
+                    <h1
+                        className="tracking-tight leading-tight mb-6 animate-fade-in delay-100 px-4"
+                        style={{
+                            fontFamily: 'Satoshi, sans-serif',
+                            fontSize: 'clamp(32px, 7vw, 72px)',
+                            fontWeight: 900
+                        }}
+                    >
+                        Advanced Laundry <br className="hidden md:block" />
                         <span className="text-brand-orange italic">Troubleshooting Services</span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium transition-all duration-300">
+                    <p className="text-lg md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium animate-fade-in delay-200">
                         Zero guesswork. Maximum uptime. Our certified engineers utilize state-of-the-art diagnostic tools to identify and resolve complex machine failures within hours, not days.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-4">
-                        <button onClick={openContactModal} className="bg-brand-orange text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3">
+                    <div className="flex flex-wrap justify-center gap-4 animate-fade-in delay-300">
+                        <button onClick={openContactModal} className="bg-brand-orange text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3">
                             Emergency Technical Support <ArrowRight size={24} />
                         </button>
                     </div>
                 </div>
             </section>
 
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[{ label: "Troubleshooting Services", href: websiteUrl }]} />
             </div>
 
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <StickyMobileTOC sections={sections} />
+
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-12">
+                <div className="grid grid-cols-12 gap-6 lg:gap-12">
                     <aside className="lg:col-span-2 hidden lg:block">
                         <div className="sticky top-24 max-h-[80vh] overflow-y-auto pr-4 scrollbar-hide">
                             <TableOfContents sections={sections} orientation="vertical" />
@@ -202,8 +213,9 @@ export default function TroubleshootingPage() {
                     </aside>
 
                     <article className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
-                        <section id="art-and-science" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Art and Science of Troubleshooting</h2>
+                        <section id="art-and-science" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">
+                                The Art and Science of Troubleshooting</h2>
                             <p>
                                 Troubleshooting industrial laundry equipment is a unique discipline that sits at the intersection of mechanical engineering, electronic diagnostics, and operational intuition. In a high-volume facility, a machine failure is more than just a broken part; it is a disruption to the entire linen lifecycle. Professional troubleshooting is the process of rapidly peeling back the layers of a failure to find the root cause, rather than just treating the symptom.
                             </p>
@@ -222,7 +234,7 @@ export default function TroubleshootingPage() {
                         </section>
 
                         <section id="decoding-errors" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Decoding Error Patterns: Beyond the Screen</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Decoding Error Patterns: Beyond the Screen</h2>
                             <p>
                                 Modern industrial laundry machines are equipped with sophisticated PLC (Programmable Logic Controller) systems that display error codes when something goes wrong. However, these codes are often just a starting point. For example, a "Drain Error" code might mean a failed drain valve, but it could also mean a clogged lint filter, a failed water level sensor, or even an obstructed vent pipe 20 feet away from the machine.
                             </p>
@@ -241,7 +253,7 @@ export default function TroubleshootingPage() {
                         </section>
 
                         <section id="speed-resolution" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Speed of Resolution: Why 4 Hours Matters</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Speed of Resolution: Why 4 Hours Matters</h2>
                             <p>
                                 In the industrial laundry business, speed is not a luxury; it is a requirement. Our "4-Hour Technical Response" guarantee is the gold standard in Delhi, Gurgaon, and the NCR. This isn&apos;t just about arriving on site; it is about having a certified engineer with the right tools and a van full of parts at your door before your morning linen mountain becomes an operational crisis.
                             </p>
@@ -254,7 +266,7 @@ export default function TroubleshootingPage() {
                         </section>
 
                         <section id="mechanical-diagnostics" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Mechanical Diagnostics: Listening to the Machine</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Mechanical Diagnostics: Listening to the Machine</h2>
                             <p>
                                 Despite all the digital sensors, the human ear remains one of the most powerful diagnostic tools in a laundry room. A mechanical failure almost always announces itself with a change in sound. A rhythmic thud might indicate a failing suspension damper, while a high-pitched squeal points directly to a slipping or glazed drive belt. Our senior technicians have "machine ears"—the ability to hear a failure before the software even knows it is failing.
                             </p>
@@ -267,7 +279,7 @@ export default function TroubleshootingPage() {
                         </section>
 
                         <section id="electronic-auditing" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Electronic Auditing: Probing the PLC</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Electronic Auditing: Probing the PLC</h2>
                             <p>
                                 The Programmable Logic Controller (PLC) is the nervous system of your machine. When troubleshooting, we perform a deep audit of the PLC&apos;s inputs and outputs. We verify that every sensor is sending a clean, stable signal back to the brain. Often, a "failure" is actually a sensor that has becomes coated in laundry chemicals or affected by high humidity. Cleaning or recalibrating a sensor is a faster and cheaper solution than replacing a whole control board.
                             </p>
@@ -277,7 +289,7 @@ export default function TroubleshootingPage() {
                         </section>
 
                         <section id="thermal-imaging" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Thermal Imaging for Electrical Health</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Thermal Imaging for Electrical Health</h2>
                             <p>
                                 Electricity creates heat, and where there is resistance, there is excessive heat. We use infrared thermal imaging cameras to "see" the health of your machine&apos;s electrical system. A loose connection in a contactor or a failing relay will show up as a bright white "hot spot" on our camera screen. This allows us to find and fix a loose wire before it melts the insulation and causes a fire or a total electronic blackout.
                             </p>
@@ -287,7 +299,7 @@ export default function TroubleshootingPage() {
                         </section>
 
                         <section id="hydraulic-pneumatic" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Hydraulic & Pneumatic Troubleshooting</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Hydraulic & Pneumatic Troubleshooting</h2>
                             <p>
                                 Many large-scale laundry machines, especially ironers and tunnel washers, rely on pneumatic or hydraulic systems for pressure and movement. Troubleshooting these systems requires a different set of tools and skills. We check for "ghost leaks"—pressure drops that happen overnight or during standby. This often points to a failing internal seal in a cylinder or a slow-leaking solenoid valve.
                             </p>
@@ -297,7 +309,7 @@ export default function TroubleshootingPage() {
                         </section>
 
                         <section id="gas-ignition" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Gas Burner & Ignition System Repair</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Gas Burner & Ignition System Repair</h2>
                             <p>
                                 Dryer troubleshooting often centers on the burner assembly. A "no heat" error is the most common dryer complaint, and it can be caused by anything from a faulty ignition cable to a blocked exhaust vent. We perform a full "gas train" audit, checking the gas pressure, the air-to-fuel ratio, and the integrity of the safety thermostats. We ensure that the burner ignites smoothly and burns with a efficient, blue flame.
                             </p>
@@ -307,7 +319,7 @@ export default function TroubleshootingPage() {
                         </section>
 
                         <section id="vfd-calibration" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Variable Frequency Drive (VFD) Calibration</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Variable Frequency Drive (VFD) Calibration</h2>
                             <p>
                                 The VFD controls the speed and torque of the main motor. It is a highly complex piece of power electronics. Troubleshooting a VFD requires specialized digital tools that can read the pulse-width modulation (PWM) signals. If your machine is taking too long to reach extract speed, or if it is "shaking" during the ramp-up, the VFD timing is likely off. We recalibrate the drive parameters to match the machine&apos;s current mechanical state.
                             </p>
@@ -317,7 +329,7 @@ export default function TroubleshootingPage() {
                         </section>
 
                         <section id="water-drainage" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Water Inlet & Drainage Obstructions</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Water Inlet & Drainage Obstructions</h2>
                             <p>
                                 A machine that cannot fill or drain quickly is a machine that is losing you money every hour. We troubleshoot the entire water path, from the building&apos;s main pipes to the internal spray nozzles. Often, a slow fill is caused by mineral buildup in the machine&apos;s inlet filters. On the drainage side, we frequently find coins, hairpins, and even stray socks that have bypassed the lint trap and are obstructing the main drain valve.
                             </p>
@@ -327,7 +339,7 @@ export default function TroubleshootingPage() {
                         </section>
 
                         <section id="vibration-analysis" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Advanced Vibration Analysis & Balancing</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Advanced Vibration Analysis & Balancing</h2>
                             <p>
                                 Excessive vibration is the enemy of any high-speed machine. We troubleshoot vibration issues using digital accelerometers that provide a "signature" of the machine&apos;s movement. This allows us to distinguish between an unbalanced load (staff error), failed shock absorbers (wear and tear), or a bent drive shaft (catastrophic damage). We can even detect if the machine&apos;s foundation is cracked or if the floor anchors have come loose.
                             </p>
@@ -337,7 +349,7 @@ export default function TroubleshootingPage() {
                         </section>
 
                         <section id="steam-integrity" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Steam Pressure & Trap Integrity</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Steam Pressure & Trap Integrity</h2>
                             <p>
                                 Steam is a powerful and dangerous energy source. Troubleshooting steam systems requires specialized knowledge of thermodynamics and high-pressure fittings. We troubleshoot slow-heating ironers by checking the steam traps. If a trap is stuck closed, the machine stays cold. If it is stuck open, you are blowing expensive steam straight down the drain. We ensure that every joule of energy is used to dry and finish your linens, not wasted in the pipes.
                             </p>
@@ -347,7 +359,7 @@ export default function TroubleshootingPage() {
                         </section>
 
                         <section id="human-factor" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Human Factor vs Machine Failure</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Human Factor vs Machine Failure</h2>
                             <p>
                                 A surprising number of "machine failures" are actually the result of human error or improper operational procedures. During our troubleshooting, we often find that a machine is overheating because staff have blocked the air intakes with laundry carts, or a washer is failing to extract because it has been overloaded with double the rated weight. We don&apos;t just fix the machine; we provide a "debrief" to the facility manager to address these behavioral issues.
                             </p>
@@ -357,7 +369,7 @@ export default function TroubleshootingPage() {
                         </section>
 
                         <section id="diagnostic-tools" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Role of Original Diagnostic Tools</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Role of Original Diagnostic Tools</h2>
                             <p>
                                 You can&apos;t fix a modern machine with just a hammer and a wrench. Our engineers use proprietary diagnostic software that plugs directly into the machine&apos;s brain. This allow us to run "step-by-step" tests, firing individual valves and motors while watching the sensor responses in real time. This level of access is only available to certified Sunshine partners and is the only way to troubleshoot intermittent electronic glitches accurately.
                             </p>
@@ -367,7 +379,7 @@ export default function TroubleshootingPage() {
                         </section>
 
                         <section id="case-study" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Case Study: Solving Intermittent Resets</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Case Study: Solving Intermittent Resets</h2>
                             <p>
                                 A major hotel in Gurgaon was experiencing random machine resets. Every few days, the main washer would just shut down in the middle of a cycle with no error code. Three other service companies had replaced the control board and the motor with no success. When the Sunshine troubleshooting team arrived, we installed a power quality logger for forty-eight hours.
                             </p>
@@ -377,7 +389,7 @@ export default function TroubleshootingPage() {
                         </section>
 
                         <section id="remote-diagnostics" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Remote Diagnostics & IoT Monitoring</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Remote Diagnostics & IoT Monitoring</h2>
                             <p>
                                 The fastest way to troubleshoot a machine is to never have to travel to it in the first place. Our IoT-enabled machines transmit thousands of data points every hour to our central monitoring center. When a deviation is detected, our engineers can log in remotely to see exactly what the machine is seeing. We can often talk your on-site maintenance person through a simple fix, such as cleaning a sensor or resetting a breaker, restoring operation in seconds.
                             </p>
@@ -387,7 +399,7 @@ export default function TroubleshootingPage() {
                         </section>
 
                         <section id="emergency-protocols" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Emergency Protocols & On-Site Safety</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Emergency Protocols & On-Site Safety</h2>
                             <p>
                                 Troubleshooting often happens when the machine is in an "unknown" state, which makes it a high-risk activity. Our engineers follow strict safety protocols, including the use of Lock-Out Tag-Out (LOTO) to ensure the machine cannot be accidentally started while they are working on internal parts. We also perform a hazardous energy audit before every repair, checking for stored heat, air pressure, or electrical charge.
                             </p>
@@ -397,21 +409,21 @@ export default function TroubleshootingPage() {
                         </section>
 
                         <section id="staff-training" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Training Staff for First-Level Diagnostics</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Training Staff for First-Level Diagnostics</h2>
                             <p>
                                 The first five minutes after a machine failure are the most critical. We provide your laundry team with "First Responder" training. This doesn&apos;t teach them how to fix the machine, but it teaches them how to gather the right data. They learn how to identify which stage of the cycle failed, what the error code says, and what physical signs (leaks, smells) were present. This information, when relayed to our hotline, allows us to diagnose the problem much faster.
                             </p>
                         </section>
 
                         <section id="regional-support" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Regional Support Network in India</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Regional Support Network in India</h2>
                             <p>
                                 Our troubleshooting network is built to handle the unique geography of India. With local teams in Delhi, Noida, Gurgaon, Mumbai, and Bengaluru, we provide a density of expertise that no other provider can match. This local presence means that we don&apos;t just know machines; we know the local water chemistry, the local power grid quirks, and the local humidity factors. This contextual expertise is what makes our troubleshooting so effective across the subcontinent.
                             </p>
                         </section>
 
                         <section id="future-ai" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Future of AI-Assisted Troubleshooting</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Future of AI-Assisted Troubleshooting</h2>
                             <p>
                                 We are currently piloting an AI "Diagnostic Assistant" that uses machine learning to analyze thousands of previous service calls. By inputting the current symptoms of a machine, our engineers get a ranked list of the most likely causes and a step-by-step verification plan. This AI doesn&apos;t replace our engineers; it gives them the collective knowledge of thirty years of troubleshooting in an instant. This is the next level of uptime security for our clients.
                             </p>
@@ -486,7 +498,7 @@ export default function TroubleshootingPage() {
                         </section>
                     </article>
 
-                    <aside className="col-span-12 lg:col-span-3">
+                    <aside className="col-span-12 lg:col-span-3 mt-12 lg:mt-0">
                         <div className="sticky top-24 space-y-8">
                             <div className="bg-brand-blue text-white p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden group border-4 border-white">
                                 <div className="absolute top-0 right-0 p-4 opacity-10">

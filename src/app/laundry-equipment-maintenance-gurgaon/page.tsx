@@ -6,6 +6,7 @@ import { CheckCircle2, Phone, Mail, ArrowRight, ShieldCheck, Zap, Droplets, Tren
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 const sections = [
@@ -229,16 +230,16 @@ export default function LaundryMaintenanceGurgaon() {
             />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
+            <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 bg-brand-blue text-white overflow-hidden">
                 <div className="absolute inset-0 opacity-20">
                     <Image src="/hero-bg.jpg" alt="Laundry Equipment Maintenance Gurgaon" fill className="object-cover" priority />
                 </div>
 
-                <div className="container mx-auto px-6 relative z-10 text-center">
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-sm font-bold mb-8 uppercase tracking-widest leading-none">
                         <ActivitySquare size={16} className="text-brand-orange" /> Precision Upkeep for High-Value Assets
                     </div>
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight px-4">
                         Laundry Equipment <br /><span className="text-brand-orange italic">Maintenance Gurgaon</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium transition-all duration-300">
@@ -262,15 +263,17 @@ export default function LaundryMaintenanceGurgaon() {
             </section>
 
             {/* Breadcrumb Container */}
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[
                     { label: "Maintenance Gurgaon", href: "/laundry-equipment-maintenance-gurgaon" }
                 ]} />
             </div>
 
+            <StickyMobileTOC sections={sections} />
+
             {/* Main Content Layout */}
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-12">
+                <div className="grid grid-cols-12 gap-6 lg:gap-12">
                     {/* Left: Table of Contents */}
                     <aside className="lg:col-span-2 hidden lg:block">
                         <div className="sticky top-24 max-h-[80vh] overflow-y-auto pr-4 scrollbar-hide">
@@ -282,7 +285,7 @@ export default function LaundryMaintenanceGurgaon() {
                     <article className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
 
                         <section id="gurgaon-challenge" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">The Gurgaon Maintenance Challenge</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Gurgaon Maintenance Challenge</h2>
                             <p>
                                 Gurgaon is a city of rapid growth and harsh environmental realities. For the hospitality and healthcare giants operating here, the challenge of maintaining 5-star linen standards is inextricably linked to the city's difficult infrastructure. In this landscape, <strong>laundry equipment maintenance Gurgaon</strong> is not a routine task—it is a specialized engineering battle against mineral scaling, heat stress, and high-volume demand.
                             </p>
@@ -302,7 +305,7 @@ export default function LaundryMaintenanceGurgaon() {
                         </section>
 
                         <section id="descaling-protocols" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Descaling & Chemical Balancing</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Descaling & Chemical Balancing</h2>
                             <p>
                                 Traditional maintenance often ignores the internal scaling until the machine stops working. Sunshine's <strong>laundry equipment maintenance Gurgaon</strong> protocol includes mandatory quarterly descaling cycles using industrial-grade, non-corrosive acids. We dissolve the mineral build-up inside the pipes and drum, restoring the machine's thermal efficiency to 98% of its factory rating.
                             </p>
@@ -332,7 +335,7 @@ export default function LaundryMaintenanceGurgaon() {
                         </section>
 
                         <section id="service-hubs" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Service Hubs: Sector 14 to 37</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Service Hubs: Sector 14 to 37</h2>
                             <p>
                                 Our presence in Gurgaon is anchored by our strategic service hubs. Sector 34 and 37 house our heavy technical teams and large-scale workshop facilities. Sector 14 and 18 serve as rapid-dispatch points for the hospitality corridor along MG Road and the Golf Course Road.
                             </p>
@@ -352,7 +355,7 @@ export default function LaundryMaintenanceGurgaon() {
                         </section>
 
                         <section id="iot-health-monitoring" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">IoT Machine Health Monitoring</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">IoT Machine Health Monitoring</h2>
                             <p>
                                 The future of <strong>laundry equipment maintenance Gurgaon</strong> is digital. Our new range of industrial machines comes with integrated IoT modules that report health data directly to our service cloud. If a motor's operating temperature exceeds its safe threshold, our team is alerted automatically.
                             </p>
@@ -362,7 +365,7 @@ export default function LaundryMaintenanceGurgaon() {
                         </section>
 
                         <section id="healthcare-maintenance" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Hospital-Grade Sanitization</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Hospital-Grade Sanitization</h2>
                             <p>
                                 For hospitals, maintenance is a compliance issue. Failure to reach the required sanitization temperature (up to 90°C) is a risk to patient safety. Our healthcare maintenance packages include regular "Temperature Validation Audits."
                             </p>
@@ -382,7 +385,7 @@ export default function LaundryMaintenanceGurgaon() {
                         </section>
 
                         <section id="energy-audits" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Energy Efficiency Audits</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Energy Efficiency Audits</h2>
                             <p>
                                 In 2025, energy costs are a major factor in Gurgaon's commercial bottom line. Every AMC visit from Sunshine includes a "Thermal Efficiency Audit." We check for steam leaks, uninsulated pipes, and clogged lint screens in dryers.
                             </p>
@@ -392,7 +395,7 @@ export default function LaundryMaintenanceGurgaon() {
                         </section>
 
                         <section id="amc-roi" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">AMC Models & Financial ROI</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">AMC Models & Financial ROI</h2>
                             <p>
                                 We offer three tiers of Annual Maintenance Contracts (AMC) designed to fit the budget and risk-profile of every Gurgaon business. Our "Comprehensive AMC" is the gold standard, covering all parts and labor, providing a fixed, predictable maintenance budget for the entire year.
                             </p>
@@ -412,7 +415,7 @@ export default function LaundryMaintenanceGurgaon() {
                         </section>
 
                         <section id="staff-empowerment" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Internal Engineering Workshops</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Internal Engineering Workshops</h2>
                             <p>
                                 We don't want to just be your service providers; we want to be your educators. We provide quarterly "Engineering Empowerment Workshops" for your internal facility management team.
                             </p>
@@ -422,7 +425,7 @@ export default function LaundryMaintenanceGurgaon() {
                         </section>
 
                         <section id="hspcb-compliance" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">HSPCB Environmental Compliance</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">HSPCB Environmental Compliance</h2>
                             <p>
                                 The Haryana State Pollution Control Board (HSPCB) is increasingly strict about wastewater discharge from laundries. Our maintenance includes the upkeep of your "Internal Water Recovery" and "Grease Trap" systems.
                             </p>
@@ -442,7 +445,7 @@ export default function LaundryMaintenanceGurgaon() {
                         </section>
 
                         <section id="ai-diagnostics" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Future: AI-Driven Diagnostics</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Future: AI-Driven Diagnostics</h2>
                             <p>
                                 As we look toward the future, Sunshine is pioneering "AI-Driven Diagnostics" in the Gurugram market. We are training machine learning models on thousands of hours of machine data to recognize the "Digital Fingerprint" of every potential failure.
                             </p>

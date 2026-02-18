@@ -6,6 +6,7 @@ import { CheckCircle2, Phone, Mail, ArrowRight, ShieldCheck, Zap, Droplets, Tren
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 const sections = [
@@ -223,37 +224,41 @@ export default function IndustrialLaundrySolutionsIndia() {
 
     return (
         <main className="min-h-screen bg-white">
+            {/* Structured Data */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
             />
 
+            {/* Sticky Mobile TOC */}
+            <StickyMobileTOC sections={sections} />
+
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
+            <section className="relative pt-20 pb-16 md:pt-32 md:pb-24 bg-brand-blue text-white overflow-hidden">
                 <div className="absolute inset-0 opacity-20">
                     <Image src="/hero-bg.jpg" alt="Industrial Laundry Solutions India" fill className="object-cover" priority />
                 </div>
 
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-sm font-bold mb-8 uppercase tracking-widest leading-none">
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-xs md:text-sm font-bold mb-6 md:mb-8 uppercase tracking-widest leading-none">
                         <Globe size={16} className="text-brand-orange" /> Empowering India&apos;s Industrial Growth
                     </div>
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
-                        Industrial Laundry <br /><span className="text-brand-orange italic">Solutions India</span>
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
+                        Industrial Laundry <br className="hidden sm:block" /><span className="text-brand-orange italic">Solutions India</span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium transition-all duration-300">
+                    <p className="text-lg md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium transition-all duration-300 px-4">
                         Redefining large-scale textile care through continuous batch processing, solar-thermal integration, and AI-enabled facility management. The national standard for mega-scale hospitality and medical-grade sanitization.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-4">
+                    <div className="flex flex-col sm:flex-row justify-center gap-4 px-4">
                         <button
                             onClick={openContactModal}
-                            className="bg-brand-orange text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3 group"
+                            className="bg-brand-orange text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3 group"
                         >
-                            Request National Consultation <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
+                            Request Consultation <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
                         </button>
                         <a
                             href="tel:+919711112950"
-                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-10 py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all flex items-center gap-3"
+                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-3"
                         >
                             <Phone size={24} /> +91 97111 12950
                         </a>
@@ -262,15 +267,15 @@ export default function IndustrialLaundrySolutionsIndia() {
             </section>
 
             {/* Breadcrumb Container */}
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-4 md:py-6 border-b border-gray-100">
                 <Breadcrumbs items={[
                     { label: "Industrial Solutions India", href: "/industrial-laundry-solutions-india" }
                 ]} />
             </div>
 
             {/* Main Content Layout */}
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-8 md:py-12">
+                <div className="grid grid-cols-12 gap-8 lg:gap-12">
                     {/* Left: Table of Contents */}
                     <aside className="lg:col-span-2 hidden lg:block">
                         <div className="sticky top-24 max-h-[80vh] overflow-y-auto pr-4 scrollbar-hide">
@@ -281,8 +286,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                     {/* Middle: Main Content */}
                     <article className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
 
-                        <section id="indian-awakening" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">The Indian Industrial Laundry Awakening</h2>
+                        <section id="indian-awakening" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8 tracking-tighter">The Indian Industrial Laundry Awakening</h2>
                             <p>
                                 India is currently witnessing an industrial metamorphosis. As the nation marches towards its goal of becoming a USD 5 trillion economy, sectors that were once considered peripheral are now moving front and center. Among these, the <strong>industrial laundry solutions India</strong> sector has emerged as a critical infrastructure pillar. Gone are the days when laundry was a manual, unorganized activity performed at the periphery of business operations. Today, it is a data driven, energy intensive, and highly specialized industrial process.
                             </p>
@@ -294,8 +299,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </p>
                         </section>
 
-                        <section id="economic-drivers" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter text-brand-orange italic">Macro-Economic Drivers 2024-2030</h2>
+                        <section id="economic-drivers" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8 tracking-tighter text-brand-orange italic">Macro-Economic Drivers 2024-2030</h2>
                             <p>
                                 Several macro-economic factors are converging to create a "Golden Era" for <strong>industrial laundry solutions India</strong>. First is the massive expansion of the middle class. By 2030, India is expected to have one of the largest consumer bases in the world, leading to an explosion in domestic tourism and private healthcare. This demand directly translates into a need for more hotel rooms and hospital beds, all of which require professional laundry support.
                             </p>
@@ -307,8 +312,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </p>
                         </section>
 
-                        <section id="pm-mitra-synergy" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">PM MITRA Scheme & Textile Synergy</h2>
+                        <section id="pm-mitra-synergy" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8 tracking-tighter">PM MITRA Scheme & Textile Synergy</h2>
                             <p>
                                 The Pradhan Mantri Mega Integrated Textile Region and Apparel (PM MITRA) Parks scheme is a game-changer for the Indian textile industry. These parks are designed to create a "Farm-to-Foreign" ecosystem, housing the entire textile value chain in one location. Within these hubs, industrial laundry plays a vital role in "Post-Processing" and "Garment Finishing."
                             </p>
@@ -320,8 +325,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </p>
                         </section>
 
-                        <section id="tier-decentralization" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter text-brand-orange">Tier 1 vs. Tier 2 Decentralization</h2>
+                        <section id="tier-decentralization" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8 tracking-tighter text-brand-orange text-center sm:text-left">Tier 1 vs. Tier 2 Decentralization</h2>
                             <p>
                                 While high-tier metros like Delhi, Mumbai, and Bangalore have historically been the centers of industrial activity, we are seeing a significant "Decentralization." Tier 2 and Tier 3 cities like Indore, Coimbatore, Nagpur, and Jaipur are now becoming major hospitality and healthcare destinations. This shift requires a decentralization of the supply chain for <strong>laundry machine suppliers in Delhi NCR</strong> and other regional leaders.
                             </p>
@@ -330,8 +335,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </p>
                         </section>
 
-                        <section id="regional-analysis" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">State-Specific Industrial Analysis</h2>
+                        <section id="regional-analysis" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8 tracking-tighter">State-Specific Industrial Analysis</h2>
                             <p>
                                 Every state in India has a different "Laundry Identity." For instance, Gujarat and Maharashtra are powerhouses of textile and industrial manufacturing, requiring heavy-duty washers for workwear and garment processing. In contrast, states like Rajasthan and Goa are hospitality centric, demanding high-end finishing equipment for luxury resorts.
                             </p>
@@ -340,8 +345,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </p>
                         </section>
 
-                        <section id="tunnel-washing-mega" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter italic text-brand-blue">Mega-Scale Tunnel Washing</h2>
+                        <section id="tunnel-washing-mega" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8 tracking-tighter italic text-brand-blue">Mega-Scale Tunnel Washing</h2>
                             <p>
                                 For the true titans of the industry, the "Tunnel Washer" or Continuous Batch Washer (CBW) is the ultimate prize. Imagine a machine that is 15 meters long, divided into 10 or 12 compartments, through which laundry flows in a continuous stream. A tunnel washer can process an entire 50kg load every 2-3 minutes, working out to over 1000kg of laundry per hour.
                             </p>
@@ -350,8 +355,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </p>
                         </section>
 
-                        <section id="smart-city-integration" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Smart City Infrastructure</h2>
+                        <section id="smart-city-integration" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8 tracking-tighter">Smart City Infrastructure</h2>
                             <p>
                                 The "Smart Cities Mission" is redefining urban living in India. One of the goals of a smart city is to provide essential services efficiently and sustainably. We are seeing a new trend of "Automatic Laundry Marts" and centralized community laundries being integrated into the master plans of these cities.
                             </p>
@@ -360,8 +365,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </p>
                         </section>
 
-                        <section id="nlp-impact" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter text-brand-orange">NLP & Logistics Impact</h2>
+                        <section id="nlp-impact" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8 tracking-tighter text-brand-orange">NLP & Logistics Impact</h2>
                             <p>
                                 The National Logistics Policy (NLP) is designed to bring down the cost of moving goods in India. For the laundry industry, this has immense implications for "Linen Rental" and "Outsourced Laundries." Historically, a laundry plant could only serve a small radius because the cost of transport was too high.
                             </p>
@@ -370,8 +375,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </p>
                         </section>
 
-                        <section id="hospital-sanitization" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">National Hospital Sanitization</h2>
+                        <section id="hospital-sanitization" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8 tracking-tighter">National Hospital Sanitization</h2>
                             <p>
                                 Hygiene protocols are no longer a local matter; they are a national security priority. Compliance with ISH (International Society for Hygiene) standards is becoming the norm for Indian hospitals. Our <strong>industrial laundry solutions India</strong> portfolio includes the widely acclaimed "Barrier Washer-Extractors."
                             </p>
@@ -380,8 +385,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </p>
                         </section>
 
-                        <section id="hospitality-boom" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter italic text-brand-orange">Hospitality Beyond the Metros</h2>
+                        <section id="hospitality-boom" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8 tracking-tighter italic text-brand-orange">Hospitality Beyond the Metros</h2>
                             <p>
                                 The growth of "Offbeat Tourism" in India has led to the development of luxury properties in remote locations like Ladakh, Hampi, and the Andaman Islands. Supplying and maintaining industrial equipment in these regions is a significant challenge. Sunshine's strategy is to provide "Remote-Resilient" machines.
                             </p>
@@ -390,8 +395,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </p>
                         </section>
 
-                        <section id="water-conservation-zld" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Water Conservation & ZLD</h2>
+                        <section id="water-conservation-zld" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8 tracking-tighter">Water Conservation & ZLD</h2>
                             <p>
                                 Zero Liquid Discharge (ZLD) is becoming a strict requirement for industrial zones in India. Sunshine machines are engineered for "Extreme Water Efficiency." Our washer extractors feature "D-Drum" designs that reduce the amount of water needed to achieve the required chemical concentration.
                             </p>
@@ -400,8 +405,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </p>
                         </section>
 
-                        <section id="solar-laundry-tech" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Solar Powered Laundry</h2>
+                        <section id="solar-laundry-tech" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8 tracking-tighter">Solar Powered Laundry</h2>
                             <p>
                                 India is a solar-superpower, and we are harnessing that for laundry. Heating water to 60-80 degrees for industrial washing is energy-intensive. By integrating solar-thermal panels on the roof of the laundry facility, we can provide "Free Hot Water" practically year-round in most parts of India.
                             </p>
@@ -410,8 +415,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </p>
                         </section>
 
-                        <section id="predictive-maintenance" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter text-brand-blue">Predictive Maintenance & SLAs</h2>
+                        <section id="predictive-maintenance" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8 tracking-tighter text-brand-blue">Predictive Maintenance & SLAs</h2>
                             <p>
                                 The future of maintenance is not "Reactive" or even "Preventative"—it is "Predictive." Sunshine's national service network uses advanced telemetry to monitor machine performance. If a sensor indicates that a motor's vibration levels are increasing or a drain valve is slowing down, we can identify the impending failure before it happens.
                             </p>
@@ -420,8 +425,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </p>
                         </section>
 
-                        <section id="ruggedized-standards" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">The All-India Ruggedized Standard</h2>
+                        <section id="ruggedized-standards" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8 tracking-tighter">The All-India Ruggedized Standard</h2>
                             <p>
                                 Indian industrial conditions are tough. Dust, voltage fluctuations, and 45-degree ambient temperatures are the reality. We build our machines to a "Ruggedized National Standard." This includes oversized copper-wound motors, heavy-duty suspension systems that can handle imbalanced loads, and "Tropicalized" circuit boards that are resistant to humidity and pests.
                             </p>
@@ -430,8 +435,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </p>
                         </section>
 
-                        <section id="future-mapping-ai" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter text-brand-orange">Future Mapping: AI & Central Hubs</h2>
+                        <section id="future-mapping-ai" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8 tracking-tighter text-brand-orange italic">Future Mapping: AI & Central Hubs</h2>
                             <p>
                                 Looking ahead to 2030, we see the rise of the "Smart Centralized Laundry Hub." These facilities will be fully autonomous, using AI to sort linens by fabric type and soil level, moving them between washers and dryers via automated overhead conveyors.
                             </p>
@@ -440,8 +445,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </p>
                         </section>
 
-                        <section id="roi-national-scale" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">ROI for National Scale Projects</h2>
+                        <section id="roi-national-scale" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8 tracking-tighter">ROI for National Scale Projects</h2>
                             <p>
                                 At a national scale, a 1 percent improvement in efficiency can translate to millions in annual savings. We provide our corporate clients with "Financial Performance Audits" every six months. We analyze your throughput and utility consumption across all sites and suggest optimizations.
                             </p>
@@ -450,8 +455,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </p>
                         </section>
 
-                        <section id="domestic-vs-global" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Domestic vs. Global Comparison</h2>
+                        <section id="domestic-vs-global" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black mb-6 md:mb-8 tracking-tighter">Domestic vs. Global Comparison</h2>
                             <p>
                                 Why choose Sunshine over a global brand? The answer lies in "Localized Technical Depth." A global brand might have a sales office in India, but their engineering team is 5,000 miles away. Sunshine's engineers are here, on the ground, in India.
                             </p>
@@ -460,8 +465,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </p>
                         </section>
 
-                        <section id="faqs">
-                            <h2 className="text-4xl font-black text-brand-blue mb-12 tracking-tighter">National Industry FAQs</h2>
+                        <section id="faqs" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-8 md:mb-12 tracking-tighter text-center sm:text-left">National Industry FAQs</h2>
                             <div className="space-y-8">
                                 {faqs.map((faq, index) => (
                                     <div key={index} className="border-b border-gray-100 pb-8">
@@ -472,14 +477,14 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </div>
                         </section>
 
-                        <section className="mb-20 p-10 bg-slate-50 rounded-[3rem] border border-slate-100">
-                            <h2 className="text-3xl font-black text-brand-blue mb-8 text-center italic">National Industry Feedback</h2>
+                        <section className="mb-12 md:mb-20 p-6 md:p-10 bg-slate-50 rounded-[2rem] md:rounded-[3rem] border border-slate-100">
+                            <h2 className="text-2xl md:text-3xl font-black text-brand-blue mb-8 text-center italic">National Industry Feedback</h2>
                             <div className="grid gap-8">
                                 {reviews.map((review, index) => (
-                                    <div key={index} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                                    <div key={index} className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
                                         <div className="flex gap-1 text-brand-orange mb-4">
                                             {[...Array(review.rating)].map((_, i) => (
-                                                <Star key={i} size={20} fill="currentColor" />
+                                                <Star key={i} size={18} fill="currentColor" />
                                             ))}
                                         </div>
                                         <p className="italic text-gray-700 text-lg">"{review.content}"</p>
@@ -499,44 +504,44 @@ export default function IndustrialLaundrySolutionsIndia() {
                     <aside className="col-span-12 lg:col-span-3">
                         <div className="sticky top-24 space-y-8">
                             {/* Sidebar CTA */}
-                            <div className="bg-brand-blue text-white p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden group border-4 border-white">
-                                <div className="absolute top-0 right-0 p-4 opacity-10">
+                            <div className="bg-brand-blue text-white p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] shadow-2xl relative overflow-hidden group border-4 border-white">
+                                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:rotate-12 transition-transform duration-500">
                                     <Globe size={100} />
                                 </div>
-                                <h3 className="text-2xl font-black mb-4 relative z-10 tracking-tight text-red-400 uppercase text-[10px] tracking-[0.2em]">Live Operation Audit</h3>
-                                <p className="text-white mb-6 relative z-10 font-bold text-2xl">
+                                <h3 className="text-xl md:text-2xl font-black mb-4 relative z-10 tracking-tight text-brand-orange uppercase text-[10px] tracking-[0.2em] italic">Live Operation Audit</h3>
+                                <p className="text-white mb-6 relative z-10 font-black text-xl md:text-2xl leading-tight">
                                     Is your laundry losing money?
                                 </p>
                                 <button
                                     onClick={openContactModal}
-                                    className="bg-brand-orange text-white w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-white hover:text-brand-orange transition-all relative z-10 shadow-lg"
+                                    className="bg-brand-orange text-white w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-white hover:text-brand-orange transition-all relative z-10 shadow-lg group"
                                 >
-                                    Book Free Energy Audit <ArrowRight size={20} />
+                                    Book Free Audit <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                                 </button>
                             </div>
 
                             {/* Related Pages */}
-                            <div className="bg-white p-8 rounded-[2.5rem] shadow-sm border border-gray-100">
-                                <h3 className="text-xl font-bold text-brand-blue mb-6">Explore More</h3>
-                                <nav className="space-y-4">
+                            <div className="bg-white p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] shadow-sm border border-gray-100">
+                                <h3 className="text-lg md:text-xl font-bold text-brand-blue mb-6 border-b border-gray-50 pb-2">Explore More</h3>
+                                <nav className="space-y-2 md:space-y-4">
                                     <Link href="/laundry-machine-suppliers-delhi-ncr" className="flex items-center justify-between group p-3 hover:bg-slate-50 rounded-xl transition-all">
                                         <div className="flex items-center gap-3">
                                             <MapPin size={18} className="text-brand-orange" />
-                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors">Delhi NCR Hub</span>
+                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors text-sm">Delhi NCR Hub</span>
                                         </div>
                                         <ChevronRight size={18} className="text-gray-400 group-hover:translate-x-1 transition-transform" />
                                     </Link>
                                     <Link href="/commercial-laundry-equipment-gurgaon" className="flex items-center justify-between group p-3 hover:bg-slate-50 rounded-xl transition-all">
                                         <div className="flex items-center gap-3">
                                             <TrendingUp size={18} className="text-brand-orange" />
-                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors">Gurgaon Solutions</span>
+                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors text-sm">Gurgaon Solutions</span>
                                         </div>
                                         <ChevronRight size={18} className="text-gray-400 group-hover:translate-x-1 transition-transform" />
                                     </Link>
                                     <Link href="/industrial-washing-machine-installation" className="flex items-center justify-between group p-3 hover:bg-slate-50 rounded-xl transition-all">
                                         <div className="flex items-center gap-3">
                                             <Settings size={18} className="text-brand-orange" />
-                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors">Expert Installation</span>
+                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors text-sm">Expert Installation</span>
                                         </div>
                                         <ChevronRight size={18} className="text-gray-400 group-hover:translate-x-1 transition-transform" />
                                     </Link>
@@ -544,8 +549,8 @@ export default function IndustrialLaundrySolutionsIndia() {
                             </div>
 
                             {/* Contact Info */}
-                            <div className="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100">
-                                <h4 className="font-bold text-brand-blue mb-4 uppercase text-[10px] tracking-[0.2em]">Direct Procurement</h4>
+                            <div className="p-6 md:p-8 bg-slate-50 rounded-[2rem] md:rounded-[2.5rem] border border-slate-100">
+                                <h4 className="font-black text-brand-blue mb-4 uppercase text-[10px] tracking-[0.2em] italic">Direct Procurement</h4>
                                 <div className="space-y-6">
                                     <div className="flex gap-4">
                                         <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shrink-0 border border-gray-100 shadow-sm">
@@ -553,7 +558,7 @@ export default function IndustrialLaundrySolutionsIndia() {
                                         </div>
                                         <div>
                                             <p className="text-[10px] text-gray-500 font-black uppercase mb-1">24/7 Priority Hotline</p>
-                                            <a href="tel:+919711112950" className="text-sm font-bold text-gray-800 hover:text-brand-orange tracking-tight">+91 97111 12950</a>
+                                            <a href="tel:+919711112950" className="text-sm font-bold text-gray-800 hover:text-brand-orange tracking-tight transition-colors">+91 97111 12950</a>
                                         </div>
                                     </div>
                                     <div className="flex gap-4">
@@ -562,7 +567,7 @@ export default function IndustrialLaundrySolutionsIndia() {
                                         </div>
                                         <div>
                                             <p className="text-[10px] text-gray-500 font-black uppercase mb-1">Corporate Email</p>
-                                            <a href="mailto:info@sunshine-laundry.com" className="text-sm font-bold text-gray-800 hover:text-brand-orange leading-none break-all">info@sunshine-laundry.com</a>
+                                            <a href="mailto:info@sunshine-laundry.com" className="text-sm font-bold text-gray-800 hover:text-brand-orange leading-none break-all transition-colors">info@sunshine-laundry.com</a>
                                         </div>
                                     </div>
                                 </div>

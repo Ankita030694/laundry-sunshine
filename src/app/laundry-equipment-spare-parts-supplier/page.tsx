@@ -6,6 +6,7 @@ import { CheckCircle2, Phone, Mail, ArrowRight, MessageSquare, Star, ChevronRigh
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 const sections = [
@@ -191,8 +192,8 @@ export default function SparePartsSupplier() {
                 <div className="absolute inset-0 opacity-15">
                     <Image src="/hero-bg.jpg" alt="Laundry Equipment Spare Parts Supplier" fill className="object-cover" />
                 </div>
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight px-4">
                         Authentic Industrial <br />
                         <span className="text-brand-orange italic">Laundry Equipment Spare Parts</span>
                     </h1>
@@ -211,12 +212,14 @@ export default function SparePartsSupplier() {
             </section>
 
             {/* Breadcrumb Container */}
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[{ label: "Spare Parts Supplier", href: "/laundry-equipment-spare-parts-supplier" }]} />
             </div>
 
+            <StickyMobileTOC sections={sections} />
+
             {/* Main Content Layout */}
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-12">
                 <div className="grid grid-cols-12 gap-12">
                     {/* Left: Table of Contents */}
                     <aside className="lg:col-span-2 hidden lg:block">
@@ -228,7 +231,7 @@ export default function SparePartsSupplier() {
                     {/* Middle: Main Content */}
                     <article className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
                         <section id="intro" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Laundry Equipment Spare Parts Supplier: The Foundation of Industrial Integrity</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Laundry Equipment Spare Parts Supplier: The Foundation of Industrial Integrity</h2>
                             <p>
                                 In the demanding environment of commercial and industrial laundry, the difference between a high-performing facility and one plagued by constant downtime is often the quality of its spare parts. Industrial laundry machines are incredible feats of engineering, designed to handle massive thermal, mechanical, and chemical stresses 24 hours a day. To maintain this level of performance, every component—from the smallest micro-sensor to the heaviest motor—must meet the exact specifications of the original design.
                             </p>
@@ -244,7 +247,7 @@ export default function SparePartsSupplier() {
                         </section>
 
                         <section id="genuine-vs-aftermarket" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Criticality of Genuine Parts: Performance vs. Aftermarket Risks</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Criticality of Genuine Parts: Performance vs. Aftermarket Risks</h2>
                             <p>
                                 The temptation to use "Aftermarket" or "Generic" spare parts is a common pitfall in industrial maintenance. While these parts often promise lower upfront costs, they hide significant long-term risks that can devastate your machinery and your bottom line. Industrial machines are built with specific material sciences and tolerances. A genuine part is made from the exact alloy, the exact polymer, and tested to the exact safety standards required for the machine's full-rated capacity.
                             </p>
@@ -260,7 +263,7 @@ export default function SparePartsSupplier() {
                         </section>
 
                         <section id="parts-ecosystem" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Comprehensive Parts Ecosystem: From Motors to Micro-Sensors</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Comprehensive Parts Ecosystem: From Motors to Micro-Sensors</h2>
                             <p>
                                 To serve the diverse needs of the Indian industrial market, a spare parts supplier must maintain a truly comprehensive inventory. At Sunshine, our parts ecosystem covers every functional system of a laundry machine. We don't just stock the "Easy" parts; we provide full support for the complex mechanical and electronic systems that defined modern laundry technology. Our catalog includes over 5,000 unique SKUs, ensuring that we have the right component for almost any situation.
                             </p>
@@ -276,7 +279,7 @@ export default function SparePartsSupplier() {
                         </section>
 
                         <section id="washer-spares" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Washing Machine Components: Bearings, Seals, and High-Flow Valves</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Washing Machine Components: Bearings, Seals, and High-Flow Valves</h2>
                             <p>
                                 Industrial washer extractors are the most mechanical-intensive machines in a laundry. They consume the most water, handle the most chemical stress, and experience the highest physical loads during high-speed extraction. Consequently, the maintenance of their internal components is critical. Our inventory of washer spares is designed for <strong>Maximum Durability</strong>, focusing on the high-wear areas that are most likely to fail under heavy usage in India.
                             </p>
@@ -292,7 +295,7 @@ export default function SparePartsSupplier() {
                         </section>
 
                         <section id="dryer-ironer-spares" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Drying and Ironing Spares: Belts, Burners, and Thermal Elements</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Drying and Ironing Spares: Belts, Burners, and Thermal Elements</h2>
                             <p>
                                 Drying and ironing equipment are thermal-intensive systems. Their primary mission is the efficient transfer of heat to the linen to remove moisture. The spare parts for these machines must be able to withstand constant high temperatures and humidity without degrading. Our catalog for dryers and ironers focuses on <strong>Thermal Efficiency</strong> and <strong>Fire Safety</strong>, providing your facility with the components it needs to process thousands of kilos of linen every day.
                             </p>
@@ -308,7 +311,7 @@ export default function SparePartsSupplier() {
                         </section>
 
                         <section id="electronic-controls" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Electronic Integrity: PLCs, Inverters, and Interface Modules</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Electronic Integrity: PLCs, Inverters, and Interface Modules</h2>
                             <p>
                                 Modern industrial laundry equipment is semi-robotic, controlled by sensitive PLCs (Programmable Logic Controllers) and Variable Frequency Drives (VFDs). These electronic brains are responsible for your machine's efficiency, its safety interlocks, and its precision wash/dry quality. In India, factors like power surges, humidity, and fine dust can put immense stress on these components. Sunshine provides a full range of <strong>Validated Electronic Spares</strong> to keep your machine's brain functioning at full capacity.
                             </p>
@@ -324,7 +327,7 @@ export default function SparePartsSupplier() {
                         </section>
 
                         <section id="supply-chain" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Supply Chain Excellence: Nationwide Inventory and Rapid Shipping</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Supply Chain Excellence: Nationwide Inventory and Rapid Shipping</h2>
                             <p>
                                 A spare part is useless if it's sitting in a warehouse 2,000 kilometers away when your machine is down. In India, with its vast geography and diverse logistical challenges, a spare parts supplier must have <strong>Supply Chain Excellence</strong> to be a viable partner for the industrial sector. At Sunshine, we have built a logistical network that is optimized for speed and reliability, ensuring that "Help is Always Close" no matter where your facility is located.
                             </p>
@@ -340,7 +343,7 @@ export default function SparePartsSupplier() {
                         </section>
 
                         <section id="cross-brand" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Technical Synergy: Cross-Brand Compatibility and Specifications</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Technical Synergy: Cross-Brand Compatibility and Specifications</h2>
                             <p>
                                 Many industrial laundry facilities in India operate a diverse fleet of machines from multiple national and international manufacturers. Managing the spare parts for such a fleet can be a bureaucratic nightmare. Sunshine simplifies this by offering <strong>Technical Synergy</strong>—a cross-brand parts program that provides high-quality components for a wide range of industry standards. Our technical databases allow us to cross-reference parts for major brands including Dexter, Speed Queen, Primus, UniMac, and many others.
                             </p>
@@ -356,7 +359,7 @@ export default function SparePartsSupplier() {
                         </section>
 
                         <section id="parts-kits" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Strategic Inventory: Customized Breakdown and Maintenance Kits</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Strategic Inventory: Customized Breakdown and Maintenance Kits</h2>
                             <p>
                                 The most efficient way to handle machinery breakdowns is to have the necessary parts already on your site. Our <strong>Strategic Inventory Program</strong> assists laundry managers in building customized "Breakdown and Maintenance Kits" tailored specifically to their equipment fleet. Instead of a "One-Size-Fits-All" approach, we use data from thousands of service calls across India to identify the most likely components to fail in your specific operational environment.
                             </p>
@@ -372,7 +375,7 @@ export default function SparePartsSupplier() {
                         </section>
 
                         <section id="tech-identification" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Identification Mastery: Using Schematics for Precision Ordering</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Identification Mastery: Using Schematics for Precision Ordering</h2>
                             <p>
                                 Ordering industrial spare parts can be a technical minefield. A single digit difference in a part number can mean the difference between a successful repair and a major setback. At Sunshine, we prioritize <strong>Identification Mastery</strong>. We empower our clients with the tools and the technical support they need to identify the exact part they require with zero ambiguity. This precision is the foundation of our "First-Time Right" service philosophy.
                             </p>
@@ -388,7 +391,7 @@ export default function SparePartsSupplier() {
                         </section>
 
                         <section id="quality-assurance" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Quality Assurance: Testing and Warranty on Industrial Spares</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Quality Assurance: Testing and Warranty on Industrial Spares</h2>
                             <p>
                                 Quality is not an accident; it is the result of rigorous testing and industrial standards. Every spare part that leaves a Sunshine warehouse has undergone a <strong>Quality Assurance (QA) Audit</strong>. We don't just trust the factory box; we verify the part's integrity ourselves. This commitment to quality is what allows us to offer some of the strongest warranties on spare parts in the Indian market, providing the ultimate protection for your investment.
                             </p>
@@ -404,7 +407,7 @@ export default function SparePartsSupplier() {
                         </section>
 
                         <section id="inventory-mgmt" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Inventory Management: Reducing Lead Times and Capital Lock-in</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Inventory Management: Reducing Lead Times and Capital Lock-in</h2>
                             <p>
                                 Managing a spare parts inventory is a balancing act. If you have too little stock, you risk downtime; if you have too much, you lock up valuable capital in parts that may sit on the shelf for years. Sunshine's <strong>Inventory Management Service</strong> helps you find the "Perfect Balance." We use actuarial data and your specific machine usage patterns to build a Lean Inventory strategy that maximizes your uptime while minimizing your financial overhead.
                             </p>
@@ -420,7 +423,7 @@ export default function SparePartsSupplier() {
                         </section>
 
                         <section id="order-procurement" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Strategic Procurement: Professional Ordering for Institutions</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Strategic Procurement: Professional Ordering for Institutions</h2>
                             <p>
                                 Procuring spare parts for a large institution—a hotel chain or a hospital group—requires a professional, transparent process. At Sunshine, we have built a procurement platform that is designed for the modern industrial buyer. We move beyond simple phone orders and provide a <strong>Digital Procurement Ecosystem</strong> that offers full visibility, budget control, and accounting transparency for your engineering and finance departments.
                             </p>

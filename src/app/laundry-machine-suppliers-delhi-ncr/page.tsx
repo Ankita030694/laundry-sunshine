@@ -6,6 +6,7 @@ import { CheckCircle2, Phone, Mail, ArrowRight, ShieldCheck, Zap, Droplets, Tren
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 const sections = [
@@ -228,16 +229,16 @@ export default function LaundrySuppliersDelhiNCR() {
             />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
+            <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 bg-brand-blue text-white overflow-hidden">
                 <div className="absolute inset-0 opacity-20">
                     <Image src="/hero-bg.jpg" alt="Laundry Machine Suppliers Delhi NCR" fill className="object-cover" priority />
                 </div>
 
-                <div className="container mx-auto px-6 relative z-10 text-center">
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-sm font-bold mb-8 uppercase tracking-widest leading-none">
                         <MapPin size={16} className="text-brand-orange" /> Delhi, Noida, Gurgaon &amp; Beyond
                     </div>
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight px-4">
                         Laundry Machine <br /><span className="text-brand-orange italic">Suppliers in Delhi NCR</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium transition-all duration-300">
@@ -261,15 +262,17 @@ export default function LaundrySuppliersDelhiNCR() {
             </section>
 
             {/* Breadcrumb Container */}
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[
                     { label: "Delhi NCR Suppliers", href: "/laundry-machine-suppliers-delhi-ncr" }
                 ]} />
             </div>
 
+            <StickyMobileTOC sections={sections} />
+
             {/* Main Content Layout */}
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-12">
+                <div className="grid grid-cols-12 gap-6 lg:gap-12">
                     {/* Left: Table of Contents */}
                     <aside className="lg:col-span-2 hidden lg:block">
                         <div className="sticky top-24 max-h-[80vh] overflow-y-auto pr-4 scrollbar-hide">
@@ -281,7 +284,7 @@ export default function LaundrySuppliersDelhiNCR() {
                     <article className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
 
                         <section id="delhi-ncr-landscape" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">The Delhi NCR Laundry Landscape</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Delhi NCR Laundry Landscape</h2>
                             <p>
                                 The National Capital Region (NCR) represents one of the most complex yet vibrant commercial landscapes in the world. Encompassing New Delhi and its satellite cities like Noida, Gurgaon, Ghaziabad, and Faridabad, the region acts as the commercial heartbeat of Northern India. Within this massive urban sprawl, the demand for sophisticated <strong>laundry machine suppliers in Delhi NCR</strong> has seen a parabolic rise. This isn't just about selling a washing machine; it's about powering the services that keep a megacity running.
                             </p>
@@ -307,7 +310,7 @@ export default function LaundrySuppliersDelhiNCR() {
                         </section>
 
                         <section id="noida-corridor" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Noida & Greater Noida Industrial Corridor</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Noida & Greater Noida Industrial Corridor</h2>
                             <p>
                                 The Noida-Greater Noida Expressway has become the primary industrial corridor for Northern India. With the upcoming Jewar International Airport, this region is slated to become a global manufacturing and hospitality hub. For businesses here, the scale of operations is massive. A typical "Linen Management System" for a Greater Noida resort might handle upwards of 5 tons of laundry per day.
                             </p>
@@ -330,7 +333,7 @@ export default function LaundrySuppliersDelhiNCR() {
                         </section>
 
                         <section id="ghaziabad-growth" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Ghaziabad Commercial Growth</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Ghaziabad Commercial Growth</h2>
                             <p>
                                 Ghaziabad has evolved from an industrial satellite to a massive residential and commercial center. The growth of healthcare facilities and high-rise apartment complexes along the Hindon elevated road has created a new market for commercial laundry. Our installations in Ghaziabad often focus on "Multi-Housing Laundries" and commercial dry-cleaning hubs.
                             </p>
@@ -350,7 +353,7 @@ export default function LaundrySuppliersDelhiNCR() {
                         </section>
 
                         <section id="technical-superiority" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Direct Drive vs. Belt Drive</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Direct Drive vs. Belt Drive</h2>
                             <p>
                                 One of the most common technical debates we have with our Delhi NCR clients is the choice between Direct Drive and Belt Drive systems. Most modern <strong>laundry machine suppliers in Delhi NCR</strong> are moving toward Direct Drive technology for its energy efficiency and reduced noise levels, which is crucial for hotel laundries located near guest areas.
                             </p>
@@ -370,7 +373,7 @@ export default function LaundrySuppliersDelhiNCR() {
                         </section>
 
                         <section id="water-basin-management" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Yamuna Basin Water Management</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Yamuna Basin Water Management</h2>
                             <p>
                                 Operating a laundry in the Yamuna basin requires a deep respect for water resources. Regional water often presents challenges ranging from high salinity to heavy mineral deposits. Our <strong>laundry machine suppliers in Delhi NCR</strong> strategy include the mandated use of magnetic descalers and specialized chemical feeders to protect the machines.
                             </p>
@@ -390,7 +393,7 @@ export default function LaundrySuppliersDelhiNCR() {
                         </section>
 
                         <section id="after-sales-network" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Regional After-Sales Infrastructure</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Regional After-Sales Infrastructure</h2>
                             <p>
                                 The true value of a supplier is revealed after the sale. We have established a "Regional Service Hub" in Okhla, New Delhi, that serves as a central dispatch for our 40+ field technicians. Every Sunshine tech in the NCR region is equipped with a digital service kit and a direct link to our factory engineering team.
                             </p>
@@ -400,7 +403,7 @@ export default function LaundrySuppliersDelhiNCR() {
                         </section>
 
                         <section id="bulk-procurement" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Bulk Procurement Strategies</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Bulk Procurement Strategies</h2>
                             <p>
                                 For large developers and hospital groups managing multiple sites in Noida, Gurgaon, and Delhi, we offer specialized bulk procurement strategies. This involves creating a "Standard Equipment Spec" for all your properties, which simplifies maintenance, staff training, and spare parts management.
                             </p>
@@ -420,7 +423,7 @@ export default function LaundrySuppliersDelhiNCR() {
                         </section>
 
                         <section id="environmental-policy" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Pollution Control & Regulations</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Pollution Control & Regulations</h2>
                             <p>
                                 Compliance with the Delhi Pollution Control Committee (DPCC) and UPPCB norms is mandatory for any commercial laundry. We help our clients navigate these complex waters by providing environmental-grade machines and support in filing the necessary documentation.
                             </p>
@@ -430,7 +433,7 @@ export default function LaundrySuppliersDelhiNCR() {
                         </section>
 
                         <section id="global-vs-indian" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Global Standards vs. Indian Builds</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Global Standards vs. Indian Builds</h2>
                             <p>
                                 While many <strong>laundry machine suppliers in Delhi NCR</strong> import generic machines from China, Sunshine follows a "Global Standards, Indian Soul" philosophy. Our equipment is designed to European standards of safety and efficiency but is built with "Heavy-Duty Indian Hardware."
                             </p>

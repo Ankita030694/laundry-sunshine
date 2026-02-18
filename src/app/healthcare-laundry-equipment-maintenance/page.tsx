@@ -6,6 +6,7 @@ import { CheckCircle2, Phone, Mail, ArrowRight, ShieldAlert, Thermometer, Activi
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 const sections = [
@@ -230,28 +231,39 @@ export default function HealthcareMaintenance() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }} />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
-                <div className="absolute inset-0 opacity-20">
-                    <Image src="/hero-bg.jpg" alt="Healthcare Laundry Maintenance" fill className="object-cover" />
+            <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 bg-brand-blue text-white overflow-hidden">
+                <div className="absolute inset-0 z-0">
+                    <Image src="/hero-bg.jpg" alt="Healthcare Laundry Maintenance" fill className="object-cover opacity-30" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-brand-blue/0 to-brand-blue/100" />
                 </div>
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
-                        Healthcare Laundry <br />
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                    <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-xs md:text-sm font-bold mb-8 uppercase tracking-widest leading-none animate-fade-in text-red-400">
+                        <ShieldAlert size={16} /> Medical-Grade Reliability
+                    </div>
+                    <h1
+                        className="tracking-tight leading-tight mb-6 animate-fade-in delay-100 px-4"
+                        style={{
+                            fontFamily: 'Satoshi, sans-serif',
+                            fontSize: 'clamp(32px, 7vw, 72px)',
+                            fontWeight: 900
+                        }}
+                    >
+                        Healthcare Laundry <br className="hidden md:block" />
                         <span className="text-brand-orange italic">Mechanical Excellence</span>
                     </h1>
-                    <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium">
+                    <p className="text-lg md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium animate-fade-in delay-200">
                         Precision Engineering for Zero-Failure Medical Environments. We ensure your infection control protocols are physically validated through technical excellence.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-4">
+                    <div className="flex flex-wrap justify-center gap-4 animate-fade-in delay-300">
                         <button
                             onClick={openContactModal}
-                            className="bg-brand-orange text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3"
+                            className="bg-brand-orange text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3"
                         >
                             Request Maintenance Audit <ArrowRight size={24} />
                         </button>
                         <button
                             onClick={openContactModal}
-                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-10 py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all flex items-center gap-3"
+                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-base md:text-lg hover:bg-white/20 transition-all flex items-center gap-3"
                         >
                             View Service Plans
                         </button>
@@ -260,13 +272,15 @@ export default function HealthcareMaintenance() {
             </section>
 
             {/* Breadcrumb Container */}
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[{ label: "Healthcare Maintenance", href: "/healthcare-laundry-equipment-maintenance" }]} />
             </div>
 
+            <StickyMobileTOC sections={sections} />
+
             {/* Main Content Layout */}
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-12">
+                <div className="grid grid-cols-12 gap-6 lg:gap-12">
 
                     {/* Left Column: Table of Contents */}
                     <aside className="lg:col-span-2 hidden lg:block">
@@ -277,8 +291,8 @@ export default function HealthcareMaintenance() {
 
                     {/* Middle Column: 3500+ Words Content */}
                     <main className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
-                        <section id="critical-uptime" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Criticality of Medical-Grade Uptime</h2>
+                        <section id="critical-uptime" className="mb-12 md:mb-20">
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Criticality of Medical-Grade Uptime</h2>
                             <p>
                                 In the healthcare sector, the laundry room is more than a utility; it is a vital pillar of the infection control strategy. A failure in the laundry workflow can lead to linen shortages in surgical suites, emergency rooms, and patient wards, directly impacting the ability to provide care. As a leader in <strong>healthcare laundry equipment maintenance</strong>, Sunshine Equipments operates under the principle of "Zero-Failure Engineering."
                             </p>
@@ -296,7 +310,7 @@ export default function HealthcareMaintenance() {
                         </section>
 
                         <section id="preventative-protocols" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Preventative Maintenance Protocols</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Preventative Maintenance Protocols</h2>
                             <p>
                                 Most maintenance companies perform a visual check and call it "preventative." Sunshine's <strong>healthcare laundry equipment maintenance</strong> involves deep-system auditing. Our protocols follow a rigorous daily, weekly, and monthly cadence that addresses the specific stresses of a clinical environment.
                             </p>
@@ -308,7 +322,7 @@ export default function HealthcareMaintenance() {
                         </section>
 
                         <section id="validation" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Validating Sanitization & Thermal Disinfection</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Validating Sanitization & Thermal Disinfection</h2>
                             <p>
                                 Verification is the heartbeat of medical laundry. It is not enough for the machine to "report" that it reached temperature; we must prove it through physical validation.
                             </p>
@@ -332,7 +346,7 @@ export default function HealthcareMaintenance() {
                         </section>
 
                         <section id="infection-control" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Infection Control in Maintenance Work</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Infection Control in Maintenance Work</h2>
                             <p>
                                 When a technician enters a medical laundry facility, they become a potential vector for cross-contamination. Unlike hotel maintenance, <strong>healthcare laundry equipment maintenance</strong> requires strict adherence to aseptic techniques.
                             </p>
@@ -342,7 +356,7 @@ export default function HealthcareMaintenance() {
                         </section>
 
                         <section id="utility-redundancy" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Utility Redundancy & Emergency Backup</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Utility Redundancy & Emergency Backup</h2>
                             <p>
                                 A machine is only as reliable as the steam, electricity, and water feeding it. We consult on the design of redundant utility headers to ensure your laundry can operate during infrastructure disruptions.
                             </p>
@@ -354,14 +368,14 @@ export default function HealthcareMaintenance() {
                         </section>
 
                         <section id="specialized-techs" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Specialized Healthcare Technicians</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Specialized Healthcare Technicians</h2>
                             <p>
                                 You wouldn't let a general contractor perform heart surgery; similarly, you shouldn't let a general appliance repairman touch a barrier washer. Sunshine technicians are specialists certified in PLC diagnostics, hydraulic engineering, and OSHA Bloodborne Pathogens protocols.
                             </p>
                         </section>
 
                         <section id="compliance-documentation" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">HLAC & TRSA Compliance Documentation</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">HLAC & TRSA Compliance Documentation</h2>
                             <p>
                                 In the event of a hospital-acquired infection (HAI) investigation, your maintenance logs are your first line of defense. Our service includes a comprehensive digital paper trail via our "Digital Twin" logging system.
                             </p>
@@ -387,14 +401,14 @@ export default function HealthcareMaintenance() {
                         </section>
 
                         <section id="spare-parts" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Critical Inventory & Spare Parts Strategy</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Critical Inventory & Spare Parts Strategy</h2>
                             <p>
                                 The fastest way to fix a machine is to have the part already on the shelf. We help healthcare facilities design "Critical Uptime Kits" tiered by soft failures, mechanical wear, and master components stored at regional hubs for 4-hour delivery.
                             </p>
                         </section>
 
                         <section id="training" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Staff Training & Emergency Response</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Staff Training & Emergency Response</h2>
                             <p>
                                 A machine is only as good as its operator. We provide on-site training for hospital staff on daily operator maintenance, emergency manual overrides, and digital error reporting to cut troubleshooting time by 50%.
                             </p>
@@ -436,7 +450,7 @@ export default function HealthcareMaintenance() {
                     </main>
 
                     {/* Right Column: Sticky CTA & Related */}
-                    <aside className="col-span-12 lg:col-span-3">
+                    <aside className="col-span-12 lg:col-span-3 mt-12 lg:mt-0">
                         <div className="sticky top-24 space-y-8">
                             {/* Sidebar CTA */}
                             <div className="bg-brand-blue text-white p-8 rounded-[2.5rem] shadow-2xl relative overflow-hidden group border-4 border-white">

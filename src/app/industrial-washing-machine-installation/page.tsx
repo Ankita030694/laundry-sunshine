@@ -6,6 +6,7 @@ import { CheckCircle2, Phone, Mail, ArrowRight, MessageSquare, Star, ChevronRigh
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 const sections = [
@@ -187,12 +188,12 @@ export default function IndustrialInstallation() {
     return (
         <main className="min-h-screen bg-white font-sans">
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
+            <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 bg-brand-blue text-white overflow-hidden">
                 <div className="absolute inset-0 opacity-15">
                     <Image src="/hero-bg.jpg" alt="Industrial Washing Machine Installation" fill className="object-cover" />
                 </div>
-                <div className="container mx-auto px-6 relative z-10 text-center">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight px-4">
                         Precision Industrial <br />
                         <span className="text-brand-orange italic">Washing Machine Installation</span>
                     </h1>
@@ -211,13 +212,15 @@ export default function IndustrialInstallation() {
             </section>
 
             {/* Breadcrumb Container */}
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[{ label: "Industrial Washing Machine Installation", href: "/industrial-washing-machine-installation" }]} />
             </div>
 
+            <StickyMobileTOC sections={sections} />
+
             {/* Main Content Layout */}
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-12">
+                <div className="grid grid-cols-12 gap-6 lg:gap-12">
                     {/* Left: Table of Contents */}
                     <aside className="lg:col-span-2 hidden lg:block">
                         <div className="sticky top-24 max-h-[80vh] overflow-y-auto pr-4 scrollbar-hide">
@@ -228,7 +231,7 @@ export default function IndustrialInstallation() {
                     {/* Middle: Main Content */}
                     <article className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
                         <section id="intro" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Industrial Washing Machine Installation: The Foundation of Operational Excellence</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Industrial Washing Machine Installation: The Foundation of Operational Excellence</h2>
                             <p>
                                 The performance and longevity of an industrial washing machine are determined long before the first load of laundry is processed. While the quality of the machine itself is paramount, the professional installation of that equipment is the true foundation of operational uptime. A poorly installed machine will suffer from excessive vibration, utility leaks, and premature component failure, leading to costly repairs and disrupted laundry cycles.
                             </p>
@@ -244,7 +247,7 @@ export default function IndustrialInstallation() {
                         </section>
 
                         <section id="site-selection" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Strategic Site Selection and Spatial Planning</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Strategic Site Selection and Spatial Planning</h2>
                             <p>
                                 Choosing the right location for your industrial washing machine is the first step in successful installation. The room must be large enough to accommodate the physical dimensions of the machines while leaving ample space for operational access, maintenance work, and the movement of laundry carts. We recommend a spatial planning model that allows for 1.5 to 2 times the machine's footprint for a safe and productive environment.
                             </p>
@@ -260,7 +263,7 @@ export default function IndustrialInstallation() {
                         </section>
 
                         <section id="structural" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Structural Engineering: Flooring, Leveling, and Anchoring</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Structural Engineering: Flooring, Leveling, and Anchoring</h2>
                             <p>
                                 The sheer weight and high-speed G-forces of an industrial washing machine require a superior structural foundation. Hardmount washer extractors, which are common in many Indian industrial laundry plants, rely on the floor to absorb the vibration generated during the high-speed extraction cycle. This means that a standard commercial floor is often inadequate; a reinforced concrete slab with a thickness of 6 to 8 inches is the minimum requirement.
                             </p>
@@ -276,7 +279,7 @@ export default function IndustrialInstallation() {
                         </section>
 
                         <section id="electrical" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Advanced Utility Infrastructure: Electrical Systems and Power Quality</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Advanced Utility Infrastructure: Electrical Systems and Power Quality</h2>
                             <p>
                                 Industrial laundry machines are high-power consumers that require specialized electrical infrastructure. Most equipment in India operates on a 3-phase, 400V or 415V supply. It is vital that each machine has its own dedicated circuit and a correctly sized MCCB (Molded Case Circuit Breaker) in the main distribution panel. This prevents the "Daisy-Chaining" of equipment, which is a major fire hazard and a leading cause of electrical failure in industrial settings.
                             </p>
@@ -292,7 +295,7 @@ export default function IndustrialInstallation() {
                         </section>
 
                         <section id="water-drainage" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Water Management: Precision Supply and Industrial Drainage</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Water Management: Precision Supply and Industrial Drainage</h2>
                             <p>
                                 Water is the primary medium of the wash, and its professional management is key to cycle efficiency. Industrial washing machines require both hot and cold water supplies with high flow rates. The inlet piping must be large enough (typically 1 to 2 inches) to fill the machine quickly. If the flow rate is restricted, the fill phase of the cycle is extended, reducing the number of loads you can process per day and increasing your labor costs.
                             </p>
@@ -308,7 +311,7 @@ export default function IndustrialInstallation() {
                         </section>
 
                         <section id="thermal" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Thermal Systems: Steam and Gas Integration for Rapid Heating</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Thermal Systems: Steam and Gas Integration for Rapid Heating</h2>
                             <p>
                                 To achieve effective sanitization, especially in healthcare and luxury hospitality, water must be heated rapidly to specific temperatures. While electric heating is common for smaller units, large industrial facilities often utilize steam or gas heating due to their higher thermal power and lower operational costs. The installation of these thermal systems requires specialized knowledge of high-pressure piping and safety regulations.
                             </p>
@@ -324,7 +327,7 @@ export default function IndustrialInstallation() {
                         </section>
 
                         <section id="ventilation" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Environmental Controls: Ventilation and Humidity Management</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Environmental Controls: Ventilation and Humidity Management</h2>
                             <p>
                                 A busy laundry room is an environment of intense heat and moisture. Without professional ventilation, this humidity can build up, leading to mold growth, fabric contamination, and the premature corrosion of machine components. Proper airflow is also essential for the comfort and productivity of your operators. We design ventilation systems that maintain a constant flow of fresh air while effectively exhausting the hot, damp air generated by dryers and ironers.
                             </p>
@@ -340,7 +343,7 @@ export default function IndustrialInstallation() {
                         </section>
 
                         <section id="barrier-design" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Workflow Optimization: Implementing the Barrier Concept</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Workflow Optimization: Implementing the Barrier Concept</h2>
                             <p>
                                 The layout of the machines determines the efficiency of the entire operation. A professional installation focuses on "Unidirectional Workflow"-ensuring that laundry moves in a straight line from soiled intake to clean output without ever backtracking. This eliminates bottlenecks and significantly reduces the risk of clean laundry being re-contaminated by dirty linen or staff moving between different zones.
                             </p>
@@ -356,7 +359,7 @@ export default function IndustrialInstallation() {
                         </section>
 
                         <section id="commissioning" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Testing and Commissioning: Ensuring Multi-Point Performance</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Testing and Commissioning: Ensuring Multi-Point Performance</h2>
                             <p>
                                 The final stage of installation is "Commissioning"-a series of rigorous technical tests that prove the machine is ready for full-scale operation. We do not consider an installation complete just because the machine turns on. Our commissioning protocol involves a 50-point checklist where we measure everything from water fill times and heater performance to the exact RPM during high-speed extraction and the functionality of every safety interlock.
                             </p>
@@ -372,7 +375,7 @@ export default function IndustrialInstallation() {
                         </section>
 
                         <section id="safety-compliance" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Safety and Compliance Standards for Indian Industrial Facilities</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Safety and Compliance Standards for Indian Industrial Facilities</h2>
                             <p>
                                 Compliance is a major focus for any industrial facility in India. Between local fire safety regulations, electrical codes, and environmental standards, there is a complex web of requirements that must be met. A professional installation by Sunshine Equipment ensures that your laundry room is fully compliant with these standards from day one, avoiding the risk of fines, closures, or insurance denials.
                             </p>
@@ -388,7 +391,7 @@ export default function IndustrialInstallation() {
                         </section>
 
                         <section id="operator-training" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Technical Training and Institutional Handover Procedures</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Technical Training and Institutional Handover Procedures</h2>
                             <p>
                                 Even the most advanced industrial washing machine is only as effective as the person operating it. The most common cause of equipment failure and fabric damage is "Operator Error"-using the wrong program, over-loading the machine, or ignoring safety warnings. Every Sunshine installation is followed by a comprehensive on-site training program for your laundry team, designed to empower them with the knowledge they need to succeed.
                             </p>
@@ -404,7 +407,7 @@ export default function IndustrialInstallation() {
                         </section>
 
                         <section id="maintenance-prep" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Preparing for Lifecycle Success: Access and Serviceability</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Preparing for Lifecycle Success: Access and Serviceability</h2>
                             <p>
                                 Professional installation considers the entire 20-year lifespan of the machine, not just the first day of operation. This means planning for future serviceability. A machine that is installed too close to a wall or in a tight corner might be impossible to repair without moving the entire unit-an expensive and time-consuming process. We ensure that every installation includes "Service Zones"-at least 24 inches of clear space behind the machine for technicians to work.
                             </p>
@@ -420,7 +423,7 @@ export default function IndustrialInstallation() {
                         </section>
 
                         <section id="roi-installation" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">The Financial Impact of Professional Installation</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Financial Impact of Professional Installation</h2>
                             <p>
                                 For many business owners, professional installation is seen as an added cost. However, a detailed financial analysis proves that it is one of the most effective ways to maximize ROI. The savings realized from reduced vibration, optimized utility flow, and zero early-life breakdowns far outweigh the initial investment in expert engineering. A professionally installed machine is simply more efficient and cheaper to run every single day.
                             </p>
@@ -436,7 +439,7 @@ export default function IndustrialInstallation() {
                         </section>
 
                         <section id="case-studies" className="mb-20">
-                            <h2 className="text-4xl font-black text-brand-blue mb-8 tracking-tighter">Installation Success Stories: From Site Prep to Full Scale Power</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Installation Success Stories: From Site Prep to Full Scale Power</h2>
                             <p>
                                 Our installation team has successfully completed projects in every imaginable environment, from luxury high-rise hotels in Mumbai to remote field hospitals in Leh. One notable success involved a heritage hotel in Rajasthan that wanted to move its laundry into a 100-year-old stone building. We designed specialized steel support frames to reinforce the floor without damaging the historic structure, allowing them to install high-performance industrial equipment in a space that was never intended for it.
                             </p>

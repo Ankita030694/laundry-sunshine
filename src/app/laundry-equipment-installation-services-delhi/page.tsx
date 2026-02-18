@@ -6,6 +6,7 @@ import { CheckCircle2, Phone, Mail, ArrowRight, ShieldCheck, Zap, Droplets, Tren
 import { useModal } from "@/context/ModalContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
+import StickyMobileTOC from "@/components/StickyMobileTOC";
 import CTA from "@/components/CTA";
 
 const sections = [
@@ -229,16 +230,16 @@ export default function LaundryInstallationServicesDelhi() {
             />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 bg-brand-blue text-white overflow-hidden">
+            <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 bg-brand-blue text-white overflow-hidden">
                 <div className="absolute inset-0 opacity-20">
                     <Image src="/hero-bg.jpg" alt="Laundry Equipment Installation Delhi" fill className="object-cover" priority />
                 </div>
 
-                <div className="container mx-auto px-6 relative z-10 text-center">
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
                     <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full text-white text-sm font-bold mb-8 uppercase tracking-widest leading-none">
                         <HardHat size={16} className="text-brand-orange" /> Engineered for Operational Excellence
                     </div>
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tight leading-tight px-4">
                         Laundry Equipment <br /><span className="text-brand-orange italic">Installation Services Delhi</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-4xl mx-auto font-medium transition-all duration-300">
@@ -262,15 +263,17 @@ export default function LaundryInstallationServicesDelhi() {
             </section>
 
             {/* Breadcrumb Container */}
-            <div className="container mx-auto px-6 py-6 border-b border-gray-100">
+            <div className="container mx-auto px-4 md:px-6 py-6 border-b border-gray-100">
                 <Breadcrumbs items={[
                     { label: "Installation Services Delhi", href: "/laundry-equipment-installation-services-delhi" }
                 ]} />
             </div>
 
+            <StickyMobileTOC sections={sections} />
+
             {/* Main Content Layout */}
-            <div className="max-w-[1440px] mx-auto px-6 py-12">
-                <div className="grid grid-cols-12 gap-12">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-12">
+                <div className="grid grid-cols-12 gap-6 lg:gap-12">
                     {/* Left: Table of Contents */}
                     <aside className="lg:col-span-2 hidden lg:block">
                         <div className="sticky top-24 max-h-[80vh] overflow-y-auto pr-4 scrollbar-hide">
@@ -282,7 +285,7 @@ export default function LaundryInstallationServicesDelhi() {
                     <article className="col-span-12 lg:col-span-7 prose prose-lg max-w-none text-gray-700 leading-relaxed font-medium">
 
                         <section id="installation-precision" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">The Precision of Industrial Installation</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">The Precision of Industrial Installation</h2>
                             <p>
                                 An industrial laundry is more than just a collection of machines; it is a complex, integrated system of fluid dynamics, thermal engineering, and mechanical power. The quality of your <strong>laundry equipment installation services Delhi</strong> will determine the operational efficiency of your facility for the next twenty years. A poorly installed machine will vibrate excessively, consume more energy, and suffer from premature component failure.
                             </p>
@@ -302,7 +305,7 @@ export default function LaundryInstallationServicesDelhi() {
                         </section>
 
                         <section id="workflow-optimization" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Workflow & Layout Strategy</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Workflow & Layout Strategy</h2>
                             <p>
                                 Space in Delhi comes at a premium. Whether you are in a basement in Okhla or a high-rise in Gurgaon, maximizing "Output per Square Foot" is essential. Our layout experts use advanced modeling to design your facility for a unidirectional workflow. This means soiled linen enters through one door, moves in a logical sequence through washing, drying, and ironing, and exits through a separate "Clean Output" door.
                             </p>
@@ -332,7 +335,7 @@ export default function LaundryInstallationServicesDelhi() {
                         </section>
 
                         <section id="plumbing-hydraulics" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Plumbing & Hydraulic Efficiency</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Plumbing & Hydraulic Efficiency</h2>
                             <p>
                                 Water is the lifeblood of laundry. An undersized water line will cause the machines to fill slowly, increasing the cycle time and reducing your daily output. We calculate the "Peak Instantaneous Flow Rate" required for your entire facility and size the main headers accordingly.
                             </p>
@@ -352,7 +355,7 @@ export default function LaundryInstallationServicesDelhi() {
                         </section>
 
                         <section id="ventilation-hvac" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">HVAC & Air Exchange Standards</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">HVAC & Air Exchange Standards</h2>
                             <p>
                                 Commercial laundries generate a lot of laundry room humidity. Without proper ventilation, this creates a working environment that is both uncomfortable for staff and damaging to the electronic components of the machines. We follow the "20/40 Rule"—20 air changes per hour for general areas, and 40 for hot-zones.
                             </p>
@@ -382,7 +385,7 @@ export default function LaundryInstallationServicesDelhi() {
                         </section>
 
                         <section id="commissioning-validation" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Commissioning & Validation</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Commissioning & Validation</h2>
                             <p>
                                 Once the last bolt is tightened, the "Commissioning Phase" begins. We don't just turn the machines on; we run them through their full range of programs under "Load Conditions." We check for leaks, verify the extraction speeds, and validate the heating times.
                             </p>
@@ -392,7 +395,7 @@ export default function LaundryInstallationServicesDelhi() {
                         </section>
 
                         <section id="staff-training" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">Operator Training Workshops</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">Operator Training Workshops</h2>
                             <p>
                                 A machine is only as good as the person operating it. Our <strong>laundry equipment installation services Delhi</strong> always include a 3-day on-site training workshop for your staff. We cover ergonomics, safety, and basic troubleshooting.
                             </p>
@@ -412,7 +415,7 @@ export default function LaundryInstallationServicesDelhi() {
                         </section>
 
                         <section id="environmental-compliance" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">DPCC & Environmental Compliance</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">DPCC & Environmental Compliance</h2>
                             <p>
                                 The Delhi Pollution Control Committee (DPCC) has strict guidelines for commercial laundries. Our installation team ensures your facility is "Inspection Ready" from day one. We include water-meters on every line, grease-traps for wastewater, and low-dB silencers on all blower motors.
                             </p>
@@ -432,7 +435,7 @@ export default function LaundryInstallationServicesDelhi() {
                         </section>
 
                         <section id="roi-of-installation" className="mb-20">
-                            <h2 className="text-4xl font-black mb-8 tracking-tighter">ROI of Professional Installation</h2>
+                            <h2 className="text-2xl md:text-4xl font-black text-brand-blue mb-6 md:mb-8 tracking-tighter">ROI of Professional Installation</h2>
                             <p>
                                 Professional installation is an investment, not an expense. A correctly installed 100kg washer extractor can save you ₹50,000 a month in utility costs and prevent ₹2 Lakh in preventable repairs every year. When you multiply that across an entire facility, the ROI of choosing Sunshine's engineering team becomes clear.
                             </p>
