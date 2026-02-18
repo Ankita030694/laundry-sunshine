@@ -12,11 +12,11 @@ export default function Footer() {
     <footer className="bg-white border-t border-gray-400" style={{ fontFamily: 'Satoshi, sans-serif' }}>
       {/* Upper Footer: Main Links */}
       <div className="border-y border-gray-400 mt-20">
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-0">
           {/* Quick Links */}
-          <div className="p-8 md:p-12 border-l border-gray-400">
+          <div className="p-8 md:p-12 border-l border-gray-400 lg:col-span-2">
             <h5 className="text-lg font-bold text-gray-800 mb-8 uppercase tracking-wide">Quick Links</h5>
-            <ul className="space-y-4 text-gray-600 font-medium">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-gray-600 font-medium">
               <li><Link href="/" className="hover:text-brand-orange transition-colors">Home</Link></li>
               <li><Link href="/about" className="hover:text-brand-orange transition-colors">About Us</Link></li>
               <li><Link href="/laundry-equipment-for-hotels" className="hover:text-brand-orange transition-colors">Hotel Laundry Equipment</Link></li>
@@ -47,7 +47,7 @@ export default function Footer() {
           </div>
 
           {/* Service & Support */}
-          <div className="p-8 md:p-12 border-r border-gray-400">
+          <div className="p-8 md:p-12 border-x border-gray-400 lg:col-span-1">
             <h5 className="text-lg font-bold text-gray-800 mb-8 uppercase tracking-wide">Service & Support</h5>
             <ul className="space-y-4 text-gray-600 font-medium">
               <li>On-Site Installation & Commissioning</li>
@@ -58,7 +58,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Us */}
-          <div className="p-8 md:p-12">
+          <div className="p-8 md:p-12 border-r border-gray-400 lg:col-span-1">
             <h5 className="text-lg font-bold text-gray-800 mb-8 uppercase tracking-wide">Contact Us</h5>
             <ul className="space-y-4 text-gray-600 font-medium">
               <li className="text-gray-900 font-bold">+91 97111 12950</li>
@@ -69,7 +69,7 @@ export default function Footer() {
           </div>
 
           {/* Head Office */}
-          <div className="p-8 md:p-12 border-r border-gray-400">
+          <div className="p-8 md:p-12 border-r border-gray-400 lg:col-span-1">
             <h5 className="text-lg font-bold text-gray-800 mb-8 uppercase tracking-wide">Head Office</h5>
             <p className="text-gray-600 font-medium leading-relaxed">
               304, 3rd Floor, Gupta Palace, <br />
