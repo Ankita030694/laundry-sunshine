@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Phone, Mail, Award, Users, Star, Quote } from "lucide-react";
+import { Phone, Mail, Award, Users, Star, Quote, Flag, Eye } from "lucide-react";
+import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
   title: "About Us | Sunshine Equipments Co Inc - 25 Years of Laundry Excellence",
@@ -38,146 +39,147 @@ export default function About() {
 
       <main>
         {/* About Hero Section */}
-        <section className="relative pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
+        <section className="relative pt-16 pb-16 md:pt-32 md:pb-24 overflow-hidden">
           <div className="container mx-auto px-6">
-            <div className="max-w-3xl mb-16 animate-fade-in">
-              <div className="mb-5 flex items-center gap-2.5">
-                <span className="h-px w-10 bg-brand-orange"></span>
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-orange">Trust & Heritage</span>
+            <div className="mb-12 md:mb-20 inline-flex flex-col items-start gap-[50px]">
+              <span className="text-[#E6763F] font-satoshi text-[40px] font-medium leading-[40px]">
+                ABOUT US
+              </span>
+
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
+                <div className="md:col-span-7">
+                  <h1 className="text-[#1F2933] font-satoshi text-[55px] font-medium leading-[55px]">
+                    Powering Commercial Laundry With Reliable Innovation
+                  </h1>
+                </div>
+                <div className="md:col-span-5 md:pt-4">
+                  <p className="text-[#1F2933] font-satoshi text-[25px] font-normal leading-[29px]">
+                    We modernize outdated laundry systems with smarter solutions. High-performance machines with expert installation. Reliable support for smooth, uninterrupted operations.
+                  </p>
+                </div>
               </div>
-              <h1 className="text-5xl font-black leading-[1.1] tracking-tighter text-brand-blue lg:text-7xl mb-10">
-                Trusted Laundry <br />
-                <span className="text-gradient-orange italic">Partner Since 2000.</span>
-              </h1>
-              <p className="text-lg font-medium leading-relaxed text-brand-blue/70">
-                Founded in 2000, Sunshine Equipment Co. Inc. has become a trusted name in commercial laundry solutions across India. Our mission is simple: to deliver premium equipment, expert installation, and dependable after-sales support while building lasting client relationships based on trust and quality.
-              </p>
             </div>
 
-            {/* Asymmetrical Image/Stats Grid */}
-            <div className="grid lg:grid-cols-12 gap-10 items-center">
-              <div className="lg:col-span-12 xl:col-span-7">
-                <div className="relative rounded-[2.5rem] overflow-hidden shadow-premium aspect-[16/9] bg-slate-100 border-[10px] border-white">
-                  <Image 
-                    src="/hero_laundry_1770031915184.png" 
-                    alt="Industrial Excellence" 
-                    fill 
-                    className="object-cover opacity-90"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-blue/60 to-transparent"></div>
-                  <div className="absolute bottom-10 left-10 text-white">
-                    <span className="text-4xl font-black block mb-1">2,500+</span>
-                    <span className="text-xs font-bold uppercase tracking-widest opacity-80">Installations Nationwide</span>
+            <div className="relative w-full aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl border border-gray-100">
+              <Image
+                src="/A_wide_169_202602161056 1.jpg"
+                alt="Sunshine Equipment Operations"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+        </section>
+
+
+        {/* Leadership Section */}
+        <section className="py-16 md:py-24 bg-white border-t border-gray-50">
+          <div className="max-w-[1524px] mx-auto px-6 flex flex-col items-center gap-[80px]">
+            <div className="flex flex-col md:flex-row items-start justify-between w-full">
+              <div className="flex flex-col items-start gap-[50px]">
+                <span className="text-[#E6763F] font-satoshi text-[40px] font-medium leading-[40px]">
+                  LEADERSHIP
+                </span>
+                <h2 className="text-[#1F2933] font-satoshi text-[55px] font-medium leading-[55px]">
+                  Driven by Industry Expertise
+                </h2>
+              </div>
+              <div className="md:pt-12">
+                <p className="text-[#1F2933] font-satoshi text-[25px] font-normal leading-[29px] max-w-xl">
+                  At Sunshine Equipment, our leadership brings decades of experience in commercial laundry solutions. We focus on delivering reliable systems and long-term partnerships that help businesses operate with confidence.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-[80px] w-full">
+              {/* Leader 1 */}
+              <div className="flex flex-col md:grid md:grid-cols-12 gap-10 md:gap-16 items-start">
+                <div className="w-full md:col-span-3">
+                  <div className="relative aspect-[4/5] bg-gray-100 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                    <Image src="/ChatGPT-Image-Oct-28-2025-11_36_28-AM 1.png" alt="Rraj Kumar Nangia" fill className="object-cover" />
                   </div>
                 </div>
-              </div>
-              <div className="lg:col-span-12 xl:col-span-5 grid grid-cols-2 gap-5">
-                <div className="p-8 rounded-[2.5rem] bg-slate-50 border border-slate-100 flex flex-col items-center text-center group hover:bg-white hover:shadow-orange transition-all hover:-translate-y-1">
-                  <Award className="text-brand-orange mb-3" size={32} />
-                  <span className="text-xl font-black text-brand-blue block leading-tight">Elite Partner</span>
-                  <span className="text-[9px] uppercase font-black tracking-widest text-brand-blue/40">Authorized Dealer</span>
+                <div className="md:col-span-4 lg:pt-2">
+                  <h3 className="text-3xl md:text-4xl font-bold text-[#1F2933] mb-3">Rraj Kumar Nangia</h3>
+                  <p className="text-[#E6763F] text-lg md:text-xl font-bold uppercase tracking-wider">Founder & Managing Director</p>
                 </div>
-                <div className="p-8 rounded-[2.5rem] bg-brand-blue text-white flex flex-col items-center text-center group hover:bg-slate-900 shadow-premium transition-all hover:-translate-y-1">
-                  <Users className="text-brand-orange mb-3" size={32} />
-                  <span className="text-xl font-black block leading-tight">Expert Support</span>
-                  <span className="text-[9px] uppercase font-black tracking-widest opacity-40">On-Call Engineers</span>
+                <div className="md:col-span-5 lg:pt-2">
+                  <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                    I founded this company with a simple goal—to make commercial laundry solutions reliable, stress-free, and accessible for every business. Over the years, we've seen how the right equipment combined with consistent after-sales support can transform operations. That's why we go beyond simply supplying machines—we partner with our clients through installation, maintenance, and continuous support.
+                  </p>
+                </div>
+              </div>
+
+              {/* Leader 2 */}
+              <div className="flex flex-col md:grid md:grid-cols-12 gap-10 md:gap-16 items-start">
+                <div className="w-full md:col-span-3">
+                  <div className="relative aspect-[4/5] bg-gray-100 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                    <Image src="/ChatGPT-Image-Oct-3-2025-08_27_45-PM 1.png" alt="Veena Sharma" fill className="object-cover" />
+                  </div>
+                </div>
+                <div className="md:col-span-4 lg:pt-2">
+                  <h3 className="text-3xl md:text-4xl font-bold text-[#1F2933] mb-3">Veena Sharma</h3>
+                  <p className="text-[#E6763F] text-lg md:text-xl font-bold uppercase tracking-wider">Operations Manager</p>
+                </div>
+                <div className="md:col-span-5 lg:pt-2">
+                  <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                    My focus is on ensuring every project is executed with precision, efficiency, and consistency. From coordinating installations to managing spare parts logistics, I work closely with our technical teams to maintain the highest operational standards. My goal is to deliver seamless execution, minimize downtime, and ensure our clients receive dependable support at every stage.
+                  </p>
+                </div>
+              </div>
+
+              {/* Leader 3 */}
+              <div className="flex flex-col md:grid md:grid-cols-12 gap-10 md:gap-16 items-start">
+                <div className="w-full md:col-span-3">
+                  <div className="relative aspect-[4/5] bg-gray-100 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                    <Image src="/ChatGPT-Image-Sep-29-2025-03_07_21-PM-414x500 1.png" alt="Gulshan Khattar" fill className="object-cover" />
+                  </div>
+                </div>
+                <div className="md:col-span-4 lg:pt-2">
+                  <h3 className="text-3xl md:text-4xl font-bold text-[#1F2933] mb-3">Gulshan Khattar</h3>
+                  <p className="text-[#E6763F] text-lg md:text-xl font-bold uppercase tracking-wider">Senior Engineering Technician</p>
+                </div>
+                <div className="md:col-span-5 lg:pt-2">
+                  <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+                    My role is to ensure every machine we install and service performs at its highest standard. With hands-on technical expertise, I focus on precise installations, thorough inspections, and proactive maintenance. My commitment is to deliver reliable performance, minimize downtime, and provide technical solutions that keep our clients' operations running smoothly and efficiently.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Global Brands Integration */}
-        <section className="bg-slate-50 py-20 rounded-[3.5rem] mx-4 border border-slate-200/50">
-          <div className="container mx-auto px-6 text-center">
-            <span className="mb-4 inline-block font-black uppercase tracking-[0.3em] text-brand-orange text-[10px]">Global Excellence</span>
-            <h3 className="text-3xl font-black text-brand-blue mb-12 tracking-tight">Authorized Dealers of World-Class Technology</h3>
-            <div className="flex flex-wrap justify-center gap-10 items-center opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
-               {["Girbau", "Electrolux", "Maxi", "Lapaow", "Pros Parts"].map((brand) => (
-                 <span key={brand} className="text-2xl font-black tracking-tighter text-brand-blue px-6">{brand}</span>
-               ))}
-            </div>
-            <p className="max-w-3xl mx-auto mt-12 text-base font-medium text-brand-blue/60 leading-relaxed">
-              As an authorized dealer of global brands like <b>Lapaow, Pros Parts, Girbau, Electrolux, and Maxi</b>, we bring world-class technology to businesses of all sizes—from hotels and hospitals to laundromats—helping them boost efficiency, minimize downtime, and maximize productivity.
-            </p>
-          </div>
-        </section>
-
-        {/* CEO Founder Message Section */}
-        <section className="py-24 lg:py-32">
+        {/* Mission & Vision Section */}
+        <section className="py-20 md:py-32 bg-white border-t border-gray-100">
           <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-12 gap-16 items-start">
-              <div className="lg:col-span-5 relative">
-                 <div className="rounded-[3rem] overflow-hidden shadow-premium relative z-10 border-[12px] border-white">
-                    <div className="aspect-[4/5] bg-slate-200 relative">
-                       <div className="absolute inset-0 flex items-center justify-center">
-                          <Image 
-                            src="/hero_laundry_1770031915184.png" 
-                            alt="Mr. Rraj Kumar Nangia" 
-                            fill 
-                            className="object-cover grayscale"
-                          />
-                       </div>
-                    </div>
-                 </div>
-                 <div className="absolute top-[15%] left-[-10%] h-[110%] w-[110%] rounded-[4rem] bg-brand-orange/5 -z-10 rotate-3"></div>
-                 <div className="absolute -bottom-8 -right-8 glass p-8 rounded-3xl shadow-premium border border-slate-100 max-w-[240px]">
-                    <h4 className="text-lg font-black text-brand-blue mb-1">Rraj Kumar Nangia</h4>
-                    <span className="text-[10px] uppercase font-black tracking-widest text-brand-orange">Founder & Visionary</span>
-                    <div className="mt-4 flex gap-1">
-                       {[...Array(5)].map((_, i) => <Star key={i} size={10} className="fill-brand-orange text-brand-orange" />)}
-                    </div>
-                 </div>
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              {/* Mission Part */}
+              <div className="py-10 md:py-0 md:pr-20 md:border-r border-gray-200 flex flex-col items-start">
+                <div className="mb-10 text-[#E6763F]">
+                  <Flag size={64} strokeWidth={1.5} />
+                </div>
+                <h3 className="text-3xl md:text-4xl font-medium text-[#1F2933] font-satoshi mb-8">Our Mission</h3>
+                <p className="text-gray-600 text-lg md:text-xl leading-relaxed font-satoshi font-normal">
+                  At Sunshine Equipment, our mission is to deliver reliable, high-performance commercial laundry solutions that simplify operations for businesses. We are committed to providing quality machinery, expert installation, and dependable after-sales support that ensure efficiency, durability, and minimal downtime for our clients.
+                </p>
               </div>
 
-              <div className="lg:col-span-7 pt-10">
-                <Quote size={48} className="text-brand-orange mb-8 opacity-20" />
-                <h3 className="text-3xl lg:text-4xl font-black text-brand-blue mb-10 tracking-tight leading-tight">
-                  "Our goal was simple: to make commercial laundry solutions <span className="text-brand-orange italic underline decoration-brand-orange/20 decoration-4">stress-free and reliable.</span>"
-                </h3>
-                
-                <div className="space-y-8 text-base font-medium text-brand-blue/70 leading-relaxed">
-                  <p>
-                    When I founded this company, my goal was simple: to make commercial laundry solutions stress-free, reliable, and accessible for every business. Over the years, I’ve seen how the right equipment and consistent after-sales support can transform operations for hotels, hospitals, laundromats, and institutions.
-                  </p>
-                  <p>
-                    What sets us apart is our commitment to partnership, not just supply. We don’t stop at selling machines; we walk alongside our clients through installation, maintenance, spare parts, and ongoing improvements. This approach has helped us build relationships based on trust and performance rather than transactions.
-                  </p>
-                  <p className="font-bold text-brand-blue italic p-6 bg-slate-50 rounded-2xl border-l-4 border-brand-orange">
-                    As we continue to grow, my promise to you remains the same: quality equipment, expert support, and service that truly cares about your success.
-                  </p>
+              {/* Vision Part */}
+              <div className="py-10 md:py-0 md:pl-20 flex flex-col items-start border-t md:border-t-0 border-gray-200">
+                <div className="mb-10 text-[#E6763F]">
+                  <Eye size={64} strokeWidth={1.5} />
                 </div>
+                <h3 className="text-3xl md:text-4xl font-medium text-[#1F2933] font-satoshi mb-8">Our Vision</h3>
+                <p className="text-gray-600 text-lg md:text-xl leading-relaxed font-satoshi font-normal">
+                  Our vision is to become a trusted leader in commercial laundry solutions across India and beyond. We aim to set new standards in service excellence, operational efficiency, and long-term partnerships by continuously improving technology, support systems, and customer experience.
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Contact Strip */}
-        <section className="bg-brand-blue py-16 overflow-hidden relative">
-          <div className="absolute top-0 right-0 h-full w-1/3 bg-brand-orange/20 clip-path-slant z-0"></div>
-          <div className="container mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
-            <div className="text-white text-center lg:text-left">
-               <h4 className="text-3xl font-black mb-3 tracking-tighter">Ready to Scale Your Operations?</h4>
-               <p className="text-lg opacity-60 font-medium">Get a personalized audit of your current laundry facility.</p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-5">
-              <a href="tel:+919711112950" className="flex items-center gap-3.5 bg-white/5 border border-white/10 px-6 py-4 rounded-xl text-white group hover:bg-brand-orange hover:border-brand-orange transition-all">
-                <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center text-brand-orange group-hover:text-white transition-colors"><Phone size={20} /></div>
-                <div>
-                  <span className="block text-[9px] uppercase font-black opacity-50 tracking-widest">Call Our Office</span>
-                  <span className="text-base font-bold">+91 9711112950</span>
-                </div>
-              </a>
-              <a href="mailto:info@sunshine-laundry.com" className="flex items-center gap-3.5 bg-white/5 border border-white/10 px-6 py-4 rounded-xl text-white group hover:bg-brand-orange hover:border-brand-orange transition-all">
-                <div className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center text-brand-orange group-hover:text-white transition-colors"><Mail size={20} /></div>
-                <div>
-                  <span className="block text-[9px] uppercase font-black opacity-50 tracking-widest">Email Inquiry</span>
-                  <span className="text-base font-bold">info@sunshine-laundry.com</span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </section>
+        <CTA />
       </main>
     </div>
   );

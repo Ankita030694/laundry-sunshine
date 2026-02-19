@@ -75,8 +75,8 @@ export default function Navbar() {
             })}
 
             {/* Combined Contact Link and Orange Square scaled down */}
-            <button
-              onClick={openContactModal}
+            <Link
+              href="/contact"
               className="flex items-center gap-3 group outline-none"
             >
               <span className={`text-[15px] font-medium group-hover:text-brand-orange transition-colors ${pathname === "/contact" ? "text-brand-blue" : "text-brand-blue/80"}`}>
@@ -85,7 +85,7 @@ export default function Navbar() {
               <div className="flex h-10 w-10 items-center justify-center bg-brand-orange text-white shadow-orange transition-all duration-300 group-hover:bg-brand-orange-hover group-hover:scale-105 active:scale-95">
                 <ArrowUpRight size={16} strokeWidth={2.5} />
               </div>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
