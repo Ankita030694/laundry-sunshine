@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, Phone, Mail, ArrowRight, ShieldCheck, Zap, Droplets, Heart, Activity, Thermometer, ShieldAlert, Award, FileText, Star, TrendingUp, ChevronRight } from "lucide-react";
-import { useModal } from "@/context/ModalContext";
+import { useRouter } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
 import StickyMobileTOC from "@/components/StickyMobileTOC";
@@ -111,7 +111,7 @@ const reviews = [
 ];
 
 export default function HospitalLaundryProvider() {
-    const { openContactModal } = useModal();
+    const router = useRouter();
     const websiteUrl = "https://sunshine-laundry.com/hospital-laundry-systems-provider";
     const brandName = "Sunshine Equipments";
     const logoUrl = "https://sunshine-laundry.com/sunshine_logo.svg";
@@ -256,13 +256,13 @@ export default function HospitalLaundryProvider() {
                     </p>
                     <div className="flex flex-wrap justify-center gap-4 animate-fade-in delay-300">
                         <button
-                            onClick={openContactModal}
+                            onClick={() => router.push("/contact")}
                             className="bg-brand-orange text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3"
                         >
                             Consult an Expert <ArrowRight size={24} />
                         </button>
                         <button
-                            onClick={openContactModal}
+                            onClick={() => router.push("/contact")}
                             className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-base md:text-lg hover:bg-white/20 transition-all flex items-center gap-3"
                         >
                             View Medical Specs
@@ -485,7 +485,7 @@ export default function HospitalLaundryProvider() {
                                     Ensure your hospital meets the latest infection control standards. Request a site visit.
                                 </p>
                                 <button
-                                    onClick={openContactModal}
+                                    onClick={() => router.push("/contact")}
                                     className="bg-brand-orange text-white w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-white hover:text-brand-orange transition-all relative z-10 shadow-lg"
                                 >
                                     Book Your Audit <TrendingUp size={20} />

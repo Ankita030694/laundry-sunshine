@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, Phone, Mail, ArrowRight, MessageSquare, Star, ChevronRight, Zap, Droplets, ShieldCheck, TrendingUp, AlertCircle, Building2, Workflow, Recycle, HardHat, Gauge, Settings, Hammer, Wrench, ShieldAlert, Cpu, Box, Truck, BarChart3 } from "lucide-react";
-import { useModal } from "@/context/ModalContext";
+import { useRouter } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
 import StickyMobileTOC from "@/components/StickyMobileTOC";
@@ -71,7 +71,7 @@ const faqs = [
 ];
 
 export default function SparePartsSupplier() {
-    const { openContactModal } = useModal();
+    const router = useRouter();
     const websiteUrl = "https://sunshine-laundry.com/laundry-equipment-spare-parts-supplier";
     const brandName = "Sunshine Equipments";
     const logoUrl = "https://sunshine-laundry.com/sunshine_logo.svg";
@@ -201,10 +201,10 @@ export default function SparePartsSupplier() {
                         Your strategic partner for genuine components. Nationwide inventory of motors, valves, electronics, and mechanical spares with rapid Pan-India delivery.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
-                        <button onClick={openContactModal} className="bg-brand-orange text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3">
+                        <button onClick={() => router.push("/contact")} className="bg-brand-orange text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3">
                             Browse Parts Catalog <Box size={24} />
                         </button>
-                        <button onClick={openContactModal} className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-10 py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all flex items-center gap-3">
+                        <button onClick={() => router.push("/contact")} className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-10 py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all flex items-center gap-3">
                             Check Stock Availability
                         </button>
                     </div>
@@ -499,7 +499,7 @@ export default function SparePartsSupplier() {
                                 <p className="text-white/80 mb-6 relative z-10 font-medium">
                                     Looking for a specific part? Send us your machine model and serial number for an instant quote.
                                 </p>
-                                <button onClick={openContactModal} className="bg-brand-orange text-white w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-white hover:text-brand-orange transition-all relative z-10 shadow-lg">
+                                <button onClick={() => router.push("/contact")} className="bg-brand-orange text-white w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-white hover:text-brand-orange transition-all relative z-10 shadow-lg">
                                     Request Part Quote <ArrowUpRight size={20} />
                                 </button>
                             </div>

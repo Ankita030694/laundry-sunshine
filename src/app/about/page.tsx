@@ -28,7 +28,7 @@ export default function About() {
   };
 
   return (
-    <div className="relative min-h-screen bg-white">
+    <div className="relative min-h-screen bg-white overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -39,21 +39,21 @@ export default function About() {
 
       <main>
         {/* About Hero Section */}
-        <section className="relative pt-16 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+        <section className="relative pt-12 pb-12 md:pt-32 md:pb-24 overflow-hidden">
           <div className="container mx-auto px-6">
-            <div className="mb-12 md:mb-20 inline-flex flex-col items-start gap-[50px]">
-              <span className="text-[#E6763F] font-satoshi text-[40px] font-medium leading-[40px]">
+            <div className="mb-12 md:mb-20 flex flex-col items-center text-center md:items-start md:text-left gap-8 md:gap-[50px] w-full">
+              <span className="text-[#E6763F] font-satoshi text-[32px] md:text-[40px] font-medium leading-[40px]">
                 ABOUT US
               </span>
 
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
                 <div className="md:col-span-7">
-                  <h1 className="text-[#1F2933] font-satoshi text-[55px] font-medium leading-[55px]">
+                  <h1 className="text-[#1F2933] font-satoshi text-[40px] md:text-[55px] font-medium leading-tight md:leading-[55px]">
                     Powering Commercial Laundry With Reliable Innovation
                   </h1>
                 </div>
                 <div className="md:col-span-5 md:pt-4">
-                  <p className="text-[#1F2933] font-satoshi text-[25px] font-normal leading-[29px]">
+                  <p className="text-[#1F2933] font-satoshi text-[18px] md:text-[25px] font-normal leading-relaxed md:leading-[29px]">
                     We modernize outdated laundry systems with smarter solutions. High-performance machines with expert installation. Reliable support for smooth, uninterrupted operations.
                   </p>
                 </div>
@@ -78,15 +78,15 @@ export default function About() {
           <div className="max-w-[1524px] mx-auto px-6 flex flex-col items-center gap-[80px]">
             <div className="flex flex-col md:flex-row items-start justify-between w-full">
               <div className="flex flex-col items-start gap-[50px]">
-                <span className="text-[#E6763F] font-satoshi text-[40px] font-medium leading-[40px]">
+                <span className="text-[#E6763F] font-satoshi text-[32px] md:text-[40px] font-medium leading-[40px]">
                   LEADERSHIP
                 </span>
-                <h2 className="text-[#1F2933] font-satoshi text-[55px] font-medium leading-[55px]">
+                <h2 className="text-[#1F2933] font-satoshi text-[40px] md:text-[55px] font-medium leading-tight md:leading-[55px]">
                   Driven by Industry Expertise
                 </h2>
               </div>
               <div className="md:pt-12">
-                <p className="text-[#1F2933] font-satoshi text-[25px] font-normal leading-[29px] max-w-xl">
+                <p className="text-[#1F2933] font-satoshi text-[18px] md:text-[25px] font-normal leading-relaxed md:leading-[29px] max-w-xl">
                   At Sunshine Equipment, our leadership brings decades of experience in commercial laundry solutions. We focus on delivering reliable systems and long-term partnerships that help businesses operate with confidence.
                 </p>
               </div>

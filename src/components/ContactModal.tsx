@@ -3,8 +3,6 @@
 import React, { useState, useEffect } from "react";
 import { X, Loader2 } from "lucide-react";
 import { useModal } from "@/context/ModalContext";
-import { db } from "@/lib/firebase";
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 export default function ContactModal() {
   const { isContactModalOpen, closeContactModal } = useModal();
@@ -45,6 +43,7 @@ export default function ContactModal() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
     if (formData.phone.length !== 10) {
       alert("Phone number must be exactly 10 digits.");
       return;
@@ -52,12 +51,20 @@ export default function ContactModal() {
 
     setIsSubmitting(true);
     try {
-      await addDoc(collection(db, "contacts"), {
-        ...formData,
-        createdAt: serverTimestamp(),
-        source: "Contact Popup"
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData
+        }),
       });
-      
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
       alert("Thank you! Your message has been sent successfully.");
       setFormData({ name: "", phone: "", email: "", message: "" });
       closeContactModal();
@@ -71,12 +78,12 @@ export default function ContactModal() {
 
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
-      <div 
+      <div
         className="relative w-full max-w-lg bg-white shadow-2xl overflow-hidden animate-scale-in"
         style={{ fontFamily: 'Satoshi, sans-serif' }}
       >
         {/* Close Button */}
-        <button 
+        <button
           onClick={closeContactModal}
           className="absolute top-4 right-4 p-2 text-gray-400 hover:text-brand-orange transition-colors"
         >

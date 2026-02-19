@@ -1,10 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { useModal } from "@/context/ModalContext";
+import { useRouter } from "next/navigation";
 
 const CTA = () => {
-  const { openContactModal } = useModal();
+  const router = useRouter();
+
+  const handleCTAClick = () => {
+    router.push("/contact");
+  };
 
   return (
     <section className="relative w-full overflow-hidden flex items-center justify-center">
@@ -48,7 +52,7 @@ const CTA = () => {
 
         {/* CTA Button Implementation - Matching Hero Section Logic */}
         <div
-          onClick={openContactModal}
+          onClick={handleCTAClick}
           className="mt-10 md:mt-12 flex items-center justify-center gap-0 animate-fade-in delay-300 group cursor-pointer"
         >
           <button

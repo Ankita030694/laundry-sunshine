@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, Phone, Mail, ArrowRight, MessageSquare, Star, ChevronRight, Zap, Droplets, ShieldCheck, TrendingUp, AlertCircle, Heart } from "lucide-react";
-import { useModal } from "@/context/ModalContext";
+import { useRouter } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
 import StickyMobileTOC from "@/components/StickyMobileTOC";
@@ -73,7 +73,7 @@ const faqs = [
 ];
 
 export default function LaundryForHospitals() {
-    const { openContactModal } = useModal();
+    const router = useRouter();
     const websiteUrl = "https://sunshine-laundry.com/laundry-equipment-for-hospitals";
     const brandName = "Sunshine Equipments";
     const logoUrl = "https://sunshine-laundry.com/sunshine_logo.svg";
@@ -205,13 +205,13 @@ export default function LaundryForHospitals() {
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <button
-                            onClick={openContactModal}
+                            onClick={() => router.push("/contact")}
                             className="bg-brand-orange text-white px-6 md:px-10 py-4 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3"
                         >
                             Request a Technical Audit <ArrowRight size={24} />
                         </button>
                         <button
-                            onClick={openContactModal}
+                            onClick={() => router.push("/contact")}
                             className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-6 md:px-10 py-4 md:py-5 rounded-2xl font-black text-base md:text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-3"
                         >
                             View Barrier Washer Specs
@@ -569,7 +569,7 @@ export default function LaundryForHospitals() {
                                     Our medical hygiene experts will evaluate your current laundry setup and provide a detailed compliance report.
                                 </p>
                                 <button
-                                    onClick={openContactModal}
+                                    onClick={() => router.push("/contact")}
                                     className="bg-brand-orange text-white w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-white hover:text-brand-orange transition-all relative z-10 shadow-lg"
                                 >
                                     Book Your Audit <TrendingUp size={20} />

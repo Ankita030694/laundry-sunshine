@@ -7,7 +7,7 @@ import {
     ChevronRight, Zap, Droplets, ShieldCheck, TrendingUp,
     AlertCircle, Heart, Settings, Shield, Package, Truck
 } from "lucide-react";
-import { useModal } from "@/context/ModalContext";
+import { useRouter } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
 import StickyMobileTOC from "@/components/StickyMobileTOC";
@@ -82,7 +82,7 @@ const faqs = [
 ];
 
 export default function OEMPartsPage() {
-    const { openContactModal } = useModal();
+    const router = useRouter();
     const websiteUrl = "https://sunshine-laundry.com/oem-laundry-equipment-parts";
     const brandName = "Sunshine Equipments";
 
@@ -191,7 +191,7 @@ export default function OEMPartsPage() {
                         Protect your industrial investment with factory-certified components. The definitive guide to selecting genuine spare parts for absolute reliability and optimized facility performance.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4 animate-fade-in delay-300">
-                        <button onClick={openContactModal} className="bg-brand-orange text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3">
+                        <button onClick={() => router.push("/contact")} className="bg-brand-orange text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3">
                             Order Parts Now <ArrowRight size={24} />
                         </button>
                     </div>
@@ -519,7 +519,7 @@ export default function OEMPartsPage() {
                                 <p className="text-white/80 mb-6 relative z-10 font-medium">
                                     Access our national inventory and get rapid fulfillment for any Sunshine Equipment model.
                                 </p>
-                                <button onClick={openContactModal} className="bg-brand-orange text-white w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-white hover:text-brand-orange transition-all relative z-10 shadow-lg">
+                                <button onClick={() => router.push("/contact")} className="bg-brand-orange text-white w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-white hover:text-brand-orange transition-all relative z-10 shadow-lg">
                                     Browse Inventory <TrendingUp size={20} />
                                 </button>
                             </div>

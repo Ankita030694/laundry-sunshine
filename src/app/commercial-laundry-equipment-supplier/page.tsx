@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, Phone, Mail, ArrowRight, MessageSquare, Star, ChevronRight, Zap, Droplets, ShieldCheck, TrendingUp, AlertCircle, Building2, Workflow, Recycle, HardHat, Gauge, Settings } from "lucide-react";
-import { useModal } from "@/context/ModalContext";
+import { useRouter } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
 import StickyMobileTOC from "@/components/StickyMobileTOC";
@@ -71,7 +71,7 @@ const faqs = [
 ];
 
 export default function CommercialLaundrySupplier() {
-    const { openContactModal } = useModal();
+    const router = useRouter();
     const websiteUrl = "https://sunshine-laundry.com/commercial-laundry-equipment-supplier";
     const brandName = "Sunshine Equipments";
     const logoUrl = "https://sunshine-laundry.com/sunshine_logo.svg";
@@ -201,10 +201,10 @@ export default function CommercialLaundrySupplier() {
                         World-class washer extractors, tumble dryers, and flatwork ironers engineered for 24/7 reliability. Transform your commercial laundry operations today.
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4 px-4">
-                        <button onClick={openContactModal} className="bg-brand-orange text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
+                        <button onClick={() => router.push("/contact")} className="bg-brand-orange text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
                             Consult Our Experts <ArrowRight size={24} />
                         </button>
-                        <button onClick={openContactModal} className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-3">
+                        <button onClick={() => router.push("/contact")} className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-3">
                             Browse Industrial Catalog
                         </button>
                     </div>
@@ -563,7 +563,7 @@ export default function CommercialLaundrySupplier() {
                                 <p className="text-white mb-6 relative z-10 font-black text-xl md:text-2xl leading-tight">
                                     Analyze My Facility Efficiency
                                 </p>
-                                <button onClick={openContactModal} className="bg-brand-orange text-white w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-white hover:text-brand-orange transition-all relative z-10 shadow-lg group">
+                                <button onClick={() => router.push("/contact")} className="bg-brand-orange text-white w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-white hover:text-brand-orange transition-all relative z-10 shadow-lg group">
                                     Request Your Audit <ArrowUpRight size={20} className="group-hover:translate-x-1 transition-transform" />
                                 </button>
                             </div>

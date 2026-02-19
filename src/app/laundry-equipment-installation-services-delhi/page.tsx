@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, Phone, Mail, ArrowRight, ShieldCheck, Zap, Droplets, TrendingUp, Settings, Wrench, Activity, BarChart3, ChevronRight, Star, MapPin, Search, HardHat } from "lucide-react";
-import { useModal } from "@/context/ModalContext";
+import { useRouter } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
 import StickyMobileTOC from "@/components/StickyMobileTOC";
@@ -107,7 +107,7 @@ const reviews = [
 ];
 
 export default function LaundryInstallationServicesDelhi() {
-    const { openContactModal } = useModal();
+    const router = useRouter();
     const websiteUrl = "https://sunshine-laundry.com/laundry-equipment-installation-services-delhi";
     const brandName = "Sunshine Equipments";
     const logoUrl = "https://sunshine-laundry.com/sunshine_logo.svg";
@@ -247,7 +247,7 @@ export default function LaundryInstallationServicesDelhi() {
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                         <button
-                            onClick={openContactModal}
+                            onClick={() => router.push("/contact")}
                             className="bg-brand-orange text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3 group"
                         >
                             Get Technical Site Audit <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
@@ -502,7 +502,7 @@ export default function LaundryInstallationServicesDelhi() {
                                     Is your laundry losing money?
                                 </p>
                                 <button
-                                    onClick={openContactModal}
+                                    onClick={() => router.push("/contact")}
                                     className="bg-brand-orange text-white w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-white hover:text-brand-orange transition-all relative z-10 shadow-lg"
                                 >
                                     Book Free Energy Audit <ArrowRight size={20} />

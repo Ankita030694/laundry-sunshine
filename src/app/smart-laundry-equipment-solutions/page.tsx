@@ -7,7 +7,7 @@ import {
     ChevronRight, Zap, Droplets, ShieldCheck, TrendingUp,
     AlertCircle, Heart, Cpu, Wifi, Smartphone, BarChart3
 } from "lucide-react";
-import { useModal } from "@/context/ModalContext";
+import { useRouter } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
 import StickyMobileTOC from "@/components/StickyMobileTOC";
@@ -82,7 +82,7 @@ const faqs = [
 ];
 
 export default function SmartSolutionsPage() {
-    const { openContactModal } = useModal();
+    const router = useRouter();
     const websiteUrl = "https://sunshine-laundry.com/smart-laundry-equipment-solutions";
     const brandName = "Sunshine Equipments";
 
@@ -191,7 +191,7 @@ export default function SmartSolutionsPage() {
                         The digitalization of textile care has arrived. Harness the power of cloud analytics, RFID tracking, and predictive AI to transform your facility into a high-efficiency data-driven enterprise.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4 animate-fade-in delay-300">
-                        <button onClick={openContactModal} className="bg-brand-orange text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3">
+                        <button onClick={() => router.push("/contact")} className="bg-brand-orange text-white px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center gap-3">
                             Request Demo <ArrowRight size={24} />
                         </button>
                     </div>
@@ -466,7 +466,7 @@ export default function SmartSolutionsPage() {
                                 <p className="text-white/80 mb-6 relative z-10 font-medium">
                                     Experience the future of laundry management with a live walkthrough of our digital suite.
                                 </p>
-                                <button onClick={openContactModal} className="bg-brand-orange text-white w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-white hover:text-brand-orange transition-all relative z-10 shadow-lg">
+                                <button onClick={() => router.push("/contact")} className="bg-brand-orange text-white w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-white hover:text-brand-orange transition-all relative z-10 shadow-lg">
                                     Book a Demo <TrendingUp size={20} />
                                 </button>
                             </div>

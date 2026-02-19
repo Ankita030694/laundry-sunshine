@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2, Phone, Mail, ArrowRight, Bed, Utensils, Waves, Sun, Sparkles, Zap, Leaf, ShieldCheck, Clock, Users, BarChart3, ChevronRight, Star } from "lucide-react";
-import { useModal } from "@/context/ModalContext";
+import { useRouter } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TableOfContents from "@/components/TableOfContents";
 import StickyMobileTOC from "@/components/StickyMobileTOC";
@@ -111,7 +111,7 @@ const reviews = [
 ];
 
 export default function HospitalityLaundrySolutions() {
-    const { openContactModal } = useModal();
+    const router = useRouter();
     const websiteUrl = "https://sunshine-laundry.com/hospitality-laundry-solutions";
     const brandName = "Sunshine Equipments";
     const logoUrl = "https://sunshine-laundry.com/sunshine_logo.svg";
@@ -248,13 +248,13 @@ export default function HospitalityLaundrySolutions() {
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4 px-4">
                         <button
-                            onClick={openContactModal}
+                            onClick={() => router.push("/contact")}
                             className="bg-brand-orange text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3"
                         >
                             Optimize Your OPL Facility <ArrowRight size={24} />
                         </button>
                         <button
-                            onClick={openContactModal}
+                            onClick={() => router.push("/contact")}
                             className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-3"
                         >
                             View Case Studies
@@ -431,7 +431,7 @@ export default function HospitalityLaundrySolutions() {
                                     Reduce OPL Costs by 35%
                                 </p>
                                 <button
-                                    onClick={openContactModal}
+                                    onClick={() => router.push("/contact")}
                                     className="bg-brand-orange text-white w-full py-4 rounded-xl font-bold flex justify-center items-center gap-2 hover:bg-white hover:text-brand-orange transition-all relative z-10 shadow-lg group"
                                 >
                                     Analyze My Facility <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
