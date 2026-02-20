@@ -123,16 +123,31 @@ export default function ReplacementPartsPage() {
                 "url": "https://sunshine-laundry.com/",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://sunshine-laundry.com/sunshine_logo.svg"
-                }
+                    "url": "https://sunshine-laundry.com/sunshine_logo.svg",
+                    "width": "300",
+                    "height": "200"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-9711112950",
+                    "contactType": "customer service",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en", "hi"]
+                },
+                "sameAs": [
+                    "https://www.facebook.com/sunshinelaundry",
+                    "https://www.instagram.com/sunshinelaundry"
+                ]
             },
             {
                 "@type": "WebPage",
                 "@id": websiteUrl,
                 "url": websiteUrl,
                 "name": "Industrial Washer & Dryer Replacement Parts | Genuine OEM Spares",
+                "isPartOf": { "@id": "https://sunshine-laundry.com/#website" },
                 "description": "Authorized supplier of genuine replacement parts for commercial laundry equipment. We stock bearings, motors, valves, and boards for all major industrial brands.",
-                "breadcrumb": { "@id": websiteUrl + "#breadcrumb" }
+                "breadcrumb": { "@id": websiteUrl + "#breadcrumb" },
+                "inLanguage": "en-US"
             },
             {
                 "@type": "BreadcrumbList",
@@ -141,6 +156,20 @@ export default function ReplacementPartsPage() {
                     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sunshine-laundry.com/" },
                     { "@type": "ListItem", "position": 2, "name": "Replacement Parts", "item": websiteUrl }
                 ]
+            },
+            {
+                "@type": "Article",
+                "@id": websiteUrl + "#article",
+                "isPartOf": { "@id": websiteUrl },
+                "author": { "@id": "https://sunshine-laundry.com/#organization" },
+                "headline": "Precision Parts Logistics | Genuine Spares, Expert Support",
+                "datePublished": "2024-02-17",
+                "dateModified": "2024-02-17",
+                "publisher": { "@id": "https://sunshine-laundry.com/#organization" },
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://sunshine-laundry.com/hero-bg.jpg"
+                }
             },
             {
                 "@type": "Product",

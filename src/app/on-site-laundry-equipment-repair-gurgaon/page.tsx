@@ -135,16 +135,31 @@ export default function OnSiteRepairGurgaonPage() {
                 "url": "https://sunshine-laundry.com/",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://sunshine-laundry.com/sunshine_logo.svg"
-                }
+                    "url": "https://sunshine-laundry.com/sunshine_logo.svg",
+                    "width": "300",
+                    "height": "200"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-9711112950",
+                    "contactType": "customer service",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en", "hi"]
+                },
+                "sameAs": [
+                    "https://www.facebook.com/sunshinelaundry",
+                    "https://www.instagram.com/sunshinelaundry"
+                ]
             },
             {
                 "@type": "WebPage",
                 "@id": websiteUrl,
                 "url": websiteUrl,
                 "name": "On-Site Laundry Equipment Repair Gurgaon | 4-Hour Response",
+                "isPartOf": { "@id": "https://sunshine-laundry.com/#website" },
                 "description": "Professional on-site repair for commercial laundry machines in Gurgaon. 4-hour emergency response, certified technicians, and genuine OEM parts for all major brands.",
                 "breadcrumb": { "@id": websiteUrl + "#breadcrumb" },
+                "inLanguage": "en-US",
                 "primaryImageOfPage": { "@type": "ImageObject", "url": "https://sunshine-laundry.com/repair-hero.jpg" }
             },
             {
@@ -154,6 +169,20 @@ export default function OnSiteRepairGurgaonPage() {
                     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sunshine-laundry.com/" },
                     { "@type": "ListItem", "position": 2, "name": "Gurgaon On-Site Repair", "item": websiteUrl }
                 ]
+            },
+            {
+                "@type": "Article",
+                "@id": websiteUrl + "#article",
+                "isPartOf": { "@id": websiteUrl },
+                "author": { "@id": "https://sunshine-laundry.com/#organization" },
+                "headline": "On-Site Industrial Repair | Gurgaon's Elite Service Team",
+                "datePublished": "2024-02-17",
+                "dateModified": "2024-02-17",
+                "publisher": { "@id": "https://sunshine-laundry.com/#organization" },
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://sunshine-laundry.com/hero-bg.jpg"
+                }
             },
             {
                 "@type": "Service",

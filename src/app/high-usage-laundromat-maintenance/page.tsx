@@ -123,16 +123,31 @@ export default function HighUsageMaintenancePage() {
                 "url": "https://sunshine-laundry.com/",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://sunshine-laundry.com/sunshine_logo.svg"
-                }
+                    "url": "https://sunshine-laundry.com/sunshine_logo.svg",
+                    "width": "300",
+                    "height": "200"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-9711112950",
+                    "contactType": "customer service",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en", "hi"]
+                },
+                "sameAs": [
+                    "https://www.facebook.com/sunshinelaundry",
+                    "https://www.instagram.com/sunshinelaundry"
+                ]
             },
             {
                 "@type": "WebPage",
                 "@id": websiteUrl,
                 "url": websiteUrl,
                 "name": "High-Usage Laundromat Maintenance | Professional Uptime Solutions",
+                "isPartOf": { "@id": "https://sunshine-laundry.com/#website" },
                 "description": "Expert preventative maintenance for high-volume 24/7 laundromats. Specialized in bearing care, vibration damping, and electrical safety to ensure 100% equipment uptime.",
-                "breadcrumb": { "@id": websiteUrl + "#breadcrumb" }
+                "breadcrumb": { "@id": websiteUrl + "#breadcrumb" },
+                "inLanguage": "en-US"
             },
             {
                 "@type": "BreadcrumbList",
@@ -141,6 +156,20 @@ export default function HighUsageMaintenancePage() {
                     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sunshine-laundry.com/" },
                     { "@type": "ListItem", "position": 2, "name": "High Usage Maintenance", "item": websiteUrl }
                 ]
+            },
+            {
+                "@type": "Article",
+                "@id": websiteUrl + "#article",
+                "isPartOf": { "@id": websiteUrl },
+                "author": { "@id": "https://sunshine-laundry.com/#organization" },
+                "headline": "Elite Uptime Engineering | For High-Volume Laundromats",
+                "datePublished": "2024-02-17",
+                "dateModified": "2024-02-17",
+                "publisher": { "@id": "https://sunshine-laundry.com/#organization" },
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://sunshine-laundry.com/hero-bg.jpg"
+                }
             },
             {
                 "@type": "Product",

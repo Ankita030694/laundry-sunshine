@@ -135,16 +135,31 @@ export default function LagoonServicesPage() {
                 "url": "https://sunshine-laundry.com/",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://sunshine-laundry.com/sunshine_logo.svg"
-                }
+                    "url": "https://sunshine-laundry.com/sunshine_logo.svg",
+                    "width": "300",
+                    "height": "200"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-9711112950",
+                    "contactType": "customer service",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en", "hi"]
+                },
+                "sameAs": [
+                    "https://www.facebook.com/sunshinelaundry",
+                    "https://www.instagram.com/sunshinelaundry"
+                ]
             },
             {
                 "@type": "WebPage",
                 "@id": websiteUrl,
                 "url": websiteUrl,
                 "name": "Lagoon Advanced Care Services | Professional Wet Cleaning Experts",
+                "isPartOf": { "@id": "https://sunshine-laundry.com/#website" },
                 "description": "Premium professional wet cleaning for delicate fabrics and luxury garments. The only system approved by Woolmark for 'dry clean only' woolens. Non-toxic and ecological.",
-                "breadcrumb": { "@id": websiteUrl + "#breadcrumb" }
+                "breadcrumb": { "@id": websiteUrl + "#breadcrumb" },
+                "inLanguage": "en-US"
             },
             {
                 "@type": "BreadcrumbList",
@@ -153,6 +168,20 @@ export default function LagoonServicesPage() {
                     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sunshine-laundry.com/" },
                     { "@type": "ListItem", "position": 2, "name": "Lagoon Services", "item": websiteUrl }
                 ]
+            },
+            {
+                "@type": "Article",
+                "@id": websiteUrl + "#article",
+                "isPartOf": { "@id": websiteUrl },
+                "author": { "@id": "https://sunshine-laundry.com/#organization" },
+                "headline": "Lagoon Advanced Care | The Sustainable Future of Delicate Fabric Cleaning",
+                "datePublished": "2024-02-17",
+                "dateModified": "2024-02-17",
+                "publisher": { "@id": "https://sunshine-laundry.com/#organization" },
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://sunshine-laundry.com/hero-bg.jpg"
+                }
             },
             {
                 "@type": "Product",

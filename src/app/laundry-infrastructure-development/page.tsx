@@ -123,16 +123,31 @@ export default function InfrastructureDevelopmentPage() {
                 "url": "https://sunshine-laundry.com/",
                 "logo": {
                     "@type": "ImageObject",
-                    "url": "https://sunshine-laundry.com/sunshine_logo.svg"
-                }
+                    "url": "https://sunshine-laundry.com/sunshine_logo.svg",
+                    "width": "300",
+                    "height": "200"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+91-9711112950",
+                    "contactType": "customer service",
+                    "areaServed": "IN",
+                    "availableLanguage": ["en", "hi"]
+                },
+                "sameAs": [
+                    "https://www.facebook.com/sunshinelaundry",
+                    "https://www.instagram.com/sunshinelaundry"
+                ]
             },
             {
                 "@type": "WebPage",
                 "@id": websiteUrl,
                 "url": websiteUrl,
                 "name": "Laundry Infrastructure Development | Turnkey Project Engineering",
+                "isPartOf": { "@id": "https://sunshine-laundry.com/#website" },
                 "description": "Professional design and development of industrial laundry facilities. We handle everything from civil plinths and plumbing to electrical load and layout optimization.",
-                "breadcrumb": { "@id": websiteUrl + "#breadcrumb" }
+                "breadcrumb": { "@id": websiteUrl + "#breadcrumb" },
+                "inLanguage": "en-US"
             },
             {
                 "@type": "BreadcrumbList",
@@ -141,6 +156,20 @@ export default function InfrastructureDevelopmentPage() {
                     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sunshine-laundry.com/" },
                     { "@type": "ListItem", "position": 2, "name": "Infrastructure Development", "item": websiteUrl }
                 ]
+            },
+            {
+                "@type": "Article",
+                "@id": websiteUrl + "#article",
+                "isPartOf": { "@id": websiteUrl },
+                "author": { "@id": "https://sunshine-laundry.com/#organization" },
+                "headline": "Laundry Infrastructure Development | Masterminds of Industrial Architecture",
+                "datePublished": "2024-02-17",
+                "dateModified": "2024-02-17",
+                "publisher": { "@id": "https://sunshine-laundry.com/#organization" },
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://sunshine-laundry.com/hero-bg.jpg"
+                }
             },
             {
                 "@type": "Product",
