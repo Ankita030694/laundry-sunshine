@@ -21,7 +21,7 @@ export default function About() {
     ],
     "founder": {
       "@type": "Person",
-      "name": "Rraj Kumar Nangia"
+      "name": "Raj Kumar Nangia"
     },
     "foundingDate": "2000",
     "description": "Authorized dealer of global laundry brands like Girbau, Electrolux, and Maxi. Expert installation, AMC, and spare parts across India since 2000."
@@ -39,7 +39,7 @@ export default function About() {
 
       <main>
         {/* About Hero Section */}
-        <section className="relative pt-12 pb-12 md:pt-32 md:pb-24 overflow-hidden">
+        <section className="relative pt-12 pb-12 md:pt-8 md:pb-24 overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="mb-12 md:mb-20 flex flex-col items-center text-center md:items-start md:text-left gap-8 md:gap-[50px] w-full">
               <span className="text-[#E6763F] font-satoshi text-[32px] md:text-[40px] font-medium leading-[40px]">
@@ -97,11 +97,11 @@ export default function About() {
               <div className="flex flex-col md:grid md:grid-cols-12 gap-10 md:gap-16 items-start">
                 <div className="w-full md:col-span-3">
                   <div className="relative aspect-[4/5] bg-gray-100 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-                    <Image src="/ChatGPT-Image-Oct-28-2025-11_36_28-AM 1.png" alt="Rraj Kumar Nangia" fill className="object-cover" />
+                    <Image src="/ChatGPT-Image-Sep-29-2025-03_07_21-PM-414x500 1.png" alt="Rraj Kumar Nangia" fill className="object-cover" />
                   </div>
                 </div>
                 <div className="md:col-span-4 lg:pt-2">
-                  <h3 className="text-3xl md:text-4xl font-bold text-[#1F2933] mb-3">Rraj Kumar Nangia</h3>
+                  <h3 className="text-3xl md:text-4xl font-bold text-[#1F2933] mb-3">Raj Kumar Nangia</h3>
                   <p className="text-[#E6763F] text-lg md:text-xl font-bold uppercase tracking-wider">Founder & Managing Director</p>
                 </div>
                 <div className="md:col-span-5 lg:pt-2">
@@ -133,7 +133,7 @@ export default function About() {
               <div className="flex flex-col md:grid md:grid-cols-12 gap-10 md:gap-16 items-start">
                 <div className="w-full md:col-span-3">
                   <div className="relative aspect-[4/5] bg-gray-100 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-                    <Image src="/ChatGPT-Image-Sep-29-2025-03_07_21-PM-414x500 1.png" alt="Gulshan Khattar" fill className="object-cover" />
+                    <Image src="/ChatGPT-Image-Oct-28-2025-11_36_28-AM 1.png" alt="Gulshan Khattar" fill className="object-cover" />
                   </div>
                 </div>
                 <div className="md:col-span-4 lg:pt-2">

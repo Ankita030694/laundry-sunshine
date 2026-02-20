@@ -164,5 +164,65 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'weekly',
             priority: 0.9,
         },
+        {
+            url: 'https://sunshine-laundry.com/laundromat-washer-dryer-servicing',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://sunshine-laundry.com/technical-support-for-laundromat-operations',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://sunshine-laundry.com/energy-efficient-laundromat-solutions',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://sunshine-laundry.com/lagoon-advanced-care-services',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://sunshine-laundry.com/on-site-laundry-equipment-repair-gurgaon',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://sunshine-laundry.com/industrial-washer-dryer-replacement-parts',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://sunshine-laundry.com/high-usage-laundromat-maintenance',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://sunshine-laundry.com/laundry-chemical-dosing-maintenance',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://sunshine-laundry.com/washer-extractor-dryer-servicing-delhi-ncr',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        {
+            url: 'https://sunshine-laundry.com/laundry-infrastructure-development',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
     ]
 }

@@ -213,13 +213,13 @@ export default function LaundryForHotels() {
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <button
                             onClick={() => router.push("/contact")}
-                            className="bg-brand-orange text-white px-6 md:px-10 py-4 md:py-5 rounded-2xl font-black text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3"
+                            className="bg-brand-orange text-white px-6 md:px-10 py-3 md:py-4 rounded-2xl font-black text-base md:text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3"
                         >
                             Consult an Expert <ArrowRight size={24} />
                         </button>
                         <button
                             onClick={() => router.push("/contact")}
-                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-6 md:px-10 py-4 md:py-5 rounded-2xl font-black text-base md:text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-3"
+                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-6 md:px-10 py-3 md:py-4 rounded-2xl font-black text-base md:text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-3"
                         >
                             View Industrial Specs
                         </button>

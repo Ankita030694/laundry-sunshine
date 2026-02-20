@@ -57,9 +57,9 @@ export default function Services() {
       <div className="blob top-[-5%] left-[-10%] transform-gpu scale-75 opacity-20"></div>
       <div className="blob bottom-[20%] right-[-10%] rotate-90 transform-gpu opacity-30 scale-75"></div>
 
-      <main className="bg-white pb-20">
+      <main className="bg-white">
         {/* Services Hero Section */}
-        <section className="relative pt-12 pb-12 md:pt-32 md:pb-16 overflow-hidden border-b border-gray-100">
+        <section className="relative pt-12 pb-12 md:pt-8 md:pb-16 overflow-hidden border-b border-gray-100">
           <div className="container mx-auto px-6">
             <div className="mb-12 flex flex-col items-center text-center md:items-start md:text-left gap-8 md:gap-[50px] w-full">
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-16 items-start w-full">

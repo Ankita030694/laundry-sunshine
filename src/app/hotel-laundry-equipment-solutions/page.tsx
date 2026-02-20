@@ -279,7 +279,7 @@ export default function HotelLaundrySolutions() {
                         </button>
                         <button
                             onClick={() => router.push("/contact")}
-                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-base md:text-lg hover:bg-white/20 transition-all flex items-center gap-3"
+                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-8 py-4 md:px-10 md:py-5 rounded-2xl font-black text-base md:text-lg hover:bg-brand-orange hover:border-brand-orange transition-all flex items-center gap-3"
                         >
                             View Industrial Specs
                         </button>

@@ -252,13 +252,13 @@ export default function IndustrialLaundrySolutionsIndia() {
                     <div className="flex flex-col sm:flex-row justify-center gap-4 px-4">
                         <button
                             onClick={() => router.push("/contact")}
-                            className="bg-brand-orange text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3 group"
+                            className="bg-brand-orange text-white px-8 md:px-10 py-3 md:py-4 rounded-2xl font-black text-lg shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center gap-3 group"
                         >
                             Request Consultation <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
                         </button>
                         <a
                             href="tel:+919711112950"
-                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-3"
+                            className="bg-white/10 backdrop-blur-md text-white border-2 border-white/20 px-8 md:px-10 py-3 md:py-4 rounded-2xl font-black text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-3"
                         >
                             <Phone size={24} /> +91 97111 12950
                         </a>
