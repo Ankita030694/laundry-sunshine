@@ -55,14 +55,16 @@ export async function GET() {
         priority: route === '' ? '1.0' : '0.8'
     }))
 
-    const blogRoutes = blogs.map(blog => ({
-        url: `${baseUrl}/blog/${(blog.slug || '').trim()}`,
-        lastModified: new Date(blog.created || Date.now()).toISOString().split('T')[0],
-        changeFrequency: 'monthly',
-        priority: '0.7'
-    }))
+    /* 
+  const blogRoutes = blogs.map(blog => ({
+    url: `${baseUrl}/blog/${(blog.slug || '').trim()}`,
+    lastModified: new Date(blog.created || Date.now()).toISOString().split('T')[0],
+    changeFrequency: 'monthly',
+    priority: '0.7'
+  }))
+  */
 
-    const allRoutes = [...staticRoutes, ...blogRoutes]
+    const allRoutes = [...staticRoutes] // Temporary: Removed ...blogRoutes
 
     const xmlContent = [
         '<?xml version="1.0" encoding="UTF-8"?>',
