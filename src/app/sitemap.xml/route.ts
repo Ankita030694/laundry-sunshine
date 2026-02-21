@@ -49,56 +49,56 @@ export async function GET(): Promise<Response> {
         '/brands/electrolux',
         '/locations/delhi'
     ].map(route => ({
-        url: \`\${baseUrl}\${route}\`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: 'weekly',
-    priority: route === '' ? 1.0 : 0.8
-  }))
+        url: `${baseUrl}${route}`,
+        lastModified: new Date().toISOString(),
+        changeFrequency: 'weekly',
+        priority: route === '' ? 1.0 : 0.8
+    }))
 
-  const blogRoutes = blogs.map(blog => ({
-    url: \`\${baseUrl}/blog/\${blog.slug}\`,
-    lastModified: new Date(blog.created || Date.now()).toISOString(),
-    changeFrequency: 'monthly',
-    priority: 0.7
-  }))
+    const blogRoutes = blogs.map(blog => ({
+        url: `${baseUrl}/blog/${blog.slug}`,
+        lastModified: new Date(blog.created || Date.now()).toISOString(),
+        changeFrequency: 'monthly',
+        priority: 0.7
+    }))
 
-  // Combine all routes
-  const allRoutes = [...staticRoutes, ...blogRoutes]
+    // Combine all routes
+    const allRoutes = [...staticRoutes, ...blogRoutes]
 
-  // Generate XML
-  const xml = \`<?xml version="1.0" encoding="UTF-8"?>
+    // Generate XML
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  \${allRoutes.map(route => \`
+  ${allRoutes.map(route => `
     <url>
-      <loc>\${route.url}</loc>
-      <lastmod>\${route.lastModified}</lastmod>
-      <changefreq>\${route.changeFrequency}</changefreq>
-      <priority>\${route.priority}</priority>
+      <loc>${route.url}</loc>
+      <lastmod>${route.lastModified}</lastmod>
+      <changefreq>${route.changeFrequency}</changefreq>
+      <priority>${route.priority}</priority>
     </url>
-  \`).join('')}
-</urlset>\`
+  `).join('')}
+</urlset>`
 
-  return new Response(xml, {
-    headers: {
-      'Content-Type': 'application/xml',
-      'Cache-Control': 'public, max-age=3600, s-maxage=3600'
-    }
-  })
+    return new Response(xml, {
+        headers: {
+            'Content-Type': 'application/xml',
+            'Cache-Control': 'public, max-age=3600, s-maxage=3600'
+        }
+    })
 }
 
 // Helper function to fetch blogs
 async function fetchAllBlogs() {
-  try {
-    const querySnapshot = await getDocs(collection(db, 'blogs'))
-    return querySnapshot.docs.map(doc => {
-      const data = doc.data()
-      return {
-        slug: data.slug,
-        created: data.created || Date.now()
-      }
-    })
-  } catch (error) {
-    console.error('Error fetching blogs:', error)
-    return []
-  }
+    try {
+        const querySnapshot = await getDocs(collection(db, 'blogs'))
+        return querySnapshot.docs.map(doc => {
+            const data = doc.data()
+            return {
+                slug: data.slug,
+                created: data.created || Date.now()
+            }
+        })
+    } catch (error) {
+        console.error('Error fetching blogs:', error)
+        return []
+    }
 }
