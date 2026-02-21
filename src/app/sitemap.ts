@@ -3,6 +3,8 @@ import { MetadataRoute } from 'next'
 import { db } from '@/lib/firebase'
 import { collection, getDocs } from 'firebase/firestore'
 
+export const revalidate = 0
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const blogs = await fetchAllBlogs()
 
@@ -52,14 +54,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         '/locations/delhi'
     ].map(route => ({
         url: `${baseUrl}${route}`,
-        lastModified: new Date(),
+        lastModified: new Date().toISOString().split('T')[0],
         changeFrequency: 'weekly',
         priority: route === '' ? 1.0 : 0.8
     }))
 
     const blogRoutes: MetadataRoute.Sitemap = blogs.map(blog => ({
-        url: `${baseUrl}/blog/${blog.slug}`,
-        lastModified: new Date(blog.created || Date.now()),
+        url: `${baseUrl}/blog/${(blog.slug || '').trim()}`,
+        lastModified: new Date(blog.created || Date.now()).toISOString().split('T')[0],
         changeFrequency: 'monthly',
         priority: 0.7
     }))
