@@ -98,10 +98,10 @@ export default function About() {
                 <div className="w-full md:col-span-3">
                   <div className="relative aspect-[4/5] bg-gray-100 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
                     <Image src="/ChatGPT-Image-Sep-29-2025-03_07_21-PM-414x500 1.png" alt="Rraj Kumar Nangia" fill className="object-cover" />
-                  </div>
+                  </div> 
                 </div>
                 <div className="md:col-span-4 lg:pt-2">
-                  <h3 className="text-3xl md:text-4xl font-bold text-[#1F2933] mb-3">Raj Kumar Nangia</h3>
+                  <h3 className="text-3xl md:text-4xl font-bold text-[#1F2933] mb-3">Rraj Kumar Nangia</h3>
                   <p className="text-[#E6763F] text-lg md:text-xl font-bold uppercase tracking-wider">Founder & Managing Director</p>
                 </div>
                 <div className="md:col-span-5 lg:pt-2">
