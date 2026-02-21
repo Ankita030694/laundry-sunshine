@@ -1,13 +1,4 @@
 const fs = require('fs');
-const { initializeApp } = require('firebase/app');
-const { getFirestore, collection, getDocs } = require('firebase/firestore');
-
-const firebaseConfig = {
-    projectId: "laundry-sunshine",
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 
 const baseUrl = 'https://www.laundryamc.com';
 
@@ -35,9 +26,13 @@ const staticRoutes = [
 
 async function generate() {
     let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+    
+    // This connects the custom stylesheet so the browser displays it as a table, not a paragraph
+    xml += '<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>\n';
+    
     xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
-    // Static
+    // Output all static routes
     staticRoutes.forEach(route => {
         xml += '  <url>\n';
         xml += `    <loc>${baseUrl}${route}</loc>\n`;
@@ -47,29 +42,10 @@ async function generate() {
         xml += '  </url>\n';
     });
 
-    // Blogs from Firebase
-    try {
-        const querySnapshot = await getDocs(collection(db, 'blogs'));
-        querySnapshot.forEach(doc => {
-            const data = doc.data();
-            if (data.slug) {
-                xml += '  <url>\n';
-                xml += `    <loc>${baseUrl}/blog/${data.slug.trim()}</loc>\n`;
-                const date = data.created ? new Date(data.created) : new Date();
-                xml += `    <lastmod>${date.toISOString().split('T')[0]}</lastmod>\n`;
-                xml += '    <changefreq>monthly</changefreq>\n';
-                xml += '    <priority>0.7</priority>\n';
-                xml += '  </url>\n';
-            }
-        });
-    } catch (e) {
-        console.error('Firebase fetch failed, skipping blogs', e);
-    }
-
     xml += '</urlset>';
 
-    fs.writeFileSync('public/sitemap.xml', xml);
-    console.log('Static sitemap generated successfully.');
+    fs.writeFileSync('public/sitemap_0.xml', xml);
+    console.log('Static XML tree sitemap generated successfully at public/sitemap_0.xml');
     process.exit(0);
 }
 
