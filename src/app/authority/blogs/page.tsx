@@ -153,7 +153,7 @@ const BlogsDashboard = () => {
             slug: docData.slug || '',
             faqs: docData.faqs || [],
             reviews: docData.reviews || [],
-            author: docData.author || 'Anuj Anand Malik'
+            author: docData.author || 'Team LaundryAMC'
           };
         });
         // Sort blogs by date in descending order (newest first)
