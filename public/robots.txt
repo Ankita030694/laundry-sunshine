@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.laundryamc.com/sitemap_0.xml
+Sitemap: https://www.laundryamc.com/sitemap.xml
