@@ -23,7 +23,8 @@ const staticRoutes = [
     '/on-site-laundry-equipment-repair-gurgaon', '/industrial-washer-dryer-replacement-parts',
     '/high-usage-laundromat-maintenance', '/laundry-chemical-dosing-maintenance',
     '/washer-extractor-dryer-servicing-delhi-ncr', '/laundry-infrastructure-development',
-    '/blog', '/brands/electrolux', '/locations/delhi'
+    '/blog', '/brands/electrolux', '/locations/delhi',
+    '/terms', '/privacy'
 ];
 
 export async function GET() {

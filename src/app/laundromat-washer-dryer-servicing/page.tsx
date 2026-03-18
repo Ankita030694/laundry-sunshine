@@ -558,13 +558,6 @@ export default function LaundromatServicingPage() {
                             <div className="bg-white p-6 md:p-8 rounded-2xl md:rounded-[2.5rem] shadow-sm border border-gray-100">
                                 <h3 className="text-xl font-bold text-[#003366] mb-6">Explore Specialized Care</h3>
                                 <nav className="space-y-4">
-                                    <Link href="/technical-support-for-landromat-operations" className="flex items-center justify-between group p-3 hover:bg-slate-50 rounded-xl transition-all">
-                                        <div className="flex items-center gap-3">
-                                            <ShieldCheck size={18} className="text-[#FF6600]" />
-                                            <span className="font-bold text-gray-600 group-hover:text-[#FF6600] transition-colors">Technical Support</span>
-                                        </div>
-                                        <ChevronRight size={18} className="text-gray-400 group-hover:translate-x-1 transition-transform" />
-                                    </Link>
                                     <Link href="/energy-efficient-laundromat-solutions" className="flex items-center justify-between group p-3 hover:bg-slate-50 rounded-xl transition-all">
                                         <div className="flex items-center gap-3">
                                             <Droplets size={18} className="text-[#FF6600]" />

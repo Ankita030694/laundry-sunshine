@@ -585,20 +585,6 @@ export default function CommercialLaundrySupplier() {
                                         </div>
                                         <ChevronRight size={18} className="text-gray-400 group-hover:translate-x-1 transition-transform" />
                                     </Link>
-                                    <Link href="/services/laundry-setup" className="flex items-center justify-between group p-3 hover:bg-slate-50 rounded-xl transition-all">
-                                        <div className="flex items-center gap-3">
-                                            <Workflow size={18} className="text-brand-orange" />
-                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors text-sm">Plant Design</span>
-                                        </div>
-                                        <ChevronRight size={18} className="text-gray-400 group-hover:translate-x-1 transition-transform" />
-                                    </Link>
-                                    <Link href="/services/amc" className="flex items-center justify-between group p-3 hover:bg-slate-50 rounded-xl transition-all">
-                                        <div className="flex items-center gap-3">
-                                            <Settings size={18} className="text-brand-orange" />
-                                            <span className="font-bold text-gray-600 group-hover:text-brand-orange transition-colors text-sm">AMC Support</span>
-                                        </div>
-                                        <ChevronRight size={18} className="text-gray-400 group-hover:translate-x-1 transition-transform" />
-                                    </Link>
                                 </nav>
                             </div>
 
