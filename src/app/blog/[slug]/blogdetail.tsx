@@ -139,10 +139,14 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
       {/* Hero Image Section */}
       <div className="w-full h-[400px] md:h-[500px] relative bg-[#1a202c]">
         {blog.image && (
-          <div 
-            className="absolute inset-0 bg-cover bg-center" 
-            style={{ backgroundImage: `url("${blog.image}")` }}
-          ></div>
+          <Image
+            src={blog.image}
+            alt={blog.title}
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
         )}
       </div>
 

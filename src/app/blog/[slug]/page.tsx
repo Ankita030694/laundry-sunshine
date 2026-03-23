@@ -3,27 +3,13 @@ import { db } from "../../../lib/firebase";
 import type { Metadata, ResolvingMetadata } from "next";
 import ArticleDetail, { Blog, FAQ, Review } from "./blogdetail";
 import Script from "next/script";
-import { unstable_cache } from 'next/cache';
 import PerformanceMonitor from '../../../components/PerformanceMonitor';
 
-// Enhanced cache with TTL (Time To Live)
-const blogCache = new Map<string, { data: any; timestamp: number }>();
-const faqCache = new Map<string, { data: any[]; timestamp: number }>();
-const reviewCache = new Map<string, { data: any[]; timestamp: number }>();
-const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
-// Helper function to check if cache entry is valid
-const isCacheValid = (timestamp: number) => {
-  return Date.now() - timestamp < CACHE_TTL;
-};
-
-// Optimized function to fetch blog by slug with enhanced caching
-const getBlogBySlug = unstable_cache(async (slug: string) => {
-  // Check cache first with TTL validation
-  const cached = blogCache.get(slug);
-  if (cached && isCacheValid(cached.timestamp)) {
-    return cached.data;
-  }
+// Optimized function to fetch blog by slug
+const getBlogBySlug = async (slug: string) => {
 
   console.log(`[getBlogBySlug] Fetching blog for slug: "${slug}"`);
 
@@ -56,53 +42,30 @@ const getBlogBySlug = unstable_cache(async (slug: string) => {
 
     if (!querySnapshot.empty) {
       const doc = querySnapshot.docs[0];
-      const data = { id: doc.id, ...doc.data() };
-      
-      console.log(`[getBlogBySlug] Found blog: ${doc.id}`);
-
-      // Cache the result with timestamp
-      blogCache.set(slug, { data, timestamp: Date.now() });
+      const data = { id: doc.id, ...doc.data() } as any;
       return data;
     }
     
-    console.log(`[getBlogBySlug] No blog found for slug: "${slug}"`);
     return null;
   } catch (error) {
     console.error("Error fetching blog by slug:", error);
     return null;
   }
-}, ['blog-by-slug'], { 
-  revalidate: 60, // Reduced revalidation time for debugging
-  tags: ['blogs']
-});
+};
 
-// Function to fetch FAQs server-side with enhanced caching
-const getBlogFAQs = unstable_cache(async (blogId: string) => {
-  const cached = faqCache.get(blogId);
-  if (cached && isCacheValid(cached.timestamp)) {
-    return cached.data;
-  }
+// Function to fetch FAQs server-side
+const getBlogFAQs = async (blogId: string) => {
 
   try {
-    // In your Blog object, FAQs are already included in the `faqs` field as an array
-    // However, if they were in a subcollection, this is how you'd fetch them.
-    // Given the previous code, they are in the blog document itself.
     return []; 
   } catch (error) {
     console.error("Error fetching FAQs:", error);
     return [];
   }
-}, ['blog-faqs'], {
-  revalidate: 300,
-  tags: ['faqs']
-});
+};
 
 // Function to fetch Reviews server-side
-const getBlogReviews = unstable_cache(async (blogId: string) => {
-  const cached = reviewCache.get(blogId);
-  if (cached && isCacheValid(cached.timestamp)) {
-    return cached.data;
-  }
+const getBlogReviews = async (blogId: string) => {
 
   try {
     return []; // Same as FAQs, usually in doc
@@ -110,10 +73,7 @@ const getBlogReviews = unstable_cache(async (blogId: string) => {
     console.error("Error fetching Reviews:", error);
     return [];
   }
-}, ['blog-reviews'], {
-  revalidate: 300,
-  tags: ['reviews']
-});
+};
 
 // Function to fetch Related Blogs
 const getRelatedBlogs = async (excludeId: string) => {
