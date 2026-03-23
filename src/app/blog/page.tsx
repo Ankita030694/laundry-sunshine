@@ -4,8 +4,6 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
-import Navbar from '@/components/Navbar';
-import ConditionalFooter from '@/components/ConditionalFooter';
 import { motion } from 'framer-motion';
 
 interface Blog {
@@ -44,7 +42,6 @@ export default function BlogListing() {
 
   return (
     <div className="min-h-screen bg-[#F5F2EB] font-satoshi">
-      <Navbar />
       
       <main className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
@@ -102,8 +99,6 @@ export default function BlogListing() {
           </div>
         )}
       </main>
-
-      <ConditionalFooter />
     </div>
   );
 }
