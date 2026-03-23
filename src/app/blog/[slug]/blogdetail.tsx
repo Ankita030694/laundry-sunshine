@@ -360,13 +360,7 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900">{blog.author}</h4>
-                      <Link 
-                        href={blog.author === "Anuj Anand Malik" ? "/author/anuj-anand-malik" : 
-                              blog.author === "Shrey Arora" ? "/author/shrey-arora" : "/about"}
-                        className="text-xs text-brand-orange hover:underline font-bold"
-                      >
-                        View Profile
-                      </Link>
+
                     </div>
                   </div>
                   <p className="text-sm text-gray-600 mb-4 line-clamp-4">
