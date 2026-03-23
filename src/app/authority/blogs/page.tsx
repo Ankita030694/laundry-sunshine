@@ -440,27 +440,19 @@ const BlogsDashboard = () => {
       }
 
       const data = await response.json();
-      setGeneratedImageUrl(data.imageUrl);
-    } catch (error) {
-      console.error('Error generating image:', error);
-      alert('Failed to generate image. Please try again.');
-    } finally {
-      setIsGeneratingImage(false);
-    }
-  };
+      const imageUrl = data.imageUrl;
 
-  const handleUploadGeneratedImage = async () => {
-    if (!generatedImageUrl) return;
-
-    try {
+      // Automatically upload the generated image to Firebase Storage
       setIsUploadingGenerated(true);
       
-      // Fetch the image from the URL via proxy to avoid CORS issues
-      const response = await fetch(`/api/proxy-image?url=${encodeURIComponent(generatedImageUrl)}`);
-      const blob = await response.blob();
+      const proxyResponse = await fetch(`/api/proxy-image?url=${encodeURIComponent(imageUrl)}`);
+      if (!proxyResponse.ok) {
+        throw new Error('Failed to fetch image via proxy for upload');
+      }
+      
+      const blob = await proxyResponse.blob();
       const file = new File([blob], `generated_${Date.now()}.png`, { type: 'image/png' });
 
-      // Use the existing upload logic
       const storageRef = ref(storage, `blog-images/${Date.now()}_generated.png`);
       const snapshot = await uploadBytes(storageRef, file);
       const downloadURL = await getDownloadURL(snapshot.ref);
@@ -470,15 +462,18 @@ const BlogsDashboard = () => {
         image: downloadURL
       }));
       setImagePreview(downloadURL);
-      setGeneratedImageUrl(null); // Clear the preview once uploaded
-      alert('Image uploaded to Firebase successfully!');
+      setGeneratedImageUrl(null); // Optional: if you still want to clear the state
+      
+      alert('Image automatically generated and attached to the blog successfully!');
     } catch (error) {
-      console.error('Error uploading generated image:', error);
-      alert('Failed to upload image to Firebase.');
+      console.error('Error generating and uploading image:', error);
+      alert('Failed to generate or upload image. Please try again.');
     } finally {
+      setIsGeneratingImage(false);
       setIsUploadingGenerated(false);
     }
   };
+
 
   const handleExpandContent = async () => {
     if (!newBlog.description) {
@@ -928,27 +923,7 @@ const BlogsDashboard = () => {
                             />
                           </div>
                           
-                          {generatedImageUrl && (
-                            <motion.div 
-                              initial={{ opacity: 0, scale: 0.95 }}
-                              animate={{ opacity: 1, scale: 1 }}
-                              className="bg-white p-3 rounded-xl border border-brand-orange/10 flex items-center space-x-4 shadow-sm"
-                            >
-                              <img src={generatedImageUrl} alt="AI Preview" className="w-24 h-24 rounded-lg object-cover border border-gray-100" />
-                              <div className="flex-1">
-                                <p className="text-xs font-bold text-brand-blue uppercase tracking-tight mb-2">Image Generated Successfully</p>
-                                <button
-                                  type="button"
-                                  onClick={handleUploadGeneratedImage}
-                                  disabled={isUploadingGenerated}
-                                  className="px-4 py-2 bg-brand-blue text-white rounded-lg text-xs font-bold hover:bg-brand-blue/90 transition-all flex items-center"
-                                >
-                                  <FontAwesomeIcon icon={faUpload} className="mr-2" />
-                                  {isUploadingGenerated ? 'Adding...' : 'Add as Featured Image'}
-                                </button>
-                              </div>
-                            </motion.div>
-                          )}
+
                         </div>
                         
                         <button
@@ -1192,6 +1167,7 @@ const BlogsDashboard = () => {
                   <table className="min-w-full divide-y divide-gray-100">
                     <thead className="bg-gray-50">
                       <tr>
+                        <th className="px-8 py-4 text-left text-xs font-bold text-gray-400 uppercase tracking-widest w-24">Media</th>
                         <th className="px-8 py-4 text-left text-xs font-bold text-gray-400 uppercase tracking-widest">Date Published</th>
                         <th className="px-8 py-4 text-left text-xs font-bold text-gray-400 uppercase tracking-widest">Article Title</th>
                         <th className="px-8 py-4 text-right text-xs font-bold text-gray-400 uppercase tracking-widest">Management</th>
@@ -1201,6 +1177,13 @@ const BlogsDashboard = () => {
                       {currentBlogs.length > 0 ? (
                         currentBlogs.map((blog, index) => (
                           <tr key={blog.id || index} className="hover:bg-gray-50/50 transition-colors group">
+                            <td className="px-8 py-4">
+                              {blog.image ? (
+                                <img src={blog.image} alt={blog.title} className="w-16 h-12 object-cover rounded shadow-sm border border-gray-100" />
+                              ) : (
+                                <div className="w-16 h-12 bg-gray-100 rounded border border-gray-200 flex items-center justify-center text-[10px] text-gray-400 font-bold uppercase">No Img</div>
+                              )}
+                            </td>
                             <td className="px-8 py-5 text-sm text-gray-500 font-medium">{new Date(blog.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</td>
                             <td className="px-8 py-5 text-sm font-bold text-brand-blue">{blog.title}</td>
                             <td className="px-8 py-5 text-right">
@@ -1217,7 +1200,7 @@ const BlogsDashboard = () => {
                         ))
                       ) : (
                         <tr>
-                          <td colSpan={3} className="px-8 py-10 text-center text-sm text-gray-400 font-medium italic">No articles found in repository.</td>
+                          <td colSpan={4} className="px-8 py-10 text-center text-sm text-gray-400 font-medium italic">No articles found in repository.</td>
                         </tr>
                       )}
                     </tbody>

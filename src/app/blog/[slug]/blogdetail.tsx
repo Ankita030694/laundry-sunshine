@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState, useMemo, memo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import Breadcrumbs from '../../../components/Breadcrumbs';
 import TableOfContents from '../../../components/TableOfContents';
@@ -298,10 +299,12 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
                       <Link key={article.id} href={`/blog/${article.slug}`} className="group">
                         <div className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
                           <div className="relative h-48 overflow-hidden">
-                            <img 
+                            <Image 
                               src={article.image || '/placeholder-blog.jpg'} 
                               alt={article.title}
-                              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                              fill
+                              className="object-cover group-hover:scale-105 transition-transform duration-500"
+                              sizes="(max-width: 768px) 100vw, 50vw"
                             />
                             <div className="absolute bottom-2 right-2 bg-white/90 backdrop-blur-sm rounded px-2 py-1 text-xs font-bold text-brand-blue">
                               {new Date(article.date).toLocaleDateString()}
