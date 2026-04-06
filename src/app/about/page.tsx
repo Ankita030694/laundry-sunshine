@@ -111,23 +111,7 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Leader 2 */}
-              <div className="flex flex-col md:grid md:grid-cols-12 gap-10 md:gap-16 items-start">
-                <div className="w-full md:col-span-3">
-                  <div className="relative aspect-[4/5] bg-gray-100 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-                    <Image src="/ChatGPT-Image-Oct-3-2025-08_27_45-PM 1.png" alt="Veena Sharma" fill className="object-cover" />
-                  </div>
-                </div>
-                <div className="md:col-span-4 lg:pt-2">
-                  <h3 className="text-3xl md:text-4xl font-bold text-[#1F2933] mb-3">Veena Sharma</h3>
-                  <p className="text-[#E6763F] text-lg md:text-xl font-bold uppercase tracking-wider">Operations Manager</p>
-                </div>
-                <div className="md:col-span-5 lg:pt-2">
-                  <p className="text-gray-600 text-base md:text-lg leading-relaxed">
-                    My focus is on ensuring every project is executed with precision, efficiency, and consistency. From coordinating installations to managing spare parts logistics, I work closely with our technical teams to maintain the highest operational standards. My goal is to deliver seamless execution, minimize downtime, and ensure our clients receive dependable support at every stage.
-                  </p>
-                </div>
-              </div>
+           
 
               {/* Leader 3 */}
               <div className="flex flex-col md:grid md:grid-cols-12 gap-10 md:gap-16 items-start">

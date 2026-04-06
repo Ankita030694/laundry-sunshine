@@ -51,17 +51,11 @@ interface BlogDetailProps {
 
 // Define author bios
 const authorBios = {
-  "Anuj Anand Malik": {
-    name: "Anuj Anand Malik",
-    description: "Anuj Anand Malik, Founder of AMA Legal Solutions, is a trusted advocate, loan settlement expert, legal advisor, and banking lawyer. With over a decade of experience in loan settlement, corporate law, financial disputes, and compliance, he leads a result-driven law firm based in India that helps individuals, startups, and businesses achieve legal and financial stability.",
-    image: "/anujbhiya.png",
-    linkedInUrl: "https://www.linkedin.com/in/iamanujmalik/"
-  },
-  "Shrey Arora": {
-    name: "Shrey Arora",
-    description: "Legal professional specializing in corporate law and regulatory compliance. Brings a strategic approach to legal advisory with extensive experience in contract negotiation and business law.",
-    image: "/shreychad.svg",
-    linkedInUrl: "https://www.linkedin.com/in/shrey-arora-b0487b67/"
+  "Team LaundryAMC": {
+    name: "Team LaundryAMC",
+    description: "Our dedicated team of laundry specialists and maintenance experts, committed to providing the best commercial laundry solutions and equipment care.",
+    image: "/logo.svg",
+    linkedInUrl: "https://www.linkedin.com/company/laundryamc/"
   }
 };
 
@@ -166,7 +160,7 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
           <div className="flex justify-center items-center space-x-4 text-sm md:text-base text-gray-500">
             <span>{new Date(blog.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
             <span>•</span>
-            <span>{blog.author || 'AMA Legal Solutions'}</span>
+            <span>Team LaundryAMC</span>
           </div>
         </div>
         
@@ -339,43 +333,46 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
           {/* Right Sidebar - Author & CTA */}
           <div className="space-y-8 sticky top-24">
               {/* Author Card */}
-              {blog.author && (
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                  <h3 className="text-lg font-bold text-brand-blue mb-4 border-b border-gray-100 pb-2 font-polysans">About Author</h3>
-                  <div className="flex items-center mb-4">
-                    <div className="w-16 h-16 rounded-full overflow-hidden mr-4 border border-gray-100 flex items-center justify-center bg-gray-50">
-                      {authorBios[blog.author as keyof typeof authorBios]?.image ? (
-                        <img 
-                          src={authorBios[blog.author as keyof typeof authorBios]?.image}
-                          alt={blog.author}
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            (e.target as HTMLImageElement).style.display = 'none';
-                            (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="text-gray-400"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg></div>';
-                          }}
-                        />
-                      ) : (
-                        <FontAwesomeIcon icon={faUser} className="text-gray-400 text-2xl" />
-                      )}
+              {(() => {
+                const authorInfo = authorBios["Team LaundryAMC"];
+                
+                return (
+                  <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h3 className="text-lg font-bold text-brand-blue mb-4 border-b border-gray-100 pb-2 font-polysans">About Author</h3>
+                    <div className="flex items-center mb-4">
+                      <div className="w-16 h-16 rounded-full overflow-hidden mr-4 border border-gray-100 flex items-center justify-center bg-gray-50">
+                        {authorInfo.image ? (
+                          <img 
+                            src={authorInfo.image}
+                            alt={authorInfo.name}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).style.display = 'none';
+                              (e.target as HTMLImageElement).parentElement!.innerHTML = '<div class="text-gray-400"><svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg></div>';
+                            }}
+                          />
+                        ) : (
+                          <FontAwesomeIcon icon={faUser} className="text-gray-400 text-2xl" />
+                        )}
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-900">{authorInfo.name}</h4>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-bold text-gray-900">{blog.author}</h4>
-
-                    </div>
+                    <p className="text-sm text-gray-600 mb-4 line-clamp-4">
+                      {authorInfo.description}
+                    </p>
+                    <a 
+                      href={authorInfo.linkedInUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full border border-[#0077b5] text-[#0077b5] text-center py-2 rounded-lg text-sm font-semibold hover:bg-[#0077b5] hover:text-white transition-colors uppercase tracking-widest font-bold"
+                    >
+                      Connect
+                    </a>
                   </div>
-                  <p className="text-sm text-gray-600 mb-4 line-clamp-4">
-                    {authorBios[blog.author as keyof typeof authorBios]?.description}
-                  </p>
-                  <a 
-                    href={authorBios[blog.author as keyof typeof authorBios]?.linkedInUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full border border-[#0077b5] text-[#0077b5] text-center py-2 rounded-lg text-sm font-semibold hover:bg-[#0077b5] hover:text-white transition-colors uppercase tracking-widest font-bold"
-                  >
-                    Connect
-                  </a>
-                </div>
-              )}
+                );
+              })()}
 
               {/* Contact Card */}
               <div className="bg-brand-blue p-6 rounded-xl shadow-sm text-white">
@@ -384,7 +381,7 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
                   Get expert advice on commercial laundry solutions and equipment maintenance.
                 </p>
                 <a 
-                  href="tel:+918700343611" 
+                  href="tel:+919711112950" 
                   className="block w-full bg-brand-orange text-white text-center py-3 rounded-lg font-bold hover:bg-brand-orange-hover transition-colors mb-4 uppercase tracking-widest text-sm shadow-lg shadow-brand-orange/20"
                 >
                   Call Now

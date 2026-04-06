@@ -109,7 +109,7 @@ export async function generateMetadata(
   let title = "Blog Post | Sunshine Equipments";
   let description = "Read our latest insights and articles at Sunshine Equipments";
   let image = "";
-  let author = "Sunshine Equipments";
+  let author = "Team LaundryAMC";
 
   const baseUrl = "https://sunshineequipments.com";
 
@@ -228,7 +228,7 @@ export default async function Page({
 function generateCombinedSchema(blogData: any, faqs: any[], reviews: any[]) {
   const baseUrl = "https://sunshineequipments.com";
   const blogUrl = `${baseUrl}/blog/${blogData.slug}`;
-  const isOrganizationAuthor = !blogData.author || blogData.author === "Sunshine Equipments";
+  const isOrganizationAuthor = !blogData.author || blogData.author === "Team LaundryAMC";
 
   const graph = [];
 
@@ -239,7 +239,7 @@ function generateCombinedSchema(blogData: any, faqs: any[], reviews: any[]) {
     "isPartOf": { "@id": blogUrl },
     "author": {
       "@type": isOrganizationAuthor ? "Organization" : "Person",
-      "name": blogData.author || "Sunshine Equipments",
+      "name": blogData.author || "Team LaundryAMC",
       "url": `${baseUrl}/about`
     },
     "headline": blogData.title,
