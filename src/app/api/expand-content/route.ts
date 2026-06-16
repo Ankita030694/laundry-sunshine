@@ -1,7 +1,14 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
+import { verifyAdminToken } from '@/lib/auth';
 
 export async function POST(request: Request) {
+    const authHeader = request.headers.get("Authorization");
+    const authResult = await verifyAdminToken(authHeader);
+    if (authResult.error) {
+        return NextResponse.json({ error: authResult.error }, { status: authResult.status || 401 });
+    }
+
     const openai = new OpenAI({
         apiKey: process.env.HELLO_DROP_CHOO,
     });

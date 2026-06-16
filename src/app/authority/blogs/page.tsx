@@ -86,7 +86,6 @@ const BlogsDashboard = () => {
   const [imagePrompt, setImagePrompt] = useState('');
   const [isGeneratingImage, setIsGeneratingImage] = useState(false);
   const [generatedImageUrl, setGeneratedImageUrl] = useState<string | null>(null);
-  const [isUploadingGenerated, setIsUploadingGenerated] = useState(false);
   const [expansionPrompt, setExpansionPrompt] = useState('');
   const [isExpanding, setIsExpanding] = useState(false);
 
@@ -353,10 +352,17 @@ const BlogsDashboard = () => {
 
     try {
       setIsGenerating(true);
+      
+      const token = await auth.currentUser?.getIdToken();
+      if (!token) {
+        throw new Error('Authentication token not found. Please log in again.');
+      }
+
       const response = await fetch('/api/generate-article', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify({ primaryKeyword, secondaryKeyword }),
       });
@@ -426,10 +432,18 @@ const BlogsDashboard = () => {
 
     try {
       setIsGeneratingImage(true);
+      
+      // Get Firebase ID token for authorization
+      const token = await auth.currentUser?.getIdToken();
+      if (!token) {
+        throw new Error('Authentication token not found. Please log in again.');
+      }
+
       const response = await fetch('/api/generate-image', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify({ prompt: imagePrompt }),
       });
@@ -442,35 +456,19 @@ const BlogsDashboard = () => {
       const data = await response.json();
       const imageUrl = data.imageUrl;
 
-      // Automatically upload the generated image to Firebase Storage
-      setIsUploadingGenerated(true);
-      
-      const proxyResponse = await fetch(`/api/proxy-image?url=${encodeURIComponent(imageUrl)}`);
-      if (!proxyResponse.ok) {
-        throw new Error('Failed to fetch image via proxy for upload');
-      }
-      
-      const blob = await proxyResponse.blob();
-      const file = new File([blob], `generated_${Date.now()}.png`, { type: 'image/png' });
-
-      const storageRef = ref(storage, `blog-images/${Date.now()}_generated.png`);
-      const snapshot = await uploadBytes(storageRef, file);
-      const downloadURL = await getDownloadURL(snapshot.ref);
-
       setNewBlog(prevState => ({
         ...prevState,
-        image: downloadURL
+        image: imageUrl
       }));
-      setImagePreview(downloadURL);
-      setGeneratedImageUrl(null); // Optional: if you still want to clear the state
+      setImagePreview(imageUrl);
+      setGeneratedImageUrl(null);
       
       alert('Image automatically generated and attached to the blog successfully!');
     } catch (error) {
-      console.error('Error generating and uploading image:', error);
-      alert('Failed to generate or upload image. Please try again.');
+      console.error('Error generating image:', error);
+      alert(error instanceof Error ? error.message : 'Failed to generate image. Please try again.');
     } finally {
       setIsGeneratingImage(false);
-      setIsUploadingGenerated(false);
     }
   };
 
@@ -483,10 +481,17 @@ const BlogsDashboard = () => {
 
     try {
       setIsExpanding(true);
+
+      const token = await auth.currentUser?.getIdToken();
+      if (!token) {
+        throw new Error('Authentication token not found. Please log in again.');
+      }
+
       const response = await fetch('/api/expand-content', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify({ 
           content: newBlog.description, 
